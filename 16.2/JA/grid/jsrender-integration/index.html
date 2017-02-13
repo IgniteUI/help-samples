@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JsRender の結合</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.lob.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.83/jsrender.min.js" type="text/javascript"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/i18n/infragistics-ja.js"></script></head>
+<body>
+
+    <table id="grid12"></table>
+
+    <!--Sample JSON Data-->
+    <script src="../../../../data-files-ja/nw-employees.js"></script>
+
+    <script>
+        $(function () {
+            var titles = ["Sales Representative", "Sales Manager", "Inside Sales Coordinator", "Vice President, Sales"];
+            var countries = ["UK", "USA"];
+
+            $.views.helpers(
+            {
+                toDate: function (val) {
+                    return new Date(val);
+                }
+            });
+
+            $.views.helpers(
+            {
+                toFullName: function (val) {
+                    var name = val.split(',').reverse().join(" ");
+                    return name;
+                }
+            });
+
+            $("#grid12").igGrid({
+                width: "100%",
+                height: "600px",
+                autoGenerateColumns: false,
+                autoCommit:true,
+                columns: [
+                        { headerText: "社員 ID", key: "ID", dataType: "number" },
+                        { headerText: "名前", key: "Name", dataType: "string", template: "{{>#view.hlp('toFullName')(Name)}}" },
+                        {
+                            headerText: "画像", key: "ImageUrl", dataType: "object",
+                            template: "<img width='100' height='90' src={{>ImageUrl}}></img>"
+                        },
+                        { headerText: "役職", key: "Title", dataType: "string" },
+                        {
+                            headerText: "言語", key: "Languages", dataType: "object",
+                            template: "{{for Languages}}<div>{{:name}}</div>{{/for}}"
+                        },
+                        { headerText: "電話", key: "Phone", dataType: "string" },
+                        {
+                            headerText: "国名", key: "Country", dataType: "string",
+                            template: "<img width='26' height='15' src='../../images/samples/nw/countries/{{>Country}}.gif'></img> <span style='display: table-cell;vertical-align: middle;'>{{>Country}}</span>"
+                        },
+                        {
+                            headerText: "生年月日", key: "BirthDate", dataType: "date",
+                            template: "<span style='color:{{if #view.hlp('toDate')(BirthDate) > #view.hlp('toDate')('1980-01-01T00:00:00.000')}}#4573D6{{else}}#F75F4F{{/if}};'>{{>BirthDate}}</span>"
+                        }
+                    ],
+                dataSource: northwindEmployees,
+                primaryKey: "ID",
+                templatingEngine: "jsrender",
+                features: [
+                    {
+                        name: 'Responsive',
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: 'ID',
+                                classes: 'ui-hidden-phone'
+                            },
+                            {
+                                columnKey: 'Phone',
+                                classes: 'ui-hidden-phone'
+                            },
+                            {
+                                columnKey: 'Name',
+                                classes: 'ui-hidden-phone'
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+
+    </script>
+</body>
+</html>
