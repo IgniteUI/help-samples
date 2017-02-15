@@ -1,0 +1,17 @@
+{
+    "embed": [
+        {
+            "label": "HTML",
+            "path": "16.2/JA/combo/html-binding/fiddle/demo.html"
+        },
+        {
+            "label": "JS",
+            "path": "16.2/JA/combo/html-binding/fiddle/demo.js"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/16.2/JA/combo/html-binding/index.html"
+        }
+    ]
+}

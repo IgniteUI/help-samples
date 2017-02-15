@@ -1,0 +1,49 @@
+body { font-family: Arial; }
+label { display: inline-block; }
+
+.order-container {
+    position: relative;
+    width: 450px;
+    margin-left: -225px;
+    left: 50%;
+    font-size:1.2em;
+}
+.row {
+    margin-top: 5px;
+}
+.row-control {
+    height: 28px;
+    padding: 0;
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.heading-row
+{
+    margin: 20px 0px 10px 0px;
+    font-size: large;
+}
+
+.heading-label, .row-label, .row-control
+{
+    width: 200px;
+    margin: 0px 5px 0px 5px;
+}
+
+
+
+@media all and (max-width: 520px) {
+    .ui-datepicker {
+        width: 250px;
+    }
+
+    .order-container {
+        width: 280px;
+        margin-left: -140px;
+    }
+
+    .ui-igedit {
+        margin-bottom: 5px;
+    }
+}

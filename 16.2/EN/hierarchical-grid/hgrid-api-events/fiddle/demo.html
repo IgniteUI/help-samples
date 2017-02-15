@@ -1,0 +1,70 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.core.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.lob.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/northwind.js"></script>
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="http://www.igniteui.com/css/apiviewer.css" rel="stylesheet" type="text/css">
+<div style="height: 400px; padding-bottom: 30px;">
+        <table id="grid"></table>
+    </div>
+<div>
+        <h3>Hierarchical Grid API</h3>
+        <div style="margin: 1em 0;">
+            <input type="button" id="buttonExpandAll" value="Expand All">
+            <input type="button" id="buttonCollapseAll" value="Collapse All">
+        </div>
+    </div>
+<hr>
+<div>      
+        <div>
+            <h3>Child Grid API</h3>
+            <p style="font-size: 15px; color: #5F6564; margin-top: 1em; margin-bottom: 1em;">
+                In order to call an API method on a child grid, please first select the associated parent row by ID.                 The selected row will be expanded to ensure that the child grid is created.                 Note that each child grid is an instatiation of a flat-data igGrid control and all igGrid API methods and events are applicable for it.                     
+            </p>
+            <div id="SelectParentRowID" style=""></div>
+
+            <div style="clear: both;"></div>
+            <fieldset id="gridOptions" class="explorer">
+                <legend>Grid api settings</legend>
+                <label>DataBind the selected child igGrid:</label>
+                <input type="button" id="buttonDataBind" value="Databind">
+            </fieldset>
+
+            <fieldset id="filteringOptions" class="explorer">
+                <legend>Filtering settings</legend>
+                <div id="filterColumn"></div>
+                <div id="conditionList"></div>
+                <div id="exprTextEditor"></div>
+                <div id="exprNumericEditor"></div>
+                <div id="exprDateEditor"></div>
+                <br>
+                <input type="button" id="buttonFilter" value="Filter">
+            </fieldset>
+
+            <div style="clear: both;"></div>
+
+            <fieldset id="pagingOptions" class="explorer">
+                <legend>Paging settings</legend>
+                <label for="pageIndexList">Select Page Index:</label>
+                <div id="pageIndexList"></div>
+                <label for="PageSizeSelect">Select Page Size:</label>
+                <div id="pageSizeList"></div>
+            </fieldset>
+
+            <fieldset id="selectionOptions" class="explorer">
+                <legend>Selection settings</legend>
+                <label for="RowSelect">Select Row Index:  </label>
+                <div id="rowNumberEditor"></div>
+                <br>
+                <input type="button" id="buttonSelectRow" value="Select Row">
+                <input type="button" id="buttonSelectedRows" value="Get Selected Rows">
+            </fieldset>
+        </div>
+        <div style="clear: both;"></div>
+        <!--    </fieldset>-->
+    </div>
+<div class="api-viewer"></div>

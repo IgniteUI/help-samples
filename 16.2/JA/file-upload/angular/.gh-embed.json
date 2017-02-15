@@ -1,0 +1,17 @@
+{
+    "embed": [
+        {
+            "label": "HTML",
+            "path": "16.2/JA/file-upload/angular/fiddle/demo.html"
+        },
+        {
+            "label": "JS",
+            "path": "16.2/JA/file-upload/angular/fiddle/demo.js"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/16.2/JA/file-upload/angular/index.html"
+        }
+    ]
+}

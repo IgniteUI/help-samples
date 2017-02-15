@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API およびイベント</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/structure/infragistics.css" rel="stylesheet">
+    
+    <!-- Used to style the API Viewer and Explorer UI -->
+    <link href="../../../../css/apiviewer.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.lob.js"></script>
+            
+    <!-- Used to add markup and provide logging 
+        functionality for the API Explorer and API Viewer UI -->
+    <script src="../../../../js/apiviewer.js"></script>   
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/i18n/infragistics-ja.js"></script></head>
+<body>
+
+    <div id="tree"></div>
+
+    <!-- Begin: API UI -->
+    <div class="api-explorer">
+        <button id="btnRemoveNode">選択したノードの削除</button><span>var node = $("#tree").igTree("selectedNode");<br>$("#tree").igTree("removeAt", node.path);</span><br>
+        <button id="btnSelectNode">「テクノロジー」ノードを選択</button><span>var nodes = $("#tree").igTree("findNodesByText", "テクノロジー"); <br>$("#tree").igTree("select", nodes[0].element);</span><br>
+        <button id="btnAddNode">ノードを追加</button><span>$("#tree").igTree("addNode", { Text: "新しいノード" });</span>
+    </div>
+
+    <div class="api-viewer" tabindex="0"></div>
+    <!-- End: API UI -->
+    
+    <script src="../../../../data-files/hierarchical-products.js"></script>
+
+    <script>        
+
+        $(function () {
+
+            // Used to show output in the API Viewer at runtime, 
+            // defined in external script 'apiviewer.js'           
+            var apiViewer = new $.ig.apiViewer(); 
+
+            
+            /*----------------- Method & Option Examples -------------------------*/
+
+            // Remove Selected Node button click handler
+            $("#btnRemoveNode").click(function (e) {
+                var node = $("#tree").igTree("selectedNode");
+
+                if (node.path != null) {
+
+                    if (node.data.Text === "テクノロジー") {
+                        apiViewer.log("「テクノロジー」ノードを削除できません。");
+                    }
+                    else {
+                        // Remove selected node using path
+                        $("#tree").igTree("removeAt", node.path);
+
+                        apiViewer.log("ノードが削除されました: " + node.data.Text);
+
+                        $("#tree").igTree("clearSelection");
+                    }
+                } else {
+                    apiViewer.log("ノードを選択して、もう一度試しください。");
+                }
+            });
+
+            // Select "Tech" Node button click handler
+            $("#btnSelectNode").click(function (e) {
+
+                var nodes = $("#tree").igTree("findNodesByText", "テクノロジー");
+
+                if (nodes.length > 0) {
+                    $("#tree").igTree("select", nodes[0].element);
+                }
+            });
+            
+            // {Button Label} button click handler
+            $("#btnAddNode").click(function (e) {
+                var parentNode = $("#tree").igTree("selectedNode").element;                
+
+                if (parentNode == null) {
+                    $("#tree").igTree("addNode", { Text: "新しいノード" });
+                }
+                else {
+                    $("#tree").igTree("addNode", { Text: "新しいノード" }, parentNode);
+                    $("#tree").igTree("expand", parentNode);
+                }
+
+            });
+
+            /*----------------- Event Examples -------------------------*/
+
+            $("#tree").on("igtreeselectionchanged", function (e, ui) {
+            	apiViewer.log("igtreeselectionchanged: [ " + "選択が変更されました: " + ui.newNodes[0].data.Text + "]"); focusOnMobile();
+            });
+
+            $("#tree").on("igtreenodeclick", function (evt, ui) {
+            	apiViewer.log("igtreenodeclick: [ " + "ノードがクリックされました: " + ui.node.data.Text + "]"); focusOnMobile();
+            });
+
+            $("#tree").on("igtreedragstart", function (evt, ui) {
+            	apiViewer.log("igtreedragstart: [ " + "ノードのドラッグ開始: " + ui.data.Text + "]"); focusOnMobile();
+            });
+
+            $("#tree").on("igtreedragstop", function (evt, ui) {
+            	apiViewer.log("igtreedragstop"); focusOnMobile();
+            });
+
+            $("#tree").on("igtreenodedropped", function (evt, ui) {
+            	apiViewer.log("igtreenodedropped"); focusOnMobile();
+            });
+
+            /*----------------- Instantiation -------------------------*/
+
+            $("#tree").igTree({
+                singleBranchExpand: true,
+                dataSourceType: "json",
+                dataSource: products, //defined in external script
+                dragAndDrop: true,
+                bindings: {
+                    textKey: "Text",
+                    valueKey: "Text",
+                    childDataProperty: "Nodes"
+                }
+            });
+
+            function focusOnMobile() {
+            	setTimeout(function () {
+            		if ($(window).width() < 600) {
+            			$(".api-viewer").focus();
+            		}
+            	}, 0);
+            }
+
+        });
+
+    </script>  
+</body>
+</html>

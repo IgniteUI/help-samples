@@ -1,0 +1,21 @@
+{
+    "embed": [
+        {
+            "label": "HTML",
+            "path": "16.2/JA/tree/drag-and-drop-single-tree/fiddle/demo.html"
+        },
+        {
+            "label": "JS",
+            "path": "16.2/JA/tree/drag-and-drop-single-tree/fiddle/demo.js"
+        },
+        {
+            "label": "CSS",
+            "path": "16.2/JA/tree/drag-and-drop-single-tree/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/16.2/JA/tree/drag-and-drop-single-tree/index.html"
+        }
+    ]
+}
