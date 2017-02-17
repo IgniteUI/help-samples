@@ -36,9 +36,10 @@
         <h4>Time Configuration</h4>
         <div id="timeEditor"></div>
 
-        <h4>Date Contraints, Hide Input Mask</h4>
+        <h4>Using different display format and Date constraints. Note the display format is used for the warning shown when entering value outside the min/max range.</h4>
         <div id="constraintEditor"></div>
-    
+        <br>
+        <button id="setMax">Set after maximum</button>
     </div>
 
     <script>
@@ -46,31 +47,32 @@
         $(function () {
 
             $("#defaultDateEditor").igDateEditor({
-                width: 200,
                 value: new Date(2015, 9, 9)
             });
 
             $("#dateTimeEditor").igDateEditor({
-                width: 200,
                 dateInputFormat: "dateTime",
                 value: new Date(2015, 9, 9, 9, 9)
             });
 
             $("#timeEditor").igDateEditor({
-                width: 200,
                 dateInputFormat: "time",
                 value: new Date(2015, 9, 9, 9, 9)
             });
 
             $("#constraintEditor").igDateEditor({
-                width: 200,
+                dateInputFormat: "MM/dd/yyyy",
+                dateDisplayFormat: "dddd, MMM d, yyyy",
                 minValue: new Date(2012, 9, 24),
-                maxValue: new Date(2018, 9, 24),
-                value: new Date(2015, 9, 9),
-                nullText: "Enter Today's Date",
-                unfilledCharsPrompt: " "
+                maxValue: new Date(2017, 9, 24),
+                value: new Date(2017, 9, 9)
             });
 
+            $("#setMax").igButton({
+                click: function () {
+                    $("#constraintEditor").igDateEditor("value", new Date(2018, 9, 26));
+                }
+            });
         });
 
     </script>
