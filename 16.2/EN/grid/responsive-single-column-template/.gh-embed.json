@@ -1,12 +1,12 @@
 {
     "embed": [
         {
-            "label": "HTML",
-            "path": "16.2/EN/grid/responsive-single-column-template/fiddle/demo.html"
-        },
-        {
             "label": "JS",
             "path": "16.2/EN/grid/responsive-single-column-template/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/grid/responsive-single-column-template/fiddle/demo.html"
         },
         {
             "label": "CSS",

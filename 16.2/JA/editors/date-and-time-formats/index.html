@@ -15,7 +15,7 @@
     <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.core.js"></script>
     <script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.lob.js"></script>
 
-<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/i18n/infragistics-ja.js"></script></head>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
 <body>
     <style>
         
@@ -36,10 +36,9 @@
         <h4>時間構成</h4>
         <div id="timeEditor"></div>
 
-        <h4>Using different display format and Date constraints. Note the display format is used for the warning shown when entering value outside the min/max range.</h4>
+        <h4>日付の制約、入力マスクの非表示</h4>
         <div id="constraintEditor"></div>
-        <br>
-        <button id="setMax">Set after maximum</button>
+    
     </div>
 
     <script>
@@ -47,32 +46,31 @@
         $(function () {
 
             $("#defaultDateEditor").igDateEditor({
+                width: 200,
                 value: new Date(2015, 9, 9)
             });
 
             $("#dateTimeEditor").igDateEditor({
+                width: 200,
                 dateInputFormat: "dateTime",
                 value: new Date(2015, 9, 9, 9, 9)
             });
 
             $("#timeEditor").igDateEditor({
+                width: 200,
                 dateInputFormat: "time",
                 value: new Date(2015, 9, 9, 9, 9)
             });
 
             $("#constraintEditor").igDateEditor({
-                dateInputFormat: "MM/dd/yyyy",
-                dateDisplayFormat: "dddd, MMM d, yyyy",
+                width: 200,
                 minValue: new Date(2012, 9, 24),
-                maxValue: new Date(2017, 9, 24),
-                value: new Date(2017, 9, 9)
+                maxValue: new Date(2018, 9, 24),
+                value: new Date(2015, 9, 9),
+                nullText: "今日の日付の入力",
+                unfilledCharsPrompt: " "
             });
 
-            $("#setMax").igButton({
-                click: function () {
-                    $("#constraintEditor").igDateEditor("value", new Date(2018, 9, 26));
-                }
-            });
         });
 
     </script>

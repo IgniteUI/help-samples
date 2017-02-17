@@ -1,12 +1,12 @@
 {
     "embed": [
         {
-            "label": "HTML",
-            "path": "16.2/EN/data-chart/motion-framework/fiddle/demo.html"
-        },
-        {
             "label": "JS",
             "path": "16.2/EN/data-chart/motion-framework/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/data-chart/motion-framework/fiddle/demo.html"
         },
         {
             "type": "htmlpage",

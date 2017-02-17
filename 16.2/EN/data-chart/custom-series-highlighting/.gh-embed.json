@@ -1,12 +1,12 @@
 {
     "embed": [
         {
-            "label": "HTML",
-            "path": "16.2/EN/data-chart/custom-series-highlighting/fiddle/demo.html"
-        },
-        {
             "label": "JS",
             "path": "16.2/EN/data-chart/custom-series-highlighting/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/data-chart/custom-series-highlighting/fiddle/demo.html"
         },
         {
             "label": "CSS",

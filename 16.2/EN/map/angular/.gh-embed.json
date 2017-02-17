@@ -1,12 +1,12 @@
 {
     "embed": [
         {
-            "label": "HTML",
-            "path": "16.2/EN/map/angular/fiddle/demo.html"
-        },
-        {
             "label": "JS",
             "path": "16.2/EN/map/angular/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/map/angular/fiddle/demo.html"
         },
         {
             "type": "htmlpage",

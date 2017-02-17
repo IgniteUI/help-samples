@@ -1,12 +1,12 @@
 {
     "embed": [
         {
-            "label": "HTML",
-            "path": "16.2/EN/bullet-graph/tooltip-settings/fiddle/demo.html"
-        },
-        {
             "label": "JS",
             "path": "16.2/EN/bullet-graph/tooltip-settings/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/bullet-graph/tooltip-settings/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
