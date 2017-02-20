@@ -1,0 +1,21 @@
+{
+    "embed": [
+        {
+            "label": "JS",
+            "path": "16.2/JA/editors/date-picker/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/JA/editors/date-picker/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "16.2/JA/editors/date-picker/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/16.2/JA/editors/date-picker/index.html"
+        }
+    ]
+}
