@@ -1,49 +1,39 @@
-body { font-family: Arial; }
-label { display: inline-block; }
-
 .order-container {
-    position: relative;
     width: 450px;
-    margin-left: -225px;
-    left: 50%;
-    font-size:1.2em;
+    margin: 0 auto;
 }
 .row {
     margin-top: 5px;
 }
+.heading-row
+{
+    font-size: large;
+}
+
 .row-control {
-    height: 28px;
-    padding: 0;
     vertical-align: top;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-.heading-row
+.row label
 {
-    margin: 20px 0px 10px 0px;
-    font-size: large;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-.heading-label, .row-label, .row-control
+.row label, .row-control
 {
+    height: 28px;
     width: 200px;
     margin: 0px 5px 0px 5px;
 }
 
-
-
 @media all and (max-width: 520px) {
-    .ui-datepicker {
-        width: 250px;
-    }
-
     .order-container {
         width: 280px;
-        margin-left: -140px;
     }
 
-    .ui-igedit {
+    .ui-igedit-container {
         margin-bottom: 5px;
     }
 }
