@@ -1,0 +1,63 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/latest/js/infragistics.core.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/latest/js/infragistics.dv.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<link href="https://secure-cdn-na.infragistics.com/igniteui/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://secure-cdn-na.infragistics.com/igniteui/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="chart" class="chartElement"></div>
+<br>
+<div>
+        <fieldset id="chartOptions">
+            <legend>カテゴリ項目強調表示オプション</legend>
+            <br>
+            <div class="optionContainer">
+                ブラシ
+                <br>
+                <select id="brush" class="selectBounds">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="" selected="selected">Default</option>
+                </select>
+            </div>
+           
+            <div class="optionContainer">
+                ブラシの幅
+                <br>
+                <div id="thicknessSlider" class="sliderBounds"></div>
+                <label id="thicknessLabel">1</label>
+            </div>
+            
+            <div class="optionContainer">
+                不透明度
+                <br>
+                <div id="opacitySlider" class="sliderBounds"></div>
+                <label id="opacityLabel">1</label>
+            </div>
+            
+            <br>
+
+            <div class="optionContainer">
+                トランジション期間
+                <br>
+                <div id="transitionDurationSlider" class="sliderBounds"></div>
+                <label id="transitionDurationLabel">500</label>
+            </div>
+            
+            <div class="optionContainer">
+                <input type="checkbox" id="useInterpolationCheckBox">補間の使用<br>
+            </div>
+
+        </fieldset>
+    </div>
+<br>
+<div class="USCensus-attribution">
+        人口のデータ ソース:<br>
+        <a href="http://www.census.gov/" target="_blank">U.S. Census Bureau</a>
+    </div>
