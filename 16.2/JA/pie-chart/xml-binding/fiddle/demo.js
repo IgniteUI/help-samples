@@ -35,7 +35,8 @@ $(function () {
         dataSource: ds, //$.ig.DataSource defined above
         dataValue: "Population",
         dataLabel: "Name",
-        labelsPosition: "bestFit"
+        labelsPosition: "bestFit",
+		explodedSlices: [0,2,3,4]
     });
 
 });
