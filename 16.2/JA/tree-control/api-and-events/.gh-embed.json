@@ -1,0 +1,17 @@
+{
+    "embed": [
+        {
+            "label": "JS",
+            "path": "16.2/JA/tree-control/api-and-events/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/JA/tree-control/api-and-events/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/16.2/JA/tree-control/api-and-events/index.html"
+        }
+    ]
+}
