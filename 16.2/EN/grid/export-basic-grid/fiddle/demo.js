@@ -2,10 +2,7 @@ $(function () {
     $.ig.loader({
         scriptPath: "https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/js/",
         cssPath: "https://secure-cdn-na.infragistics.com/igniteui/2016.2/latest/css/",
-        resources:'igGrid,' +
-            'modules/infragistics.documents.core.js,' +
-            'modules/infragistics.excel.js,' +
-            'modules/infragistics.gridexcelexporter.js' 
+        resources:'igGrid,' + 'igGridExcelExporter'
     });
 
 $.ig.loader(function () {
@@ -25,11 +22,9 @@ $.ig.loader(function () {
 
             $("#grid").igGrid({
                 autoGenerateColumns: false,
-                width: "100%",
-                height: "200px",
                 columns: [
                     { key: "ProductID", headerText: "Product ID", width: "100px", dataType: "number" },
-                    { key: "Name", headerText: "Product Name", width: "150px", dataType: "string" },
+                    { key: "Name", headerText: "Product Name", width: "250px", dataType: "string" },
                     { key: "ProductNumber", headerText: "Product Number", width: "200px", dataType: "number" }
                 ],
                 dataSource: data,
@@ -37,9 +32,13 @@ $.ig.loader(function () {
             });
 
             $("#exportButton").on("click", function () {
-                $.ig.GridExcelExporter.exportGrid($("#grid"), {
-                    fileName: "igGrid"
-                });
+                $.ig.GridExcelExporter.exportGrid(
+                    $('#grid'),
+                    { 	
+                        fileName: 'igGrid',
+                        worksheetName: 'Sheet1',
+                    }
+                );
             });
         });
     });
