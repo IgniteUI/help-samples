@@ -1,0 +1,21 @@
+{
+    "embed": [
+        {
+            "label": "JS",
+            "path": "16.2/EN/grid/history/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "16.2/EN/grid/history/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "16.2/EN/grid/history/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/16.2/EN/grid/history/index.html"
+        }
+    ]
+}
