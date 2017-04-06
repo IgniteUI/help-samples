@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/pivot-grid/drag-drop-custom-elements.html",
     "embed": [
         {
             "label": "JS",

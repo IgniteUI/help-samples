@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/tree-control/drag-and-drop-single-tree.html",
     "embed": [
         {
             "label": "JS",

@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/grid/row-edit-dialog.html",
     "embed": [
         {
             "label": "JS",

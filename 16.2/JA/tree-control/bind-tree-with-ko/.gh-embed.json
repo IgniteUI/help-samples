@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/tree-control/bind-tree-with-ko.html",
     "embed": [
         {
             "label": "JS",

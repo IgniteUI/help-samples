@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/radial-gauge/label-settings.html",
     "embed": [
         {
             "label": "JS",

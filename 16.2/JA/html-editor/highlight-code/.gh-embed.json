@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/html-editor/highlight-code.html",
     "embed": [
         {
             "label": "JS",

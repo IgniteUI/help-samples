@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/pivot-view/binding-to-xmla-data-source.html",
     "embed": [
         {
             "label": "JS",

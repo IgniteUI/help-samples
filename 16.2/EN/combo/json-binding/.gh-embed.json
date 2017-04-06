@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/combo/json-binding.html",
     "embed": [
         {
             "label": "JS",

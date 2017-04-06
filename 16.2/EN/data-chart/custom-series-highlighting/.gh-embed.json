@@ -1,4 +1,5 @@
 {
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/16.2/HTMLSamples/data-chart/custom-series-highlighting.html",
     "embed": [
         {
             "label": "JS",
