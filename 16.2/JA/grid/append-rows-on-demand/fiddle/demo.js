@@ -23,7 +23,7 @@ $(function () {
     });
 
     $('#autoAppendRowsOnDemand').igGrid({
-        dataSource: 'https://igniteui.com/api/tweets',
+        dataSource: 'https://www.igniteui.com/api/tweets',
         responseDataKey: 'Records',
         autoGenerateColumns: false,
         enableUTCDates: true,
@@ -51,7 +51,7 @@ $(function () {
     });
 
     $('#buttonAppendRowsOnDemand').igGrid({
-        dataSource: 'https://igniteui.com/api/tweets',
+        dataSource: 'https://www.igniteui.com/api/tweets',
         responseDataKey: 'Records',
         autoGenerateColumns: false,
         enableUTCDates: true,
