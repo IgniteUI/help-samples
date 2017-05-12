@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Series Tooltips</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.dv.js"></script>
+</head>
+<body>
+    <script type="text/javascript" src="../../../../data-files/world-energy-production.js"></script>
+
+    <!-- Custom Tooltip Template -->
+    <script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <div style="color: #44ACD6">
+            <span>US </span><span>${item.Year}</span><br />
+            Total Energy: <span style="font-weight: bold">${item.UnitedStates}</span>
+        </div>
+    </script>
+
+    <script>
+        $(function () {
+            $("#chart").igDataChart({
+                dataSource: everyThreeYears,
+                height: "400px",
+                width: "100%",
+                title: "Energy Production Per Country",
+                subtitle: "The top five Total Primary Energy producers",
+                axes: [{
+                    name: "Year",
+                    type: "categoryX",
+                    label: "Year",
+                    title: "Year",
+                    gap: 0.8,
+                }, {
+                    name: "Volume",
+                    type: "numericY",
+                    title: "Quadrillion Btu"
+                }],
+                series: [{
+                    // showTooltip: true enables the default tooltips
+                    showTooltip: true,
+                    // if a custom tooltipTemplate is set,
+                    // the default tooltip will not be shown
+                    tooltipTemplate: "tooltipTemplate",
+                    name: "United States",
+                    title: "US",
+                    type: "column",
+                    valueMemberPath: "UnitedStates",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                },
+                {
+                    showTooltip: true,
+                    name: "China",
+                    title: "China",
+                    type: "column",
+                    valueMemberPath: "China",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                },
+                {
+                    showTooltip: true,
+                    name: "Russia",
+                    title: "Russia",
+                    type: "column",
+                    valueMemberPath: "Russia",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }, {
+                    showTooltip: true,
+                    name: "Saudi Arabia",
+                    title: "Saudi Arabia",
+                    type: "column",
+                    valueMemberPath: "SaudiArabia",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }, {
+                    showTooltip: true,
+                    name: "Canada",
+                    title: "Canada",
+                    type: "column",
+                    valueMemberPath: "Canada",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }],
+                horizontalZoomable: true,
+                verticalZoomable: true,
+                windowResponse: "immediate"
+            });
+        });
+    </script>
+    <div id="chart"></div>
+    <div class="EIAdata-attribution">
+        Energy data from:<br>
+        <a href="http://www.eia.gov/" target="_blank">U.S. Energy Information Administration (2012)</a>
+    </div>
+</body>
+</html>

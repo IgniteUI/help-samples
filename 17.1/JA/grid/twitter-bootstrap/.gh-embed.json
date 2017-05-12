@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.1/HTMLSamples/grid/twitter-bootstrap.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.1/JA/grid/twitter-bootstrap/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.1/JA/grid/twitter-bootstrap/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.1/JA/grid/twitter-bootstrap/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/17.1/JA/grid/twitter-bootstrap/index.html"
+        }
+    ]
+}

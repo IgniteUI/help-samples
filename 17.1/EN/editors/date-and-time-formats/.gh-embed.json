@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.1/HTMLSamples/editors/date-and-time-formats.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.1/EN/editors/date-and-time-formats/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.1/EN/editors/date-and-time-formats/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.1/EN/editors/date-and-time-formats/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/17.1/EN/editors/date-and-time-formats/index.html"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.lob.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/extensions/igniteui-angular.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/hierarchical-files.js"></script>
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div ng-app="sampleApp" ng-controller="treeController">
+        <ig-tree id="tree1" data-source="data">
+            <bindings child-data-property="Folder" text-key="Text" value-key="Value">
+            </bindings>
+        </ig-tree>
+    </div>

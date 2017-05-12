@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>KnockoutJS の構成</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.lob.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js" type="text/javascript"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/extensions/infragistics.ui.editors.knockout-extensions.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/extensions/infragistics.datasource.knockoutjs.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/extensions/infragistics.ui.grid.knockout-extensions.js"></script>
+
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <style>
+        .config-tbl tr td:first-child {
+            text-align: right;
+            margin-right: 2px;
+            color: #444;
+            font-family: "Segoe UI",Arial,sans-serif;
+            font-size: 1em;
+        }
+        .config-tbl input {
+            border: solid 1px #ccc;
+            color: #444;
+            font-family: "Segoe UI",Arial,sans-serif;
+            font-size: 1.1em;
+        }
+    </style>
+    <table style="width: 100%">
+        <tr>
+            <td style="width:50%"> 
+                <fieldset>
+                    <legend>親の最初の行</legend>
+                    
+                    <table class="config-tbl">
+                        <tr>
+                            <td>
+                                <b>社員 ID:</b>
+                            </td>
+                            <td>
+                                <span id="idEditor" data-bind="text: Records()[0].EmployeeID, valueUpdate: 'input'"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>名前:</b>
+                            </td>
+                            <td>
+                                <input id="fnameEditor" type="text" data-bind="value: Records()[0].FirstName, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>名字:</b>
+                            </td>
+                            <td>
+                                <input id="lnameEditor" type="text" data-bind="value: Records()[0].LastName, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>市/州:</b>
+                            </td>
+                            <td>
+                                <input id="cityEditor" type="text" data-bind="value: Records()[0].City, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>国名:</b>
+                            </td>
+                            <td>
+                                <input id="countryEditor" type="text" data-bind="value: Records()[0].Country, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+            <td style="width:50%">
+                <fieldset>
+                    <legend>最初の子の最初の行</legend>
+                    <table class="config-tbl">
+                        <tr>
+                            <td>
+                                <b>注文 ID:</b>
+                            </td>
+                            <td>
+                                <span id="Span1" data-bind="text: Records()[0].Orders()[0].OrderID, valueUpdate: 'input'"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>配送先:</b>
+                            </td>
+                            <td>
+                                <input id="Text1" type="text" data-bind="value: Records()[0].Orders()[0].ShipName, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>輸送:</b>
+                            </td>
+                            <td>
+                                <input id="Text2" type="text" data-bind="value: Records()[0].Orders()[0].Freight, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>郵便番号:</b>
+                            </td>
+                            <td>
+                                <input id="Text3" type="text" data-bind="value: Records()[0].Orders()[0].ShipPostalCode, valueUpdate: 'input'">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>注文日:</b>
+                            </td>
+                            <td>
+                                <input id="Date1" type="date" data-bind="igDatePicker: { value: Records()[0].Orders()[0].OrderDate, valueUpdate: 'input'}">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+    </table>  
+
+    <script src="../../../../data-files/northwind.js"></script>
+
+    <script>
+        var customerOrdersModel, modifiedDataSource = {}, Records = [], db = northwind.results;
+
+        $(function () {
+
+            for (var i = 0; i < db.length; i++) {
+                var currentItem = {};
+                currentItem["EmployeeID"] = db[i].EmployeeID;
+                currentItem["FirstName"] = db[i].FirstName;
+                currentItem["LastName"] = db[i].LastName;
+                currentItem["City"] = db[i].City;
+                currentItem["Country"] = db[i].Country;
+                var orders = db[i].Orders.results.splice(0,10);
+                for (var j = 0; j < 10; j++) {
+                    orders[j].RecordsOrderDate = normalizeDate( orders[j].OrderDate );
+                }
+                currentItem["Orders"] = orders;
+                Records.push(currentItem);
+            }
+
+            modifiedDataSource["Records"] = Records;
+            customerOrdersModel = ko.mapping.fromJS( modifiedDataSource );
+            ko.applyBindings(customerOrdersModel);
+        });
+
+        function normalizeDate(date) {
+            // Note: dataSource in grid requires Date object for a column with dataType:"date".
+            if (!date)
+                return null;
+            if (date.getTime)
+                return date;
+            if (!date.substring)
+                return null;
+            if (date.indexOf("(") > 0)
+                return new Date(parseInt(date.substring(date.indexOf("(") + 1, date.lastIndexOf(")"))));
+            return Date.parse(date);
+        }
+    </script>
+
+    <table id="grid" data-bind="igHierarchicalGrid:
+               {
+                   dataSource: Records,
+                   autoCommit: true,
+                   width: '100%',
+                   initialDataBindDepth: -1,
+                   primaryKey: 'EmployeeID',
+                   dataSourceType: 'json',
+                   autoGenerateColumns: false,
+                   autoGenerateLayots: false,
+                   childrenDataProperty: 'Orders',
+                   columns: [
+                       { key: 'EmployeeID', headerText: '社員 ID', width: '5%', dataType: 'number' },
+                       { key: 'FirstName', headerText: '名前', width: '25%', dataType: 'string' },
+                       { key: 'LastName', headerText: '名字', width: '25%', dataType: 'string' },
+                       { key: 'City', headerText: '市/州', width: '20%', dataType: 'string' },
+                       { key: 'Country', headerText: '国名', width: '20%', dataType: 'string' }
+                   ],
+                   columnLayouts: [
+                       {
+                           key: 'Orders',
+                           primaryKey: 'OrderID',
+                           foreignKey: 'EmployeeID',
+                           autoGenerateColumns: false,
+                           autoCommit: true,
+                           width: '100%',
+                           dataSourceType: 'json',
+                           features: [
+                               {
+                                   name: 'Updating',
+                                   editMode: 'cell',
+                                   enableDataDirtyException: false,
+                                   enableDeleteRow: false,
+                                   enableAddRow: false,
+                                   columnSettings: [
+                                       {
+                                           columnKey: 'OrderID',
+                                           readOnly: true
+                                       }
+                                   ]
+                               },
+                               {
+                                    name: 'Paging',
+                                    type: 'local',
+                                    pageSize: 5
+                               }
+                           ],
+                           columns: [
+                               { key: 'OrderID', headerText: '注文 ID', width: '5%', dataType: 'number' },
+                               { key: 'ShipName', headerText: '配送先', width: '20%', dataType: 'string' },
+                               { key: 'Freight', headerText: '輸送', width: '20%', dataType: 'string' },
+                               { key: 'ShipPostalCode', headerText: '郵便番号', width: '20%', dataType: 'string' },
+                               { key: 'OrderDate', headerText: '注文日', width: '30%', dataType: 'date' }
+                           ]
+                       }
+                   ],
+                   features: [
+                       {
+                           name: 'Updating',
+                           editMode: 'cell',
+                           enableDataDirtyException: false,
+                           inherit: true,
+                           columnSettings: [
+                               {
+                                   columnKey: 'EmployeeID',
+                                   readOnly: true
+                               }
+                           ]
+                       },
+                       {
+                           name: 'Selection',
+                           mode: 'row',
+                           multipleSelection: false,
+                           activation: true
+                       }
+                   ]
+               }">
+    </table>
+</body>
+</html>

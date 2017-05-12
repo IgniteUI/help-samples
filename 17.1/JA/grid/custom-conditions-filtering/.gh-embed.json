@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.1/HTMLSamples/grid/custom-conditions-filtering.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.1/JA/grid/custom-conditions-filtering/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.1/JA/grid/custom-conditions-filtering/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/17.1/JA/grid/custom-conditions-filtering/index.html"
+        }
+    ]
+}

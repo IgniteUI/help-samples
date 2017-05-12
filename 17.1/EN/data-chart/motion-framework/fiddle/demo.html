@@ -1,0 +1,45 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.dv.js"></script>
+<script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <div id="tooltip" class="shadow ui-widget-content ui-corner-all">
+            <div>Genre: ${item.Genre}</div>
+            <div>Count: ${item.Count}</div>
+        </div>
+    </script>
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<table>
+        <tr>
+            <td>
+                <div class="ui-state-default ui-corner-all" id="play">
+                    <span id="playIcon" class="ui-icon ui-icon-play"></span>
+                </div>
+            </td>
+            <td>
+                <div id="timeSlider" style="width: 300px; margin: 15px">
+                </div>
+            </td>
+            <td>
+                <input type="button" id="changeType" value="Change Chart Type">
+            </td>
+        </tr>
+     </table>
+<br>
+<div id="chart"></div>
+<div>
+        Movies Data from:<br>
+        <div class="freebase-attribution">
+            <img alt="Freebase CC-BY" height="23px" style="float: left; border: 0;" width="61px" src="http://www.freebase.com/policies/freebase-cc-by-61x23.png">
+            <div style="font-size: x-small; margin-left: 70px; height: 30px; ">
+              Source:
+              <a href="http://www.freebase.com/">Freebase</a>, licensed under
+              <a href="http://creativecommons.org/licenses/by/2.5/">CC-BY</a><br>
+              Other content from
+              <a href="http://en.wikipedia.org/">Wikipedia</a>,
+              licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA</a>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.1/HTMLSamples/grid/grid-layout.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.1/EN/grid/grid-layout/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.1/EN/grid/grid-layout/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/17.1/EN/grid/grid-layout/index.html"
+        }
+    ]
+}

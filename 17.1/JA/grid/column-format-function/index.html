@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>列の書式関数</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.lob.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <table id="grid"></table>
+    <script src="../../../../data-files/adventureworks.min.js"></script>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                autoGenerateColumns: false,
+                width: "100%",
+                height: "500px",
+                columns: [
+                    { headerText: "製品 ID", key: "ProductID", dataType: "number", width: "15%" },
+                    { headerText: "製品名", key: "Name", dataType: "string", width: "40%" },
+                    { headerText: "製品番号", key: "ProductNumber", dataType: "string", width: "30%" },
+                    { headerText: "メーカー フラグ", key: "MakeFlag", dataType: "bool", width: "15%", formatter: makeFlagFormatter }
+                ],
+                dataSource: adventureWorks
+            });
+        });
+        function makeFlagFormatter(val) {
+            if (val === true)
+                return "Yes";
+            return "No";
+        }
+    </script>
+</body>
+</html>

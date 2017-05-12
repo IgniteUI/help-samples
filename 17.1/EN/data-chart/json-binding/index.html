@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JSON Binding</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.1/latest/js/infragistics.dv.js"></script>
+
+</head>
+<body>
+
+   <div style="width: 80%; min-width: 210px;">
+       <div id="chart"></div>
+   </div>
+    
+   <div class="USCensus-attribution">
+   Population data from:<br>
+   <a href="http://www.census.gov/" target="_blank">U.S. Census Bureau</a>
+   </div>
+
+    <script>
+
+        $(function () {
+
+            var data = [
+                { "CountryName": "China", "Pop1995": 1216, "Pop2005": 1297, "Pop2015": 1361, "Pop2025": 1394 },
+                { "CountryName": "India", "Pop1995": 920, "Pop2005": 1090, "Pop2015": 1251, "Pop2025": 1396 },
+                { "CountryName": "United States", "Pop1995": 266, "Pop2005": 295, "Pop2015": 322, "Pop2025": 351 },
+                { "CountryName": "Indonesia", "Pop1995": 197, "Pop2005": 229, "Pop2015": 256, "Pop2025": 277 },
+                { "CountryName": "Brazil", "Pop1995": 161, "Pop2005": 186, "Pop2015": 204, "Pop2025": 218 }
+            ];
+
+            $("#chart").igDataChart({
+                width: "100%",
+                height: "400px",
+                title: "Population per Country",
+                subtitle: "Five largest projected populations for 2015",
+                dataSource: data,
+                axes: [
+                    {
+                        name: "NameAxis",
+                        type: "categoryX",
+                        title: "Country",
+                        label: "CountryName"
+                    },
+                    {
+                        name: "PopulationAxis",
+                        type: "numericY",
+                        minimumValue: 0,
+                        title: "Millions of People",
+                    }
+                ],
+                series: [
+                    {
+                        name: "2015Population",
+                        type: "column",
+                        isHighlightingEnabled: true,
+                        isTransitionInEnabled: true,
+                        xAxis: "NameAxis",
+                        yAxis: "PopulationAxis",
+                        valueMemberPath: "Pop2015"
+                    }
+                ]
+            });
+
+        });
+    </script>
+
+</body>
+</html>
