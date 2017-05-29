@@ -37,7 +37,7 @@ $(function () {
                 { headerText: "電話", key: "Phone", dataType: "string" },
                 {
                     headerText: "国名", key: "Country", dataType: "string",
-                    template: "<img width='26' height='15' src='../../images/samples/nw/countries/{{>Country}}.gif'></img> <span style='display: table-cell;vertical-align: middle;'>{{>Country}}</span>"
+                    template: "<img width='26' height='15' src='../../../../images/grid/nw/countries/{{>Country}}.gif'></img> <span style='display: table-cell;vertical-align: middle;'>{{>Country}}</span>"
                 },
                 {
                     headerText: "生年月日", key: "BirthDate", dataType: "date",
