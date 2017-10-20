@@ -1,0 +1,61 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/infragistics.core.js"></script>
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/infragistics.dv.js"></script>
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="chart" class="chartElement"></div>
+<br>
+<div>
+        <fieldset id="chartOptions">
+            <legend>Category Item Highlight Options</legend>
+            <br>
+            <div class="optionContainer">
+                Brush
+                <br>
+                <select id="brush" class="selectBounds">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="" selected="selected">Default</option>
+                </select>
+            </div>
+           
+            <div class="optionContainer">
+                Thickness
+                <br>
+                <div id="thicknessSlider" class="sliderBounds"></div>
+                <label id="thicknessLabel">1</label>
+            </div>
+            
+            <div class="optionContainer">
+                Opacity
+                <br>
+                <div id="opacitySlider" class="sliderBounds"></div>
+                <label id="opacityLabel">1</label>
+            </div>
+            
+            <br>
+
+            <div class="optionContainer">
+                Transition Duration
+                <br>
+                <div id="transitionDurationSlider" class="sliderBounds"></div>
+                <label id="transitionDurationLabel">500</label>
+            </div>
+            
+            <div class="optionContainer">
+                <input type="checkbox" id="useInterpolationCheckBox">Use Interpolation<br>
+            </div>
+
+        </fieldset>
+    </div>
+<br>
+<div class="USCensus-attribution">
+        Population data from:<br>
+        <a href="http://www.census.gov/" target="_blank">U.S. Census Bureau</a>
+    </div>

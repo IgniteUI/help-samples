@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.2/HTMLSamples/grid/responsive-web-design-mode.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.2/JA/grid/responsive-web-design-mode/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.2/JA/grid/responsive-web-design-mode/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.2/JA/grid/responsive-web-design-mode/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/17.2/JA/grid/responsive-web-design-mode/index.html"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.2/HTMLSamples/data-chart/category-item-highlight-layer.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.2/JA/data-chart/category-item-highlight-layer/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.2/JA/data-chart/category-item-highlight-layer/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.2/JA/data-chart/category-item-highlight-layer/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/17.2/JA/data-chart/category-item-highlight-layer/index.html"
+        }
+    ]
+}

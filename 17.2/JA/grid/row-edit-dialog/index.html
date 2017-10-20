@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>行編集ダイアログ</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <style>
+		.row-edit-dialog-container-cols
+		{
+			width:100%;
+			overflow:hidden;
+			border-bottom:1px solid #ccc;
+			padding-bottom:15px;
+		}
+        .row-edit-dialog-container-cols table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .row-edit-dialog-container-cols table tbody td
+        {
+            border:none !important;
+			padding: 0 4px 10px;
+        }
+		.row-edit-dialog-container-head
+		{
+			border-bottom:1px solid #ccc;padding-bottom:10px;margin-top:10px;margin-bottom:25px;font-size:16px;
+		}
+		.ui-dialog .ui-dialog-buttonpane
+		{
+			margin-top:0;
+			padding-top:0;
+		}
+		.ui-dialog .ui-dialog-buttonpane button
+		{
+			margin:0.5em 0 0.5em 0.4em;
+		}
+		.ui-iggrid .ui-widget-content.ui-dialog
+		{
+			border-color:#888;
+		}
+		.ui-dialog-title
+		{
+			text-transform:uppercase;
+			margin:0;
+			font-size:90%;
+		}
+		.ui-dialog .ui-dialog-titlebar
+		{
+			padding: 0.7em 1em;
+		}
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/infragistics.core.js"></script>
+    <script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/infragistics.lob.js"></script>
+
+<script src="https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+
+    <!--Sample JSON Data-->
+    <script src="../../../../data-files-ja/nw-employees.js"></script>
+
+    <!-- Target element for the igGrid -->
+    <table id="grid">
+    </table>
+
+    <script id="dialogTemplate" type="text/html">
+        <div class="row-edit-dialog-container-head"><strong>${Name}</strong></div>
+        <div class="row-edit-dialog-container-cols">
+            <div style="float: left;">
+                <table>
+                    <colgroup>
+                        <col style="width: 30%;" />
+                        <col style="width: 70%;" />
+                    </colgroup>
+                    <tbody data-render-tmpl="true"></tbody>
+                </table>
+            </div>
+            <div style="width: 160px; float: right;">
+                <img width="100" height="90" src="${ImageUrl}" alt="${Name}" title="${Name}" style="float:right;" />
+            </div>
+        </div>
+    </script>
+
+    <script id="editorsTemplate" type="text/html">
+        <tr>
+            <td style="text-align:right;color:#777;"><strong>${headerText}</strong></td>
+            <td><input data-editor-for-${key}="true" /></td>
+        </tr>
+    </script>
+
+    <script type="text/javascript">
+        $( function ()
+        {
+            $("#grid").igGrid({
+				dataSource: northwindEmployees,
+				primaryKey: "ID",
+				width: "100%",
+				height: "600px",
+				autoGenerateColumns: false,
+				columns: [
+					{ headerText: "社員 ID", key: "ID", dataType: "number", hidden: true },
+					{ headerText: "画像", key: "ImageUrl", dataType: "object", template: "<img width='100' height='90' src='${ImageUrl}' alt='${Name}' title='${Name}' />" },
+					{ headerText: "名前", key: "Name", dataType: "string" },
+					{ headerText: "役職", key: "Title", dataType: "string" },
+					{ headerText: "電話", key: "Phone", dataType: "string" },
+					{ headerText: "雇用日", key: "HireDate", dataType: "date" }
+				],
+				features: [
+					{
+						name: "Updating",
+						enableAddRow: false,
+						enableDeleteRow: false,
+						editMode: "dialog",
+						columnSettings: [
+							{
+							    columnKey: "ImageUrl",
+								readOnly: true
+							},
+							{
+								columnKey: "Name",
+								readOnly: true
+							}
+						],
+						rowEditDialogOptions: {
+							width: "530px",
+							height: "410px",
+							dialogTemplateSelector: "#dialogTemplate",
+							editorsTemplateSelector: "#editorsTemplate",
+							showReadonlyEditors: false,
+						}
+					}
+				]
+			});
+        });
+
+    </script>
+</body>
+</html>

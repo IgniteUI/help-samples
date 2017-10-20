@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.2/HTMLSamples/grid/column-template.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.2/EN/grid/column-template/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.2/EN/grid/column-template/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.2/EN/grid/column-template/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/17.2/EN/grid/column-template/index.html"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/17.2/HTMLSamples/grid/history.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "17.2/EN/grid/history/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "17.2/EN/grid/history/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "17.2/EN/grid/history/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/17.2/EN/grid/history/index.html"
+        }
+    ]
+}
