@@ -49,7 +49,7 @@ $(function () {
             },
             {
                 name: "CellMerging",
-                initialState: "merged"
+                mergeOn: "always"
             },
             {
                 name: "Sorting",
