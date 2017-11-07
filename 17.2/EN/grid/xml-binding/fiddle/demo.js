@@ -33,6 +33,7 @@ $(function () {
         dataSource: xmlDoc,
         schema: xmlSchema 
     });
+    ds.dataBind();
 
     $("#grid").igGrid({
         dataSource: ds //$.ig.DataSource defined above
