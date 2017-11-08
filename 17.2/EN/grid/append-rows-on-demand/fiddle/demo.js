@@ -10,39 +10,23 @@ $(function () {
         }
     });
 
-    //Hide the button after all data is loaded.
-    $(document).delegate("#buttonAppendRowsOnDemand", "iggridrendered", function (evt, ui) {
-        $("#buttonAppendRowsOnDemand_loadMoreButton").click(function () {
-            var totalRecCount = $("#buttonAppendRowsOnDemand").data("igGrid").dataSource.totalRecordsCount();
-            var currentRecCount = $("#buttonAppendRowsOnDemand").data("igGrid").dataSource.totalLocalRecordsCount();
-            var chunkSize = $("#buttonAppendRowsOnDemand").igGridAppendRowsOnDemand("option", "chunkSize");
-                if (totalRecCount <= currentRecCount + chunkSize) {
-                    $("#buttonAppendRowsOnDemand_loadMoreButton").hide();
-                }
-        });
-    });
-
     $('#autoAppendRowsOnDemand').igGrid({
-        dataSource: 'https://www.igniteui.com/api/tweets?callback=?',
-        responseDataKey: 'd.results.Records',
-        autoGenerateColumns: false,
+    	dataSource: adventureWorks,
+    	autoGenerateColumns: false,
+    	columns: [
+			{ headerText: "Product Name", key: "Name", dataType: "string", width: "20%" },
+			{ headerText: "Product Number", key: "ProductNumber", dataType: "string", width: "20%" },
+			{ headerText: "Make Flag", key: "MakeFlag", dataType: "bool", width: "10%" },
+			{ headerText: "Reorder Point", key: "ReorderPoint", dataType: "number", width: "10%" },
+			{ headerText: "Sell Start Date", key: "SellStartDate", dataType: "date", width: "15%" }
+		],
         enableUTCDates: true,
-        columns: [
-            {
-                unbound: true,
-                key: 'Tweets',
-                headerText: 'Infragistics Tweets',
-                template: '<div style=\'float:left\'><img src=\'../../images/ig_twitter_logo.png\' ></img></div><div class=\'tweet\'><p style=\'height:20px\'><span class=\'tweet-user\'>{{>User.Name}}</span><span class=\'tweet-screen-name\'>@{{>ScreenName}}</span><span class=\'tweet-date\'>{{>#view.hlp(\'formatDate\')(CreatedAt)}}</span></p><p class=\'tweet-text\'>{{>Text}}</p></div>'
-            }
-        ],
         features: [
             {
-                recordCountKey: 'd.results.TotalRecordsCount',
                 chunkIndexUrlKey: 'page',
                 chunkSizeUrlKey: 'pageSize',
                 name: 'AppendRowsOnDemand',
-                loadTrigger: 'auto',
-                type: 'remote'
+                loadTrigger: 'auto'
             }
         ],
         width: '100%',
@@ -51,26 +35,22 @@ $(function () {
     });
 
     $('#buttonAppendRowsOnDemand').igGrid({
-        dataSource: 'https://www.igniteui.com/api/tweets?callback=?',
-        responseDataKey: 'd.results.Records',
+    	dataSource: adventureWorks,
         autoGenerateColumns: false,
         enableUTCDates: true,
         columns: [
-            {
-                unbound: true,
-                key: 'Tweets',
-                headerText: 'Infragistics Tweets',
-                template: '<div style=\'float:left\'><img src=\'../../images/ig_twitter_logo.png\' ></img></div><div class=\'tweet\'><p style=\'height:20px\'><span class=\'tweet-user\'>{{>User.Name}}</span><span class=\'tweet-screen-name\'>@{{>ScreenName}}</span><span class=\'tweet-date\'>{{>#view.hlp(\'formatDate\')(CreatedAt)}}</span></p><p class=\'tweet-text\'>{{>Text}}</p></div>'
-            }
-        ],
+			{ headerText: "Product Name", key: "Name", dataType: "string", width: "20%" },
+			{ headerText: "Product Number", key: "ProductNumber", dataType: "string", width: "20%" },
+			{ headerText: "Make Flag", key: "MakeFlag", dataType: "bool", width: "10%" },
+			{ headerText: "Reorder Point", key: "ReorderPoint", dataType: "number", width: "10%" },
+			{ headerText: "Sell Start Date", key: "SellStartDate", dataType: "date", width: "15%" }
+		],
         features: [
             {
-                recordCountKey: 'd.results.TotalRecordsCount',
                 chunkIndexUrlKey: 'page',
                 chunkSizeUrlKey: 'pageSize',
                 name: 'AppendRowsOnDemand',
-                loadTrigger: 'button',
-                type: 'remote'
+                loadTrigger: 'button'
             }
         ],
         width: '100%',
