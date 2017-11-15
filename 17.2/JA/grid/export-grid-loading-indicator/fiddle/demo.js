@@ -1,7 +1,7 @@
 $(function () {
     $.ig.loader({
-        scriptPath: "https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/js/",
-        cssPath: "https://secure-cdn-na.infragistics.com/igniteui/2017.2/latest/css/",
+        scriptPath: "https://cdn-na.infragistics.com/igniteui/2017.2/latest/js/",
+        cssPath: "https://cdn-na.infragistics.com/igniteui/2017.2/latest/css/",
         resources: 'igGrid,' +
             'igGrid.Hiding,' +
             'igGrid.Filtering,' +
