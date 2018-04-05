@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.1/HTMLSamples/grid/editing-api-events.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.1/EN/grid/editing-api-events/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.1/EN/grid/editing-api-events/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "18.1/EN/grid/editing-api-events/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/18.1/EN/grid/editing-api-events/index.html"
+        }
+    ]
+}

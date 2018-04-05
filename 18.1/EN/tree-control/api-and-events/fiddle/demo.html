@@ -1,0 +1,17 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.lob.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/hierarchical-products.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<div id="tree"></div>
+<div class="api-explorer">
+        <button id="btnRemoveNode">Remove Selected Node</button><span>var node = $("#tree").igTree("selectedNode");<br>$("#tree").igTree("removeAt", node.path);</span><br>
+        <button id="btnSelectNode">Select Tech Node</button><span>var nodes = $("#tree").igTree("findNodesByText", "Tech"); <br>$("#tree").igTree("select", nodes[0].element);</span><br>
+        <button id="btnAddNode">Add Node</button><span>$("#tree").igTree("addNode", { Text: "New Node" });</span>
+    </div>
+<div class="api-viewer" tabindex="0"></div>

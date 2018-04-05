@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>API およびイベント</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <!-- Used to style the API Viewer and Explorer UI -->
+    <link href="../../../../css/apiviewer.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.lob.js"></script>
+            
+    <!-- Used to add markup and provide logging 
+        functionality for the API Explorer and API Viewer UI -->
+    <script src="../../../../js/apiviewer.js"></script>   
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+
+    <div id="igUpload1"></div>
+
+    <!-- Begin: API UI -->
+    <div class="api-viewer"></div>
+    <!-- End: API UI -->
+    
+    <script>
+
+        $(function () {
+
+            // Used to show output in the API Viewer at runtime, 
+            // defined in external script 'apiviewer.js'           
+            var apiViewer = new $.ig.apiViewer();
+
+            /*----------------- Event Examples -------------------------*/
+
+            $("#igUpload1").on("iguploadfileselecting", function (e, ui) {                
+                apiViewer.log("iguploadfileselecting");
+            });
+
+            $("#igUpload1").on("iguploadfileselected", function (e, ui) {
+                apiViewer.log("iguploadfileselected: [ " + "ファイル パス: " + ui.filePath + "]");
+            });
+
+            $("#igUpload1").on("iguploadfileuploading", function (e, ui) {
+                apiViewer.log("iguploadfileuploading: [ " + "ファイル パス: " + ui.filePath + "]");
+            });
+
+            $("#igUpload1").on("iguploadfileuploaded", function (e, ui) {
+                apiViewer.log("iguploadfileuploaded: [ " + "ファイル サイズ: " + ui.totalSize + "]");
+            });
+
+            $("#igUpload1").on("iguploadfileuploadaborted", function (e, ui) {
+                apiViewer.log("iguploadfileuploadaborted: [ " + "アップロードを中止しました: " + ui.filePath + "]");
+            });
+
+            $("#igUpload1").on("iguploadcancelallclicked", function (e, ui) {
+                apiViewer.log("iguploadcancelallclicked");
+            });
+
+            $("#igUpload1").on("iguploadonerror", function (e, ui) {
+                apiViewer.log("iguploadonerror: [ " + "エラー メッセージ: " + ui.errorMessage + "]");
+            });
+
+            /*----------------- Instantiation -------------------------*/
+
+            $("#igUpload1").igUpload({
+                mode: 'multiple',
+                progressUrl: "../../IGUploadStatusHandler.ashx",
+                controlId: "serverID1"
+            });
+
+
+        });
+
+    </script>  
+</body>
+</html>

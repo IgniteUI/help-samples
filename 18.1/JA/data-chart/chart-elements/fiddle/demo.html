@@ -1,0 +1,50 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/financial-data.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<table>
+         <tr>
+             <td>
+                 <div id="chart"></div>
+             </td>  
+            <td>
+                 <div class="options">
+                     <div class="optionContainer">
+                           
+                         <div><input id="axisStokeLines" type="checkbox" class="chkBoxMargin" checked="checked">軸のストローク線</div>
+                         <div><input id="axisMajorLines" type="checkbox" class="chkBoxMargin" checked="checked">軸の主線</div>
+                         <div><input id="axisMinorLines" type="checkbox" class="chkBoxMargin">軸の副線</div>
+                         <div><input id="axisTickmarks" type="checkbox" class="chkBoxMargin" checked="checked">軸の目盛り</div>
+                         <div><input id="axisTitles" type="checkbox" class="chkBoxMargin" checked="checked">軸のタイトル</div>
+                         <div><input id="axisStripes" type="checkbox" class="chkBoxMargin">軸のストライプ</div>
+                         <div><input id="axisLabels" type="checkbox" class="chkBoxMargin" checked="checked">軸のラベル</div>
+
+                         <div><input id="priceSeries" type="checkbox" class="chkBoxMargin" checked="checked">価格系列</div>
+                         <div><input id="priceTrendline" type="checkbox" class="chkBoxMargin" checked="checked">価格トレンドライン</div>
+                         
+                         <div><input id="lineSeries" type="checkbox" class="chkBoxMargin" checked="checked">折れ線系列</div>
+                         <div><input id="lineMarkers" type="checkbox" class="chkBoxMargin" checked="checked">折れ線マーカー</div>
+
+                         <div><input id="legendCheckbox" type="checkbox" class="chkBoxMargin" checked="checked">チャートの凡例</div>
+                         <div><input id="chartCrosshairs" type="checkbox" class="chkBoxMargin">チャートの十字線</div>
+                         <div><input id="chartOPD" type="checkbox" class="chkBoxMargin">チャートの概要ペイン</div>
+                       
+                     </div>
+                 </div> 
+             </td>
+         </tr>
+         <tr>
+                <td id="chartLegend" style="float: left"></td>
+         </tr>
+         </table>
+<br>
+<div class="Quandldata-attribution">
+            株価のデータ ソース:<br>
+            <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+        </div>

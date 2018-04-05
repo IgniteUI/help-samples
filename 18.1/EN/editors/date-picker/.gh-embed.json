@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.1/HTMLSamples/editors/date-picker.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.1/EN/editors/date-picker/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.1/EN/editors/date-picker/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "18.1/EN/editors/date-picker/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/18.1/EN/editors/date-picker/index.html"
+        }
+    ]
+}

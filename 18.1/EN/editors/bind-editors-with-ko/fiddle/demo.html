@@ -1,0 +1,100 @@
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.core.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.lob.js"></script>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/extensions/infragistics.ui.editors.knockout-extensions.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="order-container">
+        <div class="row heading-row">
+            <label>Ignite UI Editors</label>
+            <label>Plain INPUTs</label>
+        </div>
+        <div>
+            <div class="row">
+                <label>Order Date:</label>
+            </div>
+            <div class="row">
+                <!-- date editor -->
+                <div id="orderDateIG" class="row-control" data-bind="igDateEditor: { value: orderDate, textAlign: 'right' }"></div>
+                <input id="orderDate" class="row-control" data-bind="value: orderDate" type="text">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Ship Date</label>
+            </div>
+            <div class="row">
+                <!-- date picker -->
+                <div id="shipDateIG" class="row-control" data-bind="igDatePicker: { value: shipDate, textAlign: 'right' }"></div>
+                <input id="shipDate" class="row-control" data-bind="value: shipDate" type="text">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Due in Days:</label>
+            </div>
+            <div class="row">
+                <!-- numeric editor -->
+                <div id="dueInDaysIG" class="row-control" data-bind="igNumericEditor: { value: dueInDays, textAlign: 'right' }"></div>
+                <input id="dueInDays" class="row-control" data-bind="value: dueInDays" type="number">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Customer Name:</label>
+            </div>
+            <div class="row">
+                <!-- text editor -->
+                <div id="customerNameIG" class="row-control" data-bind="igTextEditor: { value: customerName, textAlign: 'right' }"></div>
+                <input id="customerNAme" class="row-control" data-bind="value: customerName" type="text">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Contact Phone: <br> (mask: 000-000-0000)</label>
+            </div>
+            <div class="row">
+                <!-- mask editor -->
+                <div id="contactPhoneIG" class="row-control" data-bind="igMaskEditor: {
+                        value: contactPhone,
+                        inputMask: '000-000-0000',
+                        textAlign: 'right'
+                    }"></div>
+                <input id="contactPhone" type="text" class="row-control" data-bind="value: contactPhone">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Advance Payment:</label>
+            </div>
+            <div class="row">
+                <!-- currency editor -->
+                <div id="advancePaymentIG" class="row-control" data-bind="igCurrencyEditor: { value: advancePayment, textAlign: 'right' }"></div>
+                <input id="advancePayment" class="row-control" data-bind="value: advancePayment" type="text">
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <label>Discount Percent:</label>
+            </div>
+            <div class="row">
+                <!-- percent editor -->
+                <div id="discountPercentIG" class="row-control" data-bind="igPercentEditor: {
+                        value: discountPercent,
+                        displayFactor : 100,
+                        textAlign: 'right'
+                    }"></div>
+                <input id="discountPercent" type="text" class="row-control" data-bind="value: discountPercent">
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,47 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/uk-france-population.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="selectionOptions">
+        シリーズ タイプ:
+        <select id="seriesType" class="selectBounds">
+            <option value="column" selected="selected">柱状チャート</option>
+            <option value="area">エリア チャート</option>
+            <option value="line">折れ線チャート</option>
+            <option value="splineArea">スプライン エリア チャート</option>
+            <option value="spline">スプライン チャート</option>
+            <option value="stepArea">ステップ エリア チャート</option>
+            <option value="stepLine">ステップ折れ線チャート</option>
+            <option value="point">ポイント</option>
+            <option value="rangeColumn">範囲柱状チャート</option>
+            <option value="rangeArea">範囲エリア チャート</option>
+            <option value="bar">棒チャート</option>
+        </select>
+    </div>
+<table>
+        <tr>
+            <td id="chart" class="chartElement"></td>  
+            <td id="lineLegend" style="float: left"></td>
+        </tr>    
+    </table>
+<div style="float: left">
+        <fieldset id="chartOptions">
+            <legend>チャート オプション</legend>
+            <div class="optionContainer">
+                トランジション期間
+                <br>
+                <div id="transitionDurationSlider" class="sliderBounds"></div>
+                <label id="transitionDurationLabel">1000</label>
+            </div>
+        </fieldset>    
+    </div>
+<div style="float: right" class="Quandl-attribution">
+        人口のデータ ソース:
+        <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+    </div>
