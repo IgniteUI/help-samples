@@ -1,0 +1,298 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="../../js/jquery.animate-colors-min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.lob.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.dv.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/extensions/infragistics.ui.combo.knockout-extensions.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/extensions/infragistics.ui.editors.knockout-extensions.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/extensions/infragistics.ui.datachart.knockout-extensions.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="main-container">
+        <div class="eidtors-title">
+            Change editor values to update the charts below
+            <div class="year-profit" data-bind="igCurrencyEditor: {
+                value: yearProfit,
+                readOnly: true,
+                width: 100,
+                negativePattern: '$ -n',
+                postivePattern: '$ n',
+                dataMode: 'int'
+            }"></div>
+            <span class="year-profit"> Overall Year Profit: </span>
+        </div>
+        <div class="clear hr"></div>
+        <div class="window-container-1">
+			<button class="btn-refresh" title="Randomize Chart Data"></button>
+			<span data-bind="text: currMonthLong" class="number-container"></span>
+			<div class="editor-container">
+				<label class="labels">Select Month:</label>
+				<div id="combo-month" data-bind="igCombo: {
+					selectedItems: currMonth,
+					dataSource: months,
+					mode: 'dropdown',
+					enableClearButton: false,
+					width: 100
+				}"></div>
+			</div>
+			<div class="editor-container">
+				<label class="labels">Month Name:</label>
+				<div id="ed-month" data-bind="igTextEditor: { value: currMonth, width: 100, updateMode: 'immediate', readOnly: true }"></div>
+			</div>
+			<div class="responsive-clear"></div>
+			<div class="editor-container">
+				<label class="labels">Revenue:</label>
+				<div id="ed-revenue" data-bind="igNumericEditor: {
+					value: currentRevenue,
+					width: 100,
+					minValue: 0,
+					maxValue: 50,
+					button: 'spin',
+					spinDelta: 0.01,
+					updateMode: 'immediate'
+				}"></div>
+			</div>
+			<div class="editor-container">
+				<label class="labels">Expenses:</label>
+				<div id="ed-expenses" data-bind="igNumericEditor: {
+					value: currentExpenses,
+					width: 100,
+					minValue: 0,
+					maxValue: 50,
+					button: 'spin',
+					spinDelta: 0.01,
+					updateMode: 'immediate'
+				}"></div>
+			</div>
+			<div class="editor-container">
+				<label class="labels">Profit:</label>
+				<div id="ed-profit" data-bind="igNumericEditor: {
+					value: currentProfit,
+					width: 100,
+					minValue: -50,
+					button: 'spin',
+					spinDelta: 0.01,
+					maxValue: 50,
+					updateMode: 'immediate'
+				}"></div>
+			</div>
+			<div class="clear"></div>
+            <div class="sample-line-chart-holder">
+                <div id="lineChart" data-bind="igDataChart: {
+                    dataSource: data,
+                    width: "99%",
+                    height: 200,
+                    title: "Yearly Profit",
+                    leftMargin: 5,
+                    legend: { element: "legendLineChart" },
+                    axes: [{
+                        name: "xAxis",
+                        type: "categoryX",
+                        interval: chartIntervalX,
+                        label: "month",
+                        labelLocation: "outsideTop"
+
+                    }, {
+                        name: "yAxis",
+                        type: "numericY",
+                        interval: 10,
+                        minimumValue: -50,
+                        maximumValue: 50
+
+                    }],
+                    series: [{
+                        name: "line1",
+                        title: "Revenue",
+                        type: "line",
+                        isHighlightingEnabled: true,
+                        thickness: chartThickness,
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "revenue",
+                        transitionDuration: transitionDuration,
+                        brush: revenueColor
+                    },
+                    {
+                        name: "line2",
+                        title: "Expenses",
+                        type: "line",
+                        isHighlightingEnabled: true,
+                        thickness: chartThickness,
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "expenses",
+                        transitionDuration: transitionDuration,
+                        brush: expensesColor
+                    }, {
+                        name: "line3",
+                        title: "Profit",
+                        type: "line",
+                        isHighlightingEnabled: true,
+                        thickness: chartThickness,
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "profit",
+                        transitionDuration: transitionDuration,
+                        brush: profitColor
+                    }]
+                }">
+	            </div>
+                <div id="legendLineChart"></div>
+            </div>
+            <div class="sample-polar-chart-holder">
+                <div id="polarSplineChartRevenue" data-bind="igDataChart: {
+                    width: "97%",
+                    height: 275,
+                    dataSource: data,
+                    title: "Revenue",
+                    legend: { element: "legendPolarChartRevenue" },
+                    axes: [{
+                        name: "angleAxis",
+                        type: "numericAngle",
+                        interval: chartIntervalX,
+                        formatLabel: formatMonth,
+                    },
+                    {
+                        name: "radiusAxis",
+                        type: "numericRadius"
+                    }],
+                    series: [{
+                        name: "polarSpline",
+                        type: "polarSpline",
+                        title: "Revenue",
+                        angleAxis: "angleAxis",
+                        radiusAxis: "radiusAxis",
+                        angleMemberPath: "index",
+                        radiusMemberPath: "revenue",
+                        transitionDuration: transitionDuration,
+                        brush: revenueColor
+                    }]
+                }">
+	            </div>
+                <div id="legendPolarChartRevenue" class="polar-chart-legend"></div>
+            </div>
+            <div class="sample-polar-chart-holder">
+                <div id="polarSplineChartExpenses" data-bind="igDataChart: {
+                    width: "97%",
+                    height: 275,
+                    dataSource: data,
+                    title: "Expenses",
+                    legend: { element: "legendPolarChartExpenses" },
+                    axes: [{
+                        name: "angleAxis",
+                        type: "numericAngle",
+                        interval: chartIntervalX,
+                        formatLabel: formatMonth,
+                    },
+                    {
+                        name: "radiusAxis",
+                        type: "numericRadius"
+                    }],
+                    series: [{
+                        name: "polarSpline",
+                        type: "polarSpline",
+                        title: "Expenses",
+                        angleAxis: "angleAxis",
+                        radiusAxis: "radiusAxis",
+                        angleMemberPath: "index",
+                        radiusMemberPath: "expenses",
+                        transitionDuration: transitionDuration,
+                        brush: expensesColor
+                    }]
+                }">
+	            </div>
+                <div id="legendPolarChartExpenses" class="polar-chart-legend"></div>
+            </div>
+            <div class="sample-polar-chart-holder">
+                <div id="polarSplineChartProfit" data-bind="igDataChart: {
+                    width: "97%",
+                    height: 275,
+                    title: "Profit",
+                    dataSource: data,
+                    legend: { element: "legendPolarChartProfit" },
+                    axes: [{
+                        name: "angleAxis",
+                        type: "numericAngle",
+                        interval: chartIntervalX,
+                        formatLabel: formatMonth,
+                    },
+                    {
+                        name: "radiusAxis",
+                        type: "numericRadius"
+                    }],
+                    series: [{
+                        name: "polarSpline",
+                        type: "polarSpline",
+                        title: "Profit",
+                        angleAxis: "angleAxis",
+                        radiusAxis: "radiusAxis",
+                        angleMemberPath: "index",
+                        radiusMemberPath: "profit",
+                        transitionDuration: transitionDuration,
+                        brush: profitColor
+                    }]
+                }">
+	            </div>
+                <div id="legendPolarChartProfit" class="polar-chart-legend"></div>
+            </div>
+            <div class="sample-bar-chart-holder">
+                <div id="barColumnChart" data-bind="igDataChart: {
+                    dataSource: data,
+                    width: "99%",
+                    height: 220,
+                    title: "Yearly Profit",
+                    leftMargin: 5,
+                    legend: { element: "legendBarColumnChart" },
+                    axes: [{
+                        name: "xAxis",
+                        type: "categoryX",
+                        interval: chartIntervalX,
+                        label: "month",
+                        labelLocation: "outsideTop"
+                    }, {
+                        name: "yAxis",
+                        type: "numericY",
+                        minimumValue: -50,
+                        maximumValue: 50
+                    }],
+                    series: [{
+                        name: "column1",
+                        type: "column",
+                        isHighlightingEnabled: true,
+                        title: "Revenue",
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "revenue",
+                        transitionDuration: transitionDuration,
+                        brush: revenueColor
+                    },
+                    {
+                        name: "column2",
+                        type: "column",
+                        isHighlightingEnabled: true,
+                        title: "Expenses",
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "expenses",
+                        transitionDuration: transitionDuration,
+                        brush: expensesColor
+                    }, {
+                        name: "column3",
+                        type: "column",
+                        isHighlightingEnabled: true,
+                        title: "Profit",
+                        xAxis: "xAxis",
+                        yAxis: "yAxis",
+                        valueMemberPath: "profit",
+                        transitionDuration: transitionDuration,
+                        brush: profitColor
+                    }]
+                }"></div>
+           <div id="legendBarColumnChart"></div>
+        </div>
+    </div>
+    </div>

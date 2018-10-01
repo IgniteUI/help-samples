@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>シリーズ ツールチップ</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <script type="text/javascript" src="../../../../data-files/world-energy-production.js"></script>
+
+    <!-- Custom Tooltip Template -->
+    <script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <div style="color: #44ACD6">
+            <span>アメリカ </span><span>${item.Year}</span><br />
+            総エネルギー: <span style="font-weight: bold">${item.UnitedStates}</span>
+        </div>
+    </script>
+
+    <script>
+        $(function () {
+            $("#chart").igDataChart({
+                dataSource: everyThreeYears,
+                height: "400px",
+                width: "100%",
+                title: "国別エネルギー生産量",
+                subtitle: "総一次エネルギー生産国トップ 5 ",
+                axes: [{
+                    name: "Year",
+                    type: "categoryX",
+                    label: "Year",
+                    title: "年",
+                    gap: 0.8,
+                }, {
+                    name: "Volume",
+                    type: "numericY",
+                    title: "生産されたエネルギー (BTU 40 億単位)"
+                }],
+                series: [{
+                    // showTooltip: true enables the default tooltips
+                    showTooltip: true,
+                    // if a custom tooltipTemplate is set,
+                    // the default tooltip will not be shown
+                    tooltipTemplate: "tooltipTemplate",
+                    name: "United States",
+                    title: "アメリカ",
+                    type: "column",
+                    valueMemberPath: "UnitedStates",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                },
+                {
+                    showTooltip: true,
+                    name: "China",
+                    title: "中国",
+                    type: "column",
+                    valueMemberPath: "China",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                },
+                {
+                    showTooltip: true,
+                    name: "Russia",
+                    title: "ロシア",
+                    type: "column",
+                    valueMemberPath: "Russia",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }, {
+                    showTooltip: true,
+                    name: "Saudi Arabia",
+                    title: "サウジアラビア",
+                    type: "column",
+                    valueMemberPath: "SaudiArabia",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }, {
+                    showTooltip: true,
+                    name: "Canada",
+                    title: "カナダ",
+                    type: "column",
+                    valueMemberPath: "Canada",
+                    xAxis: "Year",
+                    yAxis: "Volume",
+                    thickness: .01
+                }],
+                horizontalZoomable: true,
+                verticalZoomable: true,
+                windowResponse: "immediate"
+            });
+        });
+    </script>
+    <div id="chart"></div>
+    <div class="EIAdata-attribution">
+        エネルギーのデータ ソース:<br>
+        <a href="http://www.eia.gov/" target="_blank">U.S. Energy Information Administration (2012)</a>
+    </div>
+</body>
+</html>

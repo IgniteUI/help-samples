@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/grid/angular.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.2/JA/grid/angular/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.2/JA/grid/angular/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "18.2/JA/grid/angular/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/18.2/JA/grid/angular/index.html"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/funnel-chart/xml-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.2/EN/funnel-chart/xml-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.2/EN/funnel-chart/xml-binding/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/18.2/EN/funnel-chart/xml-binding/index.html"
+        }
+    ]
+}

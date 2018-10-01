@@ -1,0 +1,13 @@
+.config-tbl tr td:first-child {
+    text-align: right;
+    margin-right: 2px;
+    color: #444;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 1em;
+}
+.config-tbl input {
+    border: solid 1px #ccc;
+    color: #444;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 1.1em;
+}

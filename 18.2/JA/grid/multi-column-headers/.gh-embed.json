@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/grid/multi-column-headers.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.2/JA/grid/multi-column-headers/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.2/JA/grid/multi-column-headers/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/18.2/JA/grid/multi-column-headers/index.html"
+        }
+    ]
+}
