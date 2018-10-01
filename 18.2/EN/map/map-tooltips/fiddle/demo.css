@@ -1,0 +1,22 @@
+#customTable
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+#customTable td, #customTable th
+{
+    font-size: 9px;
+    border: 1px solid #4377e1;
+    padding: 3px 7px 2px 7px;
+}
+#customTable th
+{
+    font-weight: bold;
+    font-size: 11px;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #4377e1;
+    color: #ffffff;
+}

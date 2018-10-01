@@ -1,0 +1,43 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.dv.js"></script>
+<script id="rangeToolTipTemplate" type="text/x-jquery-tmpl">
+        <div style="background-color: #3E3E3E; border: 1px solid black; font-size: 120%; font-weight: bold; padding: 5px 10px; border-radius: 0em 1em 0em 1em; color:${itemBrush}">
+            ${item.name}
+                <br />
+            Starts: ${item.startValue}<br />
+            Ends: ${item.endValue}
+        </div>
+    </script>
+<script id="valueToolTipTemplate" type="text/x-jquery-tmpl">
+        <div style="background-color: #3E3E3E; border: 1px solid black; font-size: 120%; font-weight: bold; padding: 5px 10px; border-radius: 0em 1em 0em 1em; color:${itemBrush}">
+            ${itemName}: ${item.value}
+        </div>
+    </script>
+<script id="targetValueToolTipTemplate" type="text/x-jquery-tmpl">
+        <div style="background-color: #3E3E3E; border: 1px solid black; font-size: 120%; font-weight: bold; padding: 5px 10px; border-radius: 0em 1em 0em 1em; color:${itemBrush}">
+            Planned Time: ${item.value}
+        </div>
+    </script>
+<link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2018.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<div>
+        <h3 style="height: 100px">Task Implementation Progress</h3>
+        <div style="height: 200px">
+            <div style="width: 30%">
+                Development Task
+            </div>
+            <div style="width: 70%" id="bulletgraph_task1"></div>
+        </div>
+
+        <div style="height: 200px">
+            <div style="width: 30%">
+                Quality Assurance Task
+            </div>
+            <div style="width: 70%" id="bulletgraph_task2"></div>
+        </div>
+        <div style="float: left">Even though these tasks are executed simultaneously at the course of three weeks, initially more time has been spent on development. This is demonstrated by the progress bars’ placement amongst the three different ranges (“Low, “Medium” and “High”), that represent the level of confidence for delivering the needed results.</div>
+    </div>

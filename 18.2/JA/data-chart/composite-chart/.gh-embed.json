@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/data-chart/composite-chart.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.2/JA/data-chart/composite-chart/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.2/JA/data-chart/composite-chart/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "18.2/JA/data-chart/composite-chart/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/18.2/JA/data-chart/composite-chart/index.html"
+        }
+    ]
+}
