@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/split-button/api-and-events.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "18.2/EN/split-button/api-and-events/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "18.2/EN/split-button/api-and-events/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "18.2/EN/split-button/api-and-events/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/18.2/EN/split-button/api-and-events/index.html"
+        }
+    ]
+}

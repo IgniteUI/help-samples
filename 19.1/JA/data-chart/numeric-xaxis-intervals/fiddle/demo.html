@@ -1,0 +1,68 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/us-fao-gross-production.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="chart" id="chartScatterLine"></div>
+<div>
+            <div class="optionsPane">
+                <div><b>XAxis IntervalOptions</b></div>
+                <div class="optionContainer">
+                    <label id="showXMajorAxisLinesLbl" class="labels">ShowXAxisMajorInterval:</label>
+                    <input id="xAxisMajorLinesCkBx" type="checkbox" class="chkBoxMargin" checked>
+                    <div>
+                        <label id="XMajorIntervalThicknessLbl">XMajorIntervalThickness: 2</label>
+                        <div id="XMajorIntervalThicknessSlider" class="slider"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="optionContainer">
+                        <label id="showXMinorAxisLinesLbl" class="labels">ShowXAxisMinorInterval:</label>
+                        <input id="xAxisMinorLinesCkBx" type="checkbox" class="chkBoxMargin" checked>
+                        <div>
+                            <label id="XMinorIntervalThicknessLbl">XMinorIntervalThickness: 1</label>
+                            <div id="XMinorIntervalThicknessSlider" class="slider"></div>
+                        </div>
+                        <div>
+                            <label id="XMinorIntervalValueLbl" class="labels2">XMinorIntervalValue: 2.5</label>
+                            <div id="XMinorIntervalValueSlider" class="slider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="optionsPane">
+                <div><b>YAxis IntervalOptions</b></div>
+                <div class="optionContainer">
+                    <label id="showYMajorAxisLinesLbl" class="labels">ShowYAxisMajorInterval:</label>
+                    <input id="yAxisMajorLinesCkBx" type="checkbox" class="chkBoxMargin" checked>
+                    <div>
+                        <label id="YMajorIntervalThicknessLbl">YMajorIntervalThickness: 2</label>
+                        <div id="YMajorIntervalThicknessSlider" class="slider"></div>
+                    </div>
+                </div>
+
+                <div class="optionContainer">
+                    <label id="showYMinorAxisLinesLbl" class="labels">ShowYAxisMinorInterval:</label>
+                    <input id="yAxisMinorLinesCkBx" type="checkbox" class="chkBoxMargin" checked>
+                    <div>
+                        <label id="YMinorIntervalThicknessLbl">YMinorIntervalThickness: 1</label>
+                        <div id="YMinorIntervalThicknessSlider" class="slider"></div>
+                    </div>
+                    <div>
+                        <label id="YMinorIntervalValueLbl" class="labels3">YMinorIntervalValue: 5000</label>
+                        <div id="YMinorIntervalValueSlider" class="slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="UNdata-attribution">
+        農業のデータ ソース:<br>
+        <a href="http://data.un.org/" target="_blank">UNdata</a>
+    </div>

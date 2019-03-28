@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drag Drop Custom Elements</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.lob.js"></script>
+
+    <style type="text/css">
+        .custom-draggables-container {
+            width: 100%;
+            height: 30px;
+            float: none;
+            margin: 2px;
+        }
+
+        .custom-draggable {
+            float: left;
+            padding: 1px 20px;
+            cursor: pointer;
+            z-index: 5;
+            margin: 0 2px;
+        }
+
+        #dataSelector, #pivotGrid {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-draggables-container">
+        <!-- Set the data-type and data-name attributes and the .ui-igpivot-metadataitem class
+            in order to enable items to be dropped to the pivot data selector and pivot grid. -->
+        <div class="ui-igpivot-metadataitem ui-state-default ui-corner-all custom-draggable" data-type="Hierarchy" data-name="[Seller].[Seller]"><span>Hierarchy: Seller</span></div>
+        <div class="ui-igpivot-metadataitem ui-state-default ui-corner-all custom-draggable" data-type="Measure" data-name="[Measures].[UnitsSold]"><span>Measure: Units Sold</span></div>
+    </div>
+
+    <div id="dataSelector"></div>
+    <div id="pivotGrid"></div>
+
+    <script type="text/javascript" src="../../../../data-files/sales.js"></script>
+    <script>
+        $.support.cors = true;
+
+        $(function () {
+            var dataSource = new $.ig.OlapFlatDataSource({
+                dataSource: sales,
+                metadata: {
+                    cube: {
+                        name: "Sales",
+                        caption: "Sales",
+                        measuresDimension: {
+                            caption: "Measures",
+                            measures: [
+                                { caption: "Units Sold", name: "UnitsSold", aggregator: $.ig.OlapUtilities.prototype.sumAggregator('UnitsSold') },
+                                { caption: "Unit Price", name: "UnitPrice", aggregator: $.ig.OlapUtilities.prototype.sumAggregator('UnitPrice', 2) }]
+                        },
+
+                        dimensions: [
+                            {
+                                caption: "Date", name: "Date", hierarchies: [
+                                    $.ig.OlapUtilities.prototype.getDateHierarchy(
+                                        "Date", ["year", "quarter", "month", "date"], "Dates", "Date",
+                                        ["Year", "Quarter", "Month", "Day"], "All Periods")]
+                            },
+                            {
+                                caption: "Location", name: "Location", hierarchies: [{
+                                    caption: "Location", name: "Location", levels: [
+                                        { name: "AllLocations", levelCaption: "All Locations", memberProvider: function (item) { return "All Locations"; } },
+                                        { name: "Country", levelCaption: "Country", memberProvider: function (item) { return item.Country; } },
+                                        { name: "City", levelCaption: "City", memberProvider: function (item) { return item.City; } }]
+                                }]
+                            },
+                            {
+                                caption: "Product", name: "Product", hierarchies: [{
+                                    caption: "Product", name: "Product", levels: [
+                                        { name: "AllProducts", levelCaption: "All Products", memberProvider: function (item) { return "All Products"; } },
+                                        { name: "ProductCategory", levelCaption: "Category", memberProvider: function (item) { return item.ProductCategory; } }]
+                                }]
+                            },
+                            {
+                                caption: "Seller", name: "Seller", hierarchies: [{
+                                    caption: "Seller", name: "Seller", levels: [
+                                        { name: "AllSellers", levelCaption: "All Sellers", memberProvider: function (item) { return "All Sellers"; } },
+                                        { name: "SellerName", levelCaption: "Seller", memberProvider: function (item) { return item.SellerName; } }]
+                                }]
+                            }
+                        ]
+                    }
+                },
+                rows: "[Date].[Dates]",
+                columns: "[Product].[Product]",
+                measures: "[Measures].[UnitPrice]"
+            });
+
+            $('#dataSelector').igPivotDataSelector({
+                dataSource: dataSource,
+                height: "565px"
+            });
+
+            $("#pivotGrid").igPivotGrid({
+                dataSource: dataSource,
+                height: "565px",
+                width: "660px"
+            });
+
+            $(".custom-draggable").draggable({
+                // You must set this option in a similar manner, because the pointer is used when 
+                // calculating the drop position and its top should not be blocked by the dragged element
+                cursorAt: {
+                    top: -10,
+                    left: 10
+                },
+                helper: "clone"
+            });
+        });
+    </script>
+</body>
+</html>

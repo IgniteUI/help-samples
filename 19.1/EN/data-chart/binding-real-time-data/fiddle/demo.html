@@ -1,0 +1,51 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.dv.js"></script>
+<script id="tooltipTemplate" type="text/x-jquery-tmpl">
+            <div id="tooltip" class="ui-widget-content ui-corner-all">
+                <span id="tooltipValue">Value: ${item.Value}</span>
+            </div>
+        </script>
+<link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="chart"></div>
+<div class="selectionOptions">
+            
+            <table>
+                <tr>
+                    <td>
+                        Data Points: <span id="volumeText">5000</span>
+                    </td>
+                     <td style="width: 10px; min-width: 10px;"></td>
+                  <td>
+                      Refresh time: <span id="intervalText">10</span>
+                    </td>
+                    <td>
+                         Refreshes Per Second: <span id="refreshCount">0</span>
+                    </td>
+                 </tr>
+               <tr>
+                    <td>
+                      <div id="volumeSlider" class="sliderBounds" style="margin: 10px 5px 5px 10px;"></div>
+                    </td> 
+                   <td style="width: 10px; min-width: 10px;"></td>
+                   <td>
+                        <div id="intervalSlider" class="sliderBounds" style="margin: 10px 5px 5px 10px;"></div>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="addDataPoints" value="Add Data Points"> 
+                    </td>
+                     <td style="width: 10px; min-width: 10px;"></td>
+                    <td>
+                        <input type="button" id="startDataFeed" value="Start Data Feed">
+                    </td>
+                </tr>
+             
+            </table>
+      
+            
+        </div>

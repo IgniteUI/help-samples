@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>レスポンス Web デザイン モード</title>
+    <style type="text/css">
+        body {
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+    </style>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/infragistics.lob.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+
+    <script src="../../../../data-files/nw-customers-with-orders.js"></script>
+    <table id="grid"></table>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                columns: [
+                    { headerText: "会社名", key: "CompanyName", dataType: "string", width: "20%" },
+                    { headerText: "名前", key: "ContactName", dataType: "string", width: "15%" },
+                    { headerText: "連絡先", key: "ContactTitle", dataType: "string", width: "20%" },
+                    { headerText: "住所", key: "Address", dataType: "string", width: "20%" },
+                    { headerText: "市", key: "City", dataType: "string", width: "10%" },
+                    { headerText: "国名", key: "Country", dataType: "string", width: "15%" }
+                ],
+                autoGenerateColumns: false,
+                autofitLastColumn: false,
+                dataSource: nwCustomersWithOrders,
+                width: "100%",
+                features: [
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: "ContactName",
+                                configuration: {
+                                    customPhone: {
+                                        hidden: true
+                                    },
+                                    customAlt: {
+                                        hidden: false
+                                    }
+                                }
+                            },
+                            {
+                                columnKey: "ContactTitle",
+                                configuration: {
+                                    customPhone: {
+                                        hidden: true
+                                    },
+                                    customAlt: {
+                                        hidden: false
+                                    }
+                                }
+                            },
+                            {
+                                columnKey: "Address",
+                                configuration: {
+                                    customPhone: {
+                                        template: "${Address}, ${City}, ${Country}"
+                                    },
+                                    customAlt: {
+                                        hidden: false
+                                    }
+                                }
+                            },
+                            {
+                                columnKey: "City",
+                                configuration: {
+                                    customPhone: {
+                                        hidden: true
+                                    },
+                                    customAlt: {
+                                        hidden: false
+                                    }
+                                }
+                            },
+                            {
+                                columnKey: "Country",
+                                configuration: {
+                                    customPhone: {
+                                        hidden: true
+                                    },
+                                    customAlt: {
+                                        hidden: false
+                                    }
+                                }
+                            }
+                        ],
+                        responsiveModes: {
+                            customPhone: {
+                                minWidth: 0,
+                                maxWidth: 600
+                            },
+                            // alternative mode
+                            customAlt: {
+                                minWidth: 601,
+                                maxWidth: Number.MAX_VALUE
+                            }
+                        }
+                    },
+                    {
+                        name: "Paging",
+                        pageSize: 5
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
