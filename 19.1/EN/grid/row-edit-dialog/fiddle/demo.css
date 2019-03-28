@@ -1,0 +1,44 @@
+.row-edit-dialog-container-cols
+{
+	width:100%;
+	overflow:hidden;
+	border-bottom:1px solid #ccc;
+	padding-bottom:15px;
+}
+.row-edit-dialog-container-cols table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+.row-edit-dialog-container-cols table tbody td
+{
+    border:none !important;
+	padding: 0 4px 10px;
+}
+.row-edit-dialog-container-head
+{
+	border-bottom:1px solid #ccc;padding-bottom:10px;margin-top:10px;margin-bottom:25px;font-size:16px;
+}
+.ui-dialog .ui-dialog-buttonpane
+{
+	margin-top:0;
+	padding-top:0;
+}
+.ui-dialog .ui-dialog-buttonpane button
+{
+	margin:0.5em 0 0.5em 0.4em;
+}
+.ui-iggrid .ui-widget-content.ui-dialog
+{
+	border-color:#888;
+}
+.ui-dialog-title
+{
+	text-transform:uppercase;
+	margin:0;
+	font-size:90%;
+}
+.ui-dialog .ui-dialog-titlebar
+{
+	padding: 0.7em 1em;
+}

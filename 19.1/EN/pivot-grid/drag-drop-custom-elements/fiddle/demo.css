@@ -1,0 +1,18 @@
+.custom-draggables-container {
+    width: 100%;
+    height: 30px;
+    float: none;
+    margin: 2px;
+}
+
+.custom-draggable {
+    float: left;
+    padding: 1px 20px;
+    cursor: pointer;
+    z-index: 5;
+    margin: 0 2px;
+}
+
+#dataSelector, #pivotGrid {
+    float: left;
+}

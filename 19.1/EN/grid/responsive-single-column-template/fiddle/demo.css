@@ -1,0 +1,13 @@
+.right {
+    height: 100%;
+    padding: 3px;
+}
+
+.right > span:nth-of-type(odd) {
+    font-weight: bold;
+}
+
+#grid1_responsiveAdaptive > div {
+    float: left;
+    width: 33%;
+}

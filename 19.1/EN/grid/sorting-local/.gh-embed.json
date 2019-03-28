@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/grid/sorting-local.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.1/EN/grid/sorting-local/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.1/EN/grid/sorting-local/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/grid/sorting-local/index.html"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/data-chart/bind-data-chart-with-ko.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.1/EN/data-chart/bind-data-chart-with-ko/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.1/EN/data-chart/bind-data-chart-with-ko/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.1/EN/data-chart/bind-data-chart-with-ko/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/data-chart/bind-data-chart-with-ko/index.html"
+        }
+    ]
+}

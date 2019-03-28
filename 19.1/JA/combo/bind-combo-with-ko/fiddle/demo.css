@@ -1,0 +1,6 @@
+label { display: inline-block; }
+.title {margin-left: 10px;}
+.horizontal-container { padding: 10px; margin-left:10px;}
+.horizontal-container .input-add-actor { width: 196px; height: 22px; border-radius: 4px; border: 1px solid #4F4F4F; font-size: 17px; }
+.horizontal-container input[type=button] { margin-left: 20px; font-size: 14px; vertical-align: top; }
+.horizontal-container select { border-radius: 4px; border: 1px solid #4F4F4F; width: 200px; }

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/html-editor/angular.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.1/EN/html-editor/angular/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.1/EN/html-editor/angular/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.1/EN/html-editor/angular/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/html-editor/angular/index.html"
+        }
+    ]
+}

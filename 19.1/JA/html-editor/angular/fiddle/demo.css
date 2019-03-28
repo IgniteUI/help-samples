@@ -1,0 +1,26 @@
+textarea {
+    width: 100%;
+    height: 400px;
+}
+.row {
+    margin-right:-15px;
+    margin-left:-15px
+}
+.col-left,.col-right {
+    position:relative;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px;
+    float:left;
+}
+.box-sizing {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.col-left {
+    width:66.6%;
+}
+.col-right {
+    width:33.3%;
+}
