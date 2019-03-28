@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/data-chart/category-highlight-layer.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/data-chart/category-highlight-layer.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/JA/data-chart/category-highlight-layer/fiddle/demo.js"
+            "path": "19.1/JA/data-chart/category-highlight-layer/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/JA/data-chart/category-highlight-layer/fiddle/demo.html"
+            "path": "19.1/JA/data-chart/category-highlight-layer/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/JA/data-chart/category-highlight-layer/fiddle/demo.css"
+            "path": "19.1/JA/data-chart/category-highlight-layer/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "サンプル",
-            "url": "https://igniteui.github.io/help-samples/18.2/JA/data-chart/category-highlight-layer/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/JA/data-chart/category-highlight-layer/index.html"
         }
     ]
 }

@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/editors/localizing-editors.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/editors/localizing-editors.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/JA/editors/localizing-editors/fiddle/demo.js"
+            "path": "19.1/JA/editors/localizing-editors/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/JA/editors/localizing-editors/fiddle/demo.html"
+            "path": "19.1/JA/editors/localizing-editors/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/JA/editors/localizing-editors/fiddle/demo.css"
+            "path": "19.1/JA/editors/localizing-editors/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "サンプル",
-            "url": "https://igniteui.github.io/help-samples/18.2/JA/editors/localizing-editors/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/JA/editors/localizing-editors/index.html"
         }
     ]
 }

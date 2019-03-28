@@ -1,18 +1,18 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/grid/feature-chooser.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/grid/feature-chooser.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/grid/feature-chooser/fiddle/demo.js"
+            "path": "19.1/EN/grid/feature-chooser/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/grid/feature-chooser/fiddle/demo.html"
+            "path": "19.1/EN/grid/feature-chooser/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/grid/feature-chooser/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/grid/feature-chooser/index.html"
         }
     ]
 }

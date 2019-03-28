@@ -1,18 +1,18 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/bullet-graph/tooltip-settings.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/bullet-graph/tooltip-settings.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/bullet-graph/tooltip-settings/fiddle/demo.js"
+            "path": "19.1/EN/bullet-graph/tooltip-settings/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/bullet-graph/tooltip-settings/fiddle/demo.html"
+            "path": "19.1/EN/bullet-graph/tooltip-settings/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/bullet-graph/tooltip-settings/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/bullet-graph/tooltip-settings/index.html"
         }
     ]
 }

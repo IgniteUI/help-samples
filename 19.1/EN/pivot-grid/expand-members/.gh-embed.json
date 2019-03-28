@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/pivot-grid/expand-members.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/pivot-grid/expand-members.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/pivot-grid/expand-members/fiddle/demo.js"
+            "path": "19.1/EN/pivot-grid/expand-members/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/pivot-grid/expand-members/fiddle/demo.html"
+            "path": "19.1/EN/pivot-grid/expand-members/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/EN/pivot-grid/expand-members/fiddle/demo.css"
+            "path": "19.1/EN/pivot-grid/expand-members/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/pivot-grid/expand-members/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/pivot-grid/expand-members/index.html"
         }
     ]
 }

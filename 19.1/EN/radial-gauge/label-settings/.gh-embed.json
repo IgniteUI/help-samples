@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/radial-gauge/label-settings.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/radial-gauge/label-settings.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/radial-gauge/label-settings/fiddle/demo.js"
+            "path": "19.1/EN/radial-gauge/label-settings/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/radial-gauge/label-settings/fiddle/demo.html"
+            "path": "19.1/EN/radial-gauge/label-settings/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/EN/radial-gauge/label-settings/fiddle/demo.css"
+            "path": "19.1/EN/radial-gauge/label-settings/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/radial-gauge/label-settings/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/radial-gauge/label-settings/index.html"
         }
     ]
 }

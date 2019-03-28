@@ -1,18 +1,18 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/combo/html-binding.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/combo/html-binding.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/combo/html-binding/fiddle/demo.js"
+            "path": "19.1/EN/combo/html-binding/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/combo/html-binding/fiddle/demo.html"
+            "path": "19.1/EN/combo/html-binding/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/combo/html-binding/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/combo/html-binding/index.html"
         }
     ]
 }

@@ -1,18 +1,18 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/sparkline/bind-to-remote-data.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/sparkline/bind-to-remote-data.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/EN/sparkline/bind-to-remote-data/fiddle/demo.js"
+            "path": "19.1/EN/sparkline/bind-to-remote-data/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/EN/sparkline/bind-to-remote-data/fiddle/demo.html"
+            "path": "19.1/EN/sparkline/bind-to-remote-data/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
             "label": "Result",
-            "url": "https://igniteui.github.io/help-samples/18.2/EN/sparkline/bind-to-remote-data/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/EN/sparkline/bind-to-remote-data/index.html"
         }
     ]
 }

@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/pivot-grid/drag-drop-custom-elements.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/pivot-grid/drag-drop-custom-elements.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.js"
+            "path": "19.1/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.html"
+            "path": "19.1/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.css"
+            "path": "19.1/JA/pivot-grid/drag-drop-custom-elements/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "サンプル",
-            "url": "https://igniteui.github.io/help-samples/18.2/JA/pivot-grid/drag-drop-custom-elements/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/JA/pivot-grid/drag-drop-custom-elements/index.html"
         }
     ]
 }

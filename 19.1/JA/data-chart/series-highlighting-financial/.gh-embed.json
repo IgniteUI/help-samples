@@ -1,22 +1,22 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/data-chart/series-highlighting-financial.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/data-chart/series-highlighting-financial.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/JA/data-chart/series-highlighting-financial/fiddle/demo.js"
+            "path": "19.1/JA/data-chart/series-highlighting-financial/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/JA/data-chart/series-highlighting-financial/fiddle/demo.html"
+            "path": "19.1/JA/data-chart/series-highlighting-financial/fiddle/demo.html"
         },
         {
             "label": "CSS",
-            "path": "18.2/JA/data-chart/series-highlighting-financial/fiddle/demo.css"
+            "path": "19.1/JA/data-chart/series-highlighting-financial/fiddle/demo.css"
         },
         {
             "type": "htmlpage",
             "label": "サンプル",
-            "url": "https://igniteui.github.io/help-samples/18.2/JA/data-chart/series-highlighting-financial/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/JA/data-chart/series-highlighting-financial/index.html"
         }
     ]
 }

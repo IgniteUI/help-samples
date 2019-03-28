@@ -1,18 +1,18 @@
 {
-    "srcUrlPattern": "/${owner}/${repo}-src/blob/18.2/HTMLSamples/map/angular.html",
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.1/HTMLSamples/map/angular.html",
     "embed": [
         {
             "label": "JS",
-            "path": "18.2/JA/map/angular/fiddle/demo.js"
+            "path": "19.1/JA/map/angular/fiddle/demo.js"
         },
         {
             "label": "HTML",
-            "path": "18.2/JA/map/angular/fiddle/demo.html"
+            "path": "19.1/JA/map/angular/fiddle/demo.html"
         },
         {
             "type": "htmlpage",
             "label": "サンプル",
-            "url": "https://igniteui.github.io/help-samples/18.2/JA/map/angular/index.html"
+            "url": "https://igniteui.github.io/help-samples/19.1/JA/map/angular/index.html"
         }
     ]
 }
