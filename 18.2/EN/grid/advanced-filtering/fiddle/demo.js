@@ -12,7 +12,8 @@ function createAdvancedFilteringGrid() {
             { headerText: "Register Date", key: "RegistererDate", dataType: "date" },
             { headerText: "Country", key: "Country", dataType: "string" },
             { headerText: "Age", key: "Age", dataType: "number" },
-            { headerText: "Is Active", key: "IsActive", dataType: "bool" }
+            { headerText: "Is Active", key: "IsActive", dataType: "bool" },
+            { headerText: "Register Time", key: "RegistererTime", dataType: "time" }
         ],
         dataSource: employees,
         renderCheckboxes: true,

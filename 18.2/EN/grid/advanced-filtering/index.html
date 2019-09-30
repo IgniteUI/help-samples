@@ -17,12 +17,12 @@
 </head>
 <body>
     <h3 id="gridAdvancedFilteringLabel">Grid with Advanced Filtering</h3>
-     <!-- Target element for the Simple Filtering igGrid -->
+    <!-- Target element for the Simple Filtering igGrid -->
     <table id="gridAdvancedFiltering"></table>
-     <br>
-   
-     <!--Sample JSON Data-->
-   <script src="../../../../data-files/employee-data-allDatatypes.js"></script>
+    <br>
+
+    <!--Sample JSON Data-->
+    <script src="../../../../data-files/employee-data-allDatatypes.js"></script>
 
     <script>
         $(function () {
@@ -39,7 +39,8 @@
                     { headerText: "Register Date", key: "RegistererDate", dataType: "date" },
                     { headerText: "Country", key: "Country", dataType: "string" },
                     { headerText: "Age", key: "Age", dataType: "number" },
-                    { headerText: "Is Active", key: "IsActive", dataType: "bool" }
+                    { headerText: "Is Active", key: "IsActive", dataType: "bool" },
+                    { headerText: "Register Time", key: "RegistererTime", dataType: "time" }
                 ],
                 dataSource: employees,
                 renderCheckboxes: true,

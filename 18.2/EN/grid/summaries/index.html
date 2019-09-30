@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Summaries</title>
 
@@ -15,6 +16,7 @@
     <script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
     <script src="https://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.lob.js"></script>
 </head>
+
 <body>
     <table id="grid"></table>
     <script src="../../../../data-files/adventureworks.min.js"></script>
@@ -28,7 +30,8 @@
                     { headerText: "Product Name", key: "Name", dataType: "string", width: "40%" },
                     { headerText: "Product Number", key: "ProductNumber", dataType: "string", width: "20%" },
                     { headerText: "List Price", key: "ListPrice", dataType: "number", width: "20%" },
-                    { headerText: "Standard Cost", key: "StandardCost", dataType: "number", width: "20%" }
+                    { headerText: "Standard Cost", key: "StandardCost", dataType: "number", width: "20%" },
+                    { headerText: "Time", key: "ModifiedDate", dataType: "time", width: "20%" },
                 ],
                 dataSource: adventureWorks,
                 features: [
@@ -40,4 +43,5 @@
         });
     </script>
 </body>
+
 </html>

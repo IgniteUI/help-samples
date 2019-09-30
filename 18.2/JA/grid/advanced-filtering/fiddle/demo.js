@@ -12,7 +12,8 @@ function createAdvancedFilteringGrid() {
             { headerText: "登録日付", key: "RegistererDate", dataType: "date" },
             { headerText: "国", key: "Country", dataType: "string" },
             { headerText: "年齢", key: "Age", dataType: "number" },
-            { headerText: "アクティブ", key: "IsActive", dataType: "bool" }
+            { headerText: "アクティブ", key: "IsActive", dataType: "bool" },
+            { headerText: "登録時間", key: "RegistererTime", dataType: "time" }
         ],
         dataSource: employees,
         renderCheckboxes: true,
