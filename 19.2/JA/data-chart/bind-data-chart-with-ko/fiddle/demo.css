@@ -1,0 +1,64 @@
+.float { float: left; margin: 10px 10px 0 0; }
+.clear { clear: both; }
+.hr { border-top: 1px solid #2CBDF9; margin-bottom: 10px; }
+.options-container { width: 220px; padding-top: 70px; }
+.main-container { width: 100%; height: 850px; }
+.editor-container { float: left; margin: 0 25px 20px 5px; }
+.editor-container .labels { display: block; font-size: 13px; padding-bottom: 5px; }
+.year-profit { float: right; margin-left: 5px; font-weight: bold; border: none; }
+.eidtors-title { padding: 0 0 3px 2px; }
+.number-container { float: right; font-size: 30px; width: 200px; text-align: right; margin-right: 20px; }
+.btn-refresh { float: right; width: 48px; height: 48px; padding: 0; margin: 0;
+    border-image-width: 0; cursor: pointer; border: 1px solid #999;
+    background-image: url(../../images/samples/data-chart/music-controls-sprite.png); 
+    background-position: -434px -2px; background-repeat: no-repeat; }
+    .btn-refresh:hover { background-position: -434px -50px; }
+
+/* Line chart container and legend */
+.sample-line-chart-holder {
+    position: relative;
+    width: 100%;
+}
+#legendLineChart { border: none; background-color: transparent; font-weight: bold;}
+
+/* Polar chart container and legend */
+.sample-polar-chart-holder {
+    position: relative;
+    width: 33.3%;
+    float: left;
+    margin-top: 10px;
+}
+.polar-chart-legend { position: absolute; top: 250px; left: 15px; border: none; background-color: transparent; font-weight: bold; }
+
+/* Line chart container and legend */
+.sample-bar-chart-holder {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+#legendBarColumnChart { border: none; background-color: transparent; font-weight: bold; }
+
+
+@media screen and (max-width: 970px) {
+	.responsive-clear { clear: both; }
+}
+
+@media screen and (max-width: 600px) {
+    /* Polar chart container and legend under 600px */
+    .sample-polar-chart-holder {
+        position: relative;
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+    }
+        .sample-polar-chart-holder > div:first-of-type { 
+            width: 99% !important;
+        }
+	.editor-container { clear: both; }
+}
+@media screen and (max-width: 430px) {
+    #sample > section > * {
+        margin: 0;
+    }
+}

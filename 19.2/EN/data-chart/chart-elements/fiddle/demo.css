@@ -1,0 +1,25 @@
+td { vertical-align: top; }
+
+#chart
+{
+    position: relative;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+#chartLegend
+{
+    left: 10px;
+    font-size: 0.857em;
+    top: 0px;
+}
+.chkBoxMargin
+{
+    margin: 4px;
+}
+.options
+{
+    float: left;
+    font-size: 0.857em;
+    line-height: 1.429em;
+}

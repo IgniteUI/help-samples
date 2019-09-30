@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.2/HTMLSamples/pivot-grid/expand-members.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.2/JA/pivot-grid/expand-members/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.2/JA/pivot-grid/expand-members/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.2/JA/pivot-grid/expand-members/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/19.2/JA/pivot-grid/expand-members/index.html"
+        }
+    ]
+}

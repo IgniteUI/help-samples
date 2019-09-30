@@ -1,0 +1,113 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.dv.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/financial-indicators.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/financial-data.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2019.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2019.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="selectionOptions">
+        Series type:
+        <select id="seriesType" class="selectBounds">
+            <option value="candlestick" selected="selected">Candlestick</option>
+            <option value="ohlc">OHLC</option>
+            <option value="absoluteVolumeOscillatorIndicator">Absolute Volume Oscillator</option>
+            <option value="averageTrueRangeIndicator">Average True Range</option>
+            <option value="accumulationDistributionIndicator">Accumulation Distribution</option>
+            <option value="averageDirectionalIndexIndicator">Average Directional Index</option>
+            <option value="bollingerBandsOverlay">Bollinger Bands Overlay</option>
+            <option value="bollingerBandWidthIndicator">Bollinger Band Width</option>
+            <option value="chaikinOscillatorIndicator">Chaikin Oscillator</option>
+            <option value="chaikinVolatilityIndicator">Chaikin Volatility</option>
+            <option value="commodityChannelIndexIndicator">Commodity Channel Index</option>
+            <option value="detrendedPriceOscillatorIndicator">Detrended Price Oscillator</option>
+            <option value="easeOfMovementIndicator">Ease Of Movement</option>
+            <option value="fastStochasticOscillatorIndicator">Fast Stochastic Oscillator</option>
+            <option value="forceIndexIndicator">Force Index</option>
+            <option value="fullStochasticOscillatorIndicator">Full Stochastic Oscillator</option>
+            <option value="marketFacilitationIndexIndicator">Market Facilitation Index</option>
+            <option value="massIndexIndicator">Mass Index</option>
+            <option value="medianPriceIndicator">Median Price</option>
+            <option value="moneyFlowIndexIndicator">Money Flow Index</option>
+            <option value="movingAverageConvergenceDivergenceIndicator">Moving Average Convergence Divergence</option>
+            <option value="negativeVolumeIndexIndicator">Negative Volume Index</option>
+            <option value="onBalanceVolumeIndicator">On Balance Volume</option>
+            <option value="percentagePriceOscillatorIndicator">Percentage Price Oscillator</option>
+            <option value="percentageVolumeOscillatorIndicator">Percentage Volume Oscillator</option>
+            <option value="positiveVolumeIndexIndicator">Positive Volume Index</option>
+            <option value="priceChannelOverlay">Price Channel Overlay</option>
+            <option value="priceVolumeTrendIndicator">Price Volume Trend</option>
+            <option value="rateOfChangeAndMomentumIndicator">Rate Of Change And Momentum</option>
+            <option value="relativeStrengthIndexIndicator">Relative Strength Index</option>
+            <option value="slowStochasticOscillatorIndicator">Slow Stochastic Oscillator</option>
+            <option value="standardDeviationIndicator">Standard Deviation</option>
+            <option value="stochRSIIndicator">Stoch RSI</option>
+            <option value="trixIndicator">Trix</option>
+            <option value="typicalPriceIndicator">Typical Price</option>
+            <option value="ultimateOscillatorIndicator">Ultimate Oscillator</option>
+            <option value="weightedCloseIndicator">Weighted Close</option>
+            <option value="williamsPercentRIndicator">Williams Percent R</option>
+         </select>
+    </div>
+<div id="chart" class="chartElement"></div>
+<div>
+        <fieldset id="chartOptions">
+            <legend>Chart Options</legend>
+            	
+            <div class="optionContainer">
+                Transition Types
+                <br>
+                <select id="transitionInTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="fromZero">fromZero</option>
+                    <option value="accordionFromLeft">accordionFromLeft</option>
+                    <option value="accordionFromRight">accordionFromRight</option>
+                    <option value="accordionFromTop">accordionFromTop</option>
+                    <option value="accordionFromBottom">accordionFromBottom</option>
+                    <option value="expand">expand</option>
+                    <option value="sweepFromLeft">sweepFromLeft</option>
+                    <option value="sweepFromRight">sweepFromRight</option>
+                    <option value="sweepFromTop">sweepFromTop</option>
+                    <option value="sweepFromBottom">sweepFromBottom</option>
+                    <option value="sweepFromCenter">sweepFromCenter</option>
+                    <option value="accordionFromCategoryAxisMinimum">accordionFromCategoryAxisMinimum</option>
+                    <option value="accordionFromCategoryAxisMaximum">accordionFromCategoryAxisMaximum</option>
+                    <option value="accordionFromValueAxisMinimum">accordionFromValueAxisMinimum</option>
+                    <option value="accordionFromValueAxisMaximum">accordionFromValueAxisMaximum</option>
+                    <option value="sweepFromCategoryAxisMinimum">sweepFromCategoryAxisMinimum</option>
+                    <option value="sweepFromCategoryAxisMaximum">sweepFromCategoryAxisMaximum</option>
+                    <option value="sweepFromValueAxisMinimum">sweepFromValueAxisMinimum</option>
+                    <option value="sweepFromValueAxisMaximum">sweepFromValueAxisMaximum</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                Speed Type
+                <br>
+                <select id="transitionInSpeedTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="normal">normal</option>
+                    <option value="valueScaled">valueScaled</option>
+                    <option value="indexScaled">indexScaled</option>
+                    <option value="random">random</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                Easing Function
+                <br>
+                <select id="transitionEasingFunctionSlider">
+                    <option value="linear" selected="selected">linear</option>
+                    <option value="cubic">cubic</option>
+                </select>
+            </div>
+            
+           
+        </fieldset>
+    </div>
+<div class="selectionOptions" style="display: inline-block">
+        <label>Stock data from:
+            <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+        </label>
+    </div>

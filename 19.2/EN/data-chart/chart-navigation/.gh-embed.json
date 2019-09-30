@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.2/HTMLSamples/data-chart/chart-navigation.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.2/EN/data-chart/chart-navigation/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.2/EN/data-chart/chart-navigation/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.2/EN/data-chart/chart-navigation/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/19.2/EN/data-chart/chart-navigation/index.html"
+        }
+    ]
+}

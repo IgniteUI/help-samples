@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.2/HTMLSamples/radial-gauge/api-usage.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.2/EN/radial-gauge/api-usage/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.2/EN/radial-gauge/api-usage/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.2/EN/radial-gauge/api-usage/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/19.2/EN/radial-gauge/api-usage/index.html"
+        }
+    ]
+}

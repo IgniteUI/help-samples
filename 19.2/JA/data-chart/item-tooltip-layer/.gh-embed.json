@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/19.2/HTMLSamples/data-chart/item-tooltip-layer.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "19.2/JA/data-chart/item-tooltip-layer/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "19.2/JA/data-chart/item-tooltip-layer/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "19.2/JA/data-chart/item-tooltip-layer/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/19.2/JA/data-chart/item-tooltip-layer/index.html"
+        }
+    ]
+}

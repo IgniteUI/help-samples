@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>機能セレクター</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2019.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/infragistics.lob.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2019.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+
+    <table id="grid"></table>
+
+    <script src="../../../../data-files/northwind.js"></script>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                primaryKey: "EmployeeID",
+                width: '100%',
+                columns: [
+                    { headerText: "従業員 ID", key: "EmployeeID", dataType: "number", width: "15%" },
+                    { headerText: "名前", key: "FirstName", dataType: "string", width: "25%" },
+                    { headerText: "名字", key: "LastName", dataType: "string", width: "25%"},
+                    { headerText: "役職", key: "Title", dataType: "string", width: "35%" }
+                ],
+                autofitLastColumn: false,
+                autoGenerateColumns: false,
+                dataSource: northwind,
+                responseDataKey: "results",
+                features: [
+                    {
+                        name: "Sorting",
+                        type: "local",
+                        mode: "multi",
+                        sortingDialogContainment: "window"
+                    },
+                    {
+                        name: "Filtering",
+                        type: "local",
+                        mode: "advanced",
+                        filterDialogContainment: "window"
+                    },
+                    {
+                        name: "Hiding"
+                    },
+                    {
+                        name: "ColumnMoving",
+                        columnMovingDialogContainment: "window"
+                    },
+                    {
+                        name: "Summaries"
+                    }
+                ]
+            });
+        });
+     </script>
+</body>
+</html>
