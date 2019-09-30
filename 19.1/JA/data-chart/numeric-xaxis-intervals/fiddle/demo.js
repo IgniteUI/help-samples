@@ -90,7 +90,7 @@ $(function () {
         value: 1,
         slide: function (e, ui) {
             $("#chartScatterLine").igDataChart("option", "axes", [{ name: "xAxis", minorStrokeThickness: ui.value }]);
-            $("#XMinorIntervalThicknessLbl").text("$$(XMinorIntervalThicknessSldr)" + ui.value);
+            $("#XMinorIntervalThicknessLbl").text("XMinorIntervalThickness: " + ui.value);
         }
     });
 

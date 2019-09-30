@@ -17,12 +17,12 @@
 <script src="https://cdn-na.infragistics.com/igniteui/2019.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
 <body>
     <h3 id="gridAdvancedFilteringLabel">詳細フィルターのグリッド</h3>
-     <!-- Target element for the Simple Filtering igGrid -->
+    <!-- Target element for the Simple Filtering igGrid -->
     <table id="gridAdvancedFiltering"></table>
-     <br>
-   
-     <!--Sample JSON Data-->
-   <script src="../../../../data-files/employee-data-allDatatypes.js"></script>
+    <br>
+
+    <!--Sample JSON Data-->
+    <script src="../../../../data-files/employee-data-allDatatypes.js"></script>
 
     <script>
         $(function () {
@@ -39,7 +39,8 @@
                     { headerText: "登録日付", key: "RegistererDate", dataType: "date" },
                     { headerText: "国", key: "Country", dataType: "string" },
                     { headerText: "年齢", key: "Age", dataType: "number" },
-                    { headerText: "アクティブ", key: "IsActive", dataType: "bool" }
+                    { headerText: "アクティブ", key: "IsActive", dataType: "bool" },
+                    { headerText: "登録時間", key: "RegistererTime", dataType: "time" }
                 ],
                 dataSource: employees,
                 renderCheckboxes: true,
