@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/20.1/HTMLSamples/data-chart/chart-fill-gradients.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "20.1/EN/data-chart/chart-fill-gradients/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "20.1/EN/data-chart/chart-fill-gradients/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "20.1/EN/data-chart/chart-fill-gradients/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/20.1/EN/data-chart/chart-fill-gradients/index.html"
+        }
+    ]
+}

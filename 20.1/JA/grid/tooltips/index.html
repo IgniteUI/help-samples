@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>ツールチップ</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.lob.js"></script>
+
+    <style type="text/css">
+        .tooltip-grid-notes { white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+    </style>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>    
+    <table id="grid"></table>
+    <script src="../../../../data-files/adventureworks.min.js"></script>
+    <script>
+        $(function () {
+            $( "#grid" ).igGrid( {
+                autoGenerateColumns: false,
+                autofitLastColumn: false,
+				renderCheckboxes: true,
+                width: "100%",
+                columns: [
+                    { headerText: "製品名", key: "Name", dataType: "string", width: "20%" },
+					{ headerText: "製品番号", key: "ProductNumber", dataType: "string", width: "20%" },
+					{ headerText: "メーカー フラグ", key: "MakeFlag", dataType: "bool", width: "10%" },
+					{ headerText: "再注文", key: "ReorderPoint", dataType: "number", width: "10%" },
+					{ headerText: "販売の開始日付", key: "SellStartDate", dataType: "date", width: "15%" }
+                ],
+                dataSource: adventureWorks.slice(0, 10),
+                features: [
+                    {
+                        name: "Tooltips",
+                        columnSettings: [
+                           { columnKey: "Name", allowTooltips: false },
+                           { columnKey: "MakeFlag", allowTooltips: false }
+                        ],
+                        style: Modernizr.touch ? "popover" : "tooltip",
+                        visibility: "always"
+                    },
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: "MakeFlag",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ReorderPoint",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "SellStartDate",
+                                classes: "ui-hidden-phone"
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

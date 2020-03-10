@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/20.1/HTMLSamples/grid/bind-grid-with-ko.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "20.1/JA/grid/bind-grid-with-ko/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "20.1/JA/grid/bind-grid-with-ko/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "20.1/JA/grid/bind-grid-with-ko/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/20.1/JA/grid/bind-grid-with-ko/index.html"
+        }
+    ]
+}

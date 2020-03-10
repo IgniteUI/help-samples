@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twitter Bootstrap</title>
+    <style type="text/css">
+        body {
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+    </style>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.lob.js"></script>
+
+</head>
+<body>
+
+    <script src="../../../../data-files/nw-customers-with-orders.js"></script>
+    <table id="grid"></table>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                columns: [
+                    { headerText: "Customer ID", key: "ID", dataType: "string", width:"10%" },
+                    { headerText: "Company Name", key: "CompanyName", dataType: "string", width: "10%" },
+                    { headerText: "Contact Name", key: "ContactName", dataType: "string", width: "10%" },
+                    { headerText: "Contact Title", key: "ContactTitle", dataType: "string", width: "20%" },
+                    { headerText: "Address", key: "Address", dataType: "string", width: "20%" },
+                    { headerText: "City", key: "City", dataType: "string", width: "10%" },
+                    { headerText: "Country", key: "Country", dataType: "string", width: "15%" }
+                ],
+                autoGenerateColumns: false,
+                dataSource: nwCustomersWithOrders,
+                width: "100%",
+                height: "400px",
+                autofitLastColumn: false,
+                features: [
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: "ID",
+                                classes: "hidden-md-down hidden-sm-down"
+                            },
+                            {
+                                columnKey: "ContactName",
+                                classes: "hidden-sm-down"
+                            },
+                            {
+                                columnKey: "ContactTitle",
+                                classes: "hidden-md-down hidden-sm-down"
+                            },
+                            {
+                                columnKey: "Address",
+                                classes: "hidden-sm-down"
+                            },
+                            {
+                                columnKey: "City",
+                                classes: "hidden-sm-down"
+                            },
+                            {
+                                columnKey: "Country",
+                                classes: "hidden-md-down hidden-sm-down"
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

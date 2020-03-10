@@ -1,0 +1,32 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.lob.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="container" class="clearfix">
+        <div id="igDatePickersContainer">
+            <form id="form" name="FormSubmit" action="javascript:console.log('Submit');">
+                <div class="group-fields">
+                    <label for="datePicker1">Date object</label>
+                    <input id="datePicker1" type="date" name="datePicker_date">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker2">Edit mode text</label>
+                    <input id="datePicker2" type="date" name="datePicker_editModeText">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker3">Display mode text</label>
+                    <input id="datePicker3" type="date" name="displayModeText">
+                </div>
+                <input type="submit" id="submitBtn" value="Submit">
+            </form>
+        </div>
+
+        <div id="ValuesContainer">
+            <h4>DatePickers submitted values:</h4>
+            <div id="results">
+            </div>
+        </div>
+    </div>

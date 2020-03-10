@@ -1,0 +1,31 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.dv.js"></script>
+<script id="tooltipChina" type="text/x-jquery-tmpl">
+        <span id="tooltipValue" class="tooltip">China: ${item.China}</span>
+    </script>
+<script id="tooltipUS" type="text/x-jquery-tmpl">
+        <span id="Span1" class="tooltip">US: ${item.UnitedStates}</span>
+    </script>
+<script id="tooltipRussia" type="text/x-jquery-tmpl">
+        <span id="Span2" class="tooltip">Russia: ${item.Russia}</span>
+    </script>
+<script id="tooltipTotal" type="text/x-jquery-tmpl">
+        <span id="Span3" class="tooltip">Total Energy: ${item.Total}</span>
+    </script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/world-energy-production.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="chartComponent">
+        <div id="chart"></div>
+    </div>
+<div id="legends">
+        <div id="legend"></div>
+        <div id="legend2"></div>
+    </div>
+<div class="EIAdata-attribution">
+    Energy data from:<br>
+    <a href="http://www.eia.gov/" target="_blank">U.S. Energy Information Administration (2012)</a>
+    </div>

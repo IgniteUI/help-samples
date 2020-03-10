@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head><meta charset="utf-8">
+    <title>チャート ナビゲーション</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/infragistics.dv.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2020.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <script type="text/javascript" src="../../../../data-files/uk-france-population.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var data = [
+                { "CountryName": "China", "Pop1995": 1216, "Pop2005": 1297, "Pop2015": 1361, "Pop2025": 1394 },
+                { "CountryName": "India", "Pop1995": 920, "Pop2005": 1090, "Pop2015": 1251, "Pop2025": 1396 },
+                { "CountryName": "United States", "Pop1995": 266, "Pop2005": 295, "Pop2015": 322, "Pop2025": 351 },
+                { "CountryName": "Indonesia", "Pop1995": 197, "Pop2005": 229, "Pop2015": 256, "Pop2025": 277 },
+                { "CountryName": "Brazil", "Pop1995": 161, "Pop2005": 186, "Pop2015": 204, "Pop2025": 218 }
+            ];
+
+            $("#chart").igDataChart({
+                width: "600px",
+                height: "400px",
+                legend: { element: "lineLegend" },
+                title: "国別人口",
+                subtitle: "1995 年と 2005 年の人口の比較",
+                overviewPlusDetailPaneVisibility: "visible",
+                horizontalZoomable: true,
+                verticalZoomable: true,
+                dataSource: data,
+                axes: [
+                    {
+                        name: "NameAxis",
+                        type: "categoryX",
+                        label: "CountryName"
+                    },
+                    {
+                        name: "PopulationAxis",
+                        type: "numericY", 
+                        minimumValue: 0,
+                        title: "人口 (百万人単位)",
+                    }
+                ],
+                series: [
+                   {
+                       name: "Pop1995",
+                       type: "column",
+                       title: "1995",
+                       xAxis: "NameAxis",
+                       yAxis: "PopulationAxis",
+                       valueMemberPath: "Pop1995",
+                       isTransitionInEnabled: true,
+                       isHighlightingEnabled: true,
+                       thickness: 1
+                   },
+                   {
+                        name: "Pop2005",
+                        type: "column",
+                        title: "2005",
+                        xAxis: "NameAxis",
+                        yAxis: "PopulationAxis",
+                        valueMemberPath: "Pop2005",
+                        isTransitionInEnabled: true,
+                        isHighlightingEnabled: true,
+                        thickness: 1
+                    },
+                    {
+                        name: "Pop2015",
+                        type: "column",
+                        title: "2015",
+                        xAxis: "NameAxis",
+                        yAxis: "PopulationAxis",
+                        valueMemberPath: "Pop2015",
+                        isTransitionInEnabled: true,
+                        isHighlightingEnabled: true,
+                        thickness: 1
+                    },
+                    {
+                        name: "Pop2025",
+                        type: "column",
+                        title: "2025",
+                        xAxis: "NameAxis",
+                        yAxis: "PopulationAxis",
+                        valueMemberPath: "Pop2025",
+                        isTransitionInEnabled: true,
+                        isHighlightingEnabled: true,
+                        thickness: 1
+                    }
+                    ]
+            });
+
+            $("#selectDefault").change(function (e) {
+                $("#chart").igDataChart("option", "defaultInteraction", $(this).val());
+            });
+
+            $("#selectPanModifier").change(function (e) {
+                $("#chart").igDataChart("option", "panModifier", $(this).val());
+            });
+
+            $("#selectDragModifier").change(function (e) {
+                $("#chart").igDataChart("option", "dragModifier", $(this).val());
+            });
+
+            $("#enableVerticalZooming").click(function (e) {
+                var verticalZoomingChecked = $(this).is(":checked");
+                $("#chart").igDataChart("option", "verticalZoomable", verticalZoomingChecked);
+                $("#verticalZoomSlider").slider("option", "disabled", !verticalZoomingChecked);
+            });
+
+            $("#enableHorizontalZooming").click(function (e) {
+                var horizontalZoomingChecked = $(this).is(":checked");
+                $("#chart").igDataChart("option", "horizontalZoomable", horizontalZoomingChecked);
+                $("#horizontalZoomSlider").slider("option", "disabled", !horizontalZoomingChecked);
+            });
+
+            $("#enablePane").click(function (e) {
+                var visibility = ($(this).is(":checked")) ? "visible" : "collapsed";
+                $("#chart").igDataChart("option", "overviewPlusDetailPaneVisibility", visibility);
+                $("#chart").igDataChart("styleUpdated");
+            });
+
+            $("#verticalZoomSlider").slider({
+                min: 0.0001,
+                max: 1,
+                value: 1,
+                step: 0.0001,
+                slide: function (e, ui) {
+                    if ($('#enableVerticalZooming').is(":checked"))
+                        $("#chart").igDataChart("option", "windowScaleVertical", ui.value);
+                }
+            });
+
+            $("#horizontalZoomSlider").slider({
+                min: 0.0001,
+                max: 1,
+                value: 1,
+                step: 0.0001,
+                slide: function (e, ui) {
+                    if ($('#enableHorizontalZooming').is(":checked"))
+                        $("#chart").igDataChart("option", "windowScaleHorizontal", ui.value);
+                }
+            });
+            
+        });
+    </script>
+
+    <style type="text/css">
+       
+        .labelCol
+        {
+            width: 110px;
+        }
+        
+       .slider
+        {
+            width: 80px;
+            height: 10px;
+            margin: 10px;
+        }
+        .selectionOptions
+        {
+            margin-bottom: 10px;   
+        }
+
+        td { vertical-align: top; }
+        .chartElement {
+            padding-bottom: 20px;
+        }
+    </style>
+    
+
+    <div class="selectionOptions">
+       <!-- シリーズ タイプ:&nbsp
+        <select id="seriesType">
+            <option value="area">エリア チャート</option>
+            <option value="column">柱状チャート</option>
+            <option value="line" selected="selected">折れ線チャート</option>
+            <option value="splineArea">スプライン エリア チャート</option>
+            <option value="spline">スプライン チャート</option>
+            <option value="stepArea">ステップ エリア チャート</option>
+            <option value="stepLine">ステップ折れ線チャート</option>
+            <option value="waterfall">ウォーターフォール</option>
+            <option value="point">ポイント</option>
+        </select>-->
+         <table class="optionsTable">
+            <colgroup>
+                <col class="labelCol">
+                <col>
+                <col class="valueCol">
+                <col class="labelCol">
+                <col>
+                <col class="valueCol">
+                 <col>
+                <col class="valueCol">
+                   <col>
+                <col class="valueCol">
+         </colgroup>
+
+            <tr>
+                <td colspan="2">
+                    <b>操作</b>
+                </td>
+                <td></td>
+                <td colspan="2">
+                    <b>垂直ズーム</b>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    デフォルト
+                </td>
+                <td>
+                    <select id="selectDefault">
+                        <option value="dragZoom" selected="selected">DragZoom</option>
+                        <option value="dragPan">DragPan</option>
+                        <option value="none">None</option>
+                    </select>
+                </td>
+                <td></td>
+
+                <td>
+                    ズームを有効にする
+                </td>
+                <td>
+                    <input type="checkbox" id="enableVerticalZooming" checked="checked">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    パニング修飾子
+                </td>
+                <td>
+                    <select id="selectPanModifier">
+                        <option value="control">Control</option>
+                        <option value="alt">Alt</option>
+                        <option value="shift" selected="selected">Shift</option>
+                        <option value="none">None</option>
+                    </select>
+                </td>
+                <td></td>
+
+                <td>
+                    ズーム
+                </td>
+                <td>
+                    <div id="verticalZoomSlider" class="slider"></div>
+                </td>
+                <td>
+                    <span id="verticalZoomLevel">1.0000</span>
+                </td>
+            </tr>
+
+             <tr>
+                <td>
+                    ドラッグ修飾子
+                </td>
+                <td>
+                    <select id="selectDragModifier">
+                        <option value="control">Control</option>
+                        <option value="alt">Alt</option>
+                        <option value="shift">Shift</option>
+                        <option value="none" selected="selected">None</option>
+                    </select>
+                </td>
+                  <td></td>
+              <td colspan="2">
+                    <b>水平ズーム</b>
+                </td>
+          </tr>
+
+            <tr>
+                <td colspan="2">
+                    <b>概要と詳細ペイン</b>
+                </td>
+               <td></td>
+                <td>
+                    ズームを有効にする
+                </td>
+                <td>
+                    <input type="checkbox" id="enableHorizontalZooming" checked="checked">
+                </td>
+              </tr>
+
+            <tr>
+                <td>
+                    ペインを有効にする
+                </td>
+                <td>
+                    <input type="checkbox" id="enablePane" checked="checked">
+                </td>
+              <td></td>
+                <td>
+                    ズーム
+                </td>
+                <td>
+                    <div id="horizontalZoomSlider" class="slider"></div>
+                </td>
+                <td>
+                    <span id="horizontalZoomLevel">1.0000</span>
+                </td>
+
+            </tr>
+             
+        </table>
+    </div>
+    
+    <table>
+        <tr>
+            <td id="chart" class="chartElement"></td>      
+            <td id="lineLegend" style="float: left"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

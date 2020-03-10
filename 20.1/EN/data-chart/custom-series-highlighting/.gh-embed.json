@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/20.1/HTMLSamples/data-chart/custom-series-highlighting.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "20.1/EN/data-chart/custom-series-highlighting/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "20.1/EN/data-chart/custom-series-highlighting/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "20.1/EN/data-chart/custom-series-highlighting/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/20.1/EN/data-chart/custom-series-highlighting/index.html"
+        }
+    ]
+}
