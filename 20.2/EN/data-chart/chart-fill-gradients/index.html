@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Chart Fill Gradients</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.dv.js"></script>
+
+</head>
+<body>
+    <style>
+        /* Use the following css classes to apply gradients through CSS for the series fill */
+        /* As many palettes can be defined as needed */
+        /*.ui-chart-fill-palette-1 {
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        .ui-chart-fill-palette-2 {
+            background-image: linear-gradient(to right, violet, indigo,blue, green, yellow, orange, red);
+        }*/
+        /*Use the following css classes to apply gradients through CSS for the series fill*/
+        /*.ui-chart-outline-palette-1 {
+            background-image: linear-gradient(90deg, green 10%, blue 80%);
+        }
+
+        .ui-chart-outline-palette-2 {
+            background-image: linear-gradient(180deg, red 30%, blue 50%);
+        }*/
+    </style>
+    <script type="text/javascript" src="../../../../data-files/wind.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#chart").igDataChart({
+                width: "100%",
+                height: "400px",
+                dataSource: data,
+                title: "Los Angeles wind data over twelve hours",
+                horizontalZoomable: true,
+                verticalZoomable: true,
+                windowResponse: "immediate",
+                axes: [{
+                    name: "xAxis",
+                    type: "categoryX",
+                    label: "Time"
+                },
+                    {
+                        name: "yAxis",
+                        type: "numericY",
+                        maximumValue: 10,
+                        title: "Wind Speed (mph)",
+                    }],
+                series: [{
+                    brush: {
+                        type: "linearGradient",
+                        colorStops: [{
+                            color: "#2788B1",
+                            offset: 0
+                        },
+                        {
+                            color: "#A4BA29",
+                            offset: 0.3
+                        },
+                        {
+                            color: "#FDBD48",
+                            offset: .6
+                        },
+                        {
+                            color: "#D3404B",
+                            offset: .9
+                        }],
+                        // optional:
+                        startPoint: { x: 0, y: 1 },
+                        endPoint: { x: 0, y: 0 }
+                        // if start/endPoint are not specified, the default direction is top-bottom
+                    },
+                    outline: {
+                        type: "linearGradient",
+                        colorStops: [{
+                            color: "#2788B1",
+                            offset: 0
+                        },
+                        {
+                            color: "#A4BA29",
+                            offset: 0.3
+                        },
+                        {
+                            color: "#FDBD48",
+                            offset: .6
+                        },
+                        {
+                            color: "#D3404B",
+                            offset: .9
+                        }],
+                        startPoint: { x: 0, y: 1 },
+                        endPoint: { x: 0, y: 0 }
+                    },
+                    areaFillOpacity: .9,
+                    name: "series1",
+                    type: "splineArea",
+                    xAxis: "xAxis",
+                    yAxis: "yAxis",
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    valueMemberPath: "WindSpeed"
+                }],
+             });
+        });
+    </script>
+
+
+    <div id="chart"></div>
+
+    <div class="NOAAdata-attribution">
+        Weather data from:<br>
+        <a href="http://www.noaa.gov/" target="_blank">NOAA</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head><meta charset="utf-8">
+    <title>移行アニメーション (財務)</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.dv.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <script type="text/javascript" src="../../../../data-files-ja/financial-indicators.js"></script>
+    <script type="text/javascript" src="../../../../data-files/financial-data.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+           $("#chart").igDataChart({
+                width: "100%",
+                height: "400px",
+                dataSource: data,
+                title: "財務チャート",
+                axes: [{
+                    type: "categoryX",
+                    label: "Date",
+                    name: "xAxis",
+                    title: "日付"
+                }, {
+                    type: "numericY",
+                    name: "yAxis",
+                    title: "価格"
+                }],
+                series: [{
+                    type: "financial",
+                    displayType: "candlestick",
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    closeMemberPath: "Close",
+                    highMemberPath: "High",
+                    lowMemberPath: "Low",
+                    openMemberPath: "Open",
+                    volumeMemberPath: "Volume",
+                    xAxis: "xAxis",
+                    yAxis: "yAxis",
+                    name: "indicatorSeries",
+                    title: "Financial Indicator Data",
+                    transitionInDuration: 1500,
+                    transitionInMode: "accordionFromValueAxisMaximum"
+                }]
+            });
+        
+
+        function redrawChart() {
+            transMode = $("#transitionInTypeSlider").val();
+            transType = $("#transitionInSpeedTypeSlider").val();
+            transEasingFunc = $("#transitionEasingFunctionSlider").val();
+            seriesType = $("#seriesType").val();
+            var thickness = 3;
+            if (seriesType == "candlestick" ||
+                   seriesType == "priceChannelOverlay" ||
+                   seriesType == "bollingerBandsOverlay") {
+                thickness = 1;
+            }
+            if (seriesType == "ohlc") {
+                thickness = 2;
+            }
+            $("#chart").igDataChart("option", "series", [{name: "indicatorSeries",remove: true}]);
+
+            if (seriesType == "ohlc" || seriesType == "candlestick") {
+                $("#chart").igDataChart("option", "series", [{
+                    type: "financial",
+                    isTransitionInEnabled: true,
+                    closeMemberPath: "Close",
+                    highMemberPath: "High",
+                    lowMemberPath: "Low",
+                    openMemberPath: "Open",
+                    volumeMemberPath: "Volume",
+                    xAxis: "xAxis",
+                    yAxis: "yAxis",
+                    name: "indicatorSeries",
+                    title: "Financial Indicator Data",
+                    thickness: thickness,
+                    transitionInDuration: 1500,
+                    transitionInMode: transMode,
+                    transitionInType: transType,
+                    transitionInEasingFunction: transEasingFunc,
+                    displayType: seriesType
+                }]);
+            } else {
+                $("#chart").igDataChart("option", "series", [{
+                    type: seriesType,
+                    isTransitionInEnabled: true,
+                    closeMemberPath: "Close",
+                    highMemberPath: "High",
+                    lowMemberPath: "Low",
+                    openMemberPath: "Open",
+                    volumeMemberPath: "Volume",
+                    xAxis: "xAxis",
+                    yAxis: "yAxis",
+                    name: "indicatorSeries",
+                    title: "Financial Indicator Data",
+                    transitionInDuration: 1500,
+                    transitionInMode: transMode,
+                    transitionInType: transType,
+                    transitionInEasingFunction: transEasingFunc
+                }]);
+            }
+        };
+        
+        $("#seriesType").change(function (e) {
+            redrawChart();
+        });
+        
+        $("#transitionInTypeSlider").change(function (e) {
+            redrawChart();
+        });
+
+        $("#transitionInSpeedTypeSlider").change(function (e) {
+            redrawChart();
+        });
+
+        $("#transitionEasingFunctionSlider").change(function (e) {
+            redrawChart();
+        });
+        });
+    </script>
+
+    <style type="text/css">
+       
+        .selectionOptions
+        {
+            width: 450px;
+            margin-top: 10px;
+        }
+
+        .selectionOptions > label 
+        {
+            display: block;
+        }
+
+        .optionContainer {
+            min-width: 120px;
+            max-width: 250px;
+            margin: 2px;
+            padding: 2px;
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+         td { vertical-align: top; }
+        .chartElement {
+            padding-bottom: 20px;
+        }
+
+        .sliderBounds {
+            width: 95px;
+            margin: 6px 3px 6px 6px;
+            display: inline-block;
+        }
+        
+        .selectBounds {
+            min-width: 120px;
+            max-width: 132px;
+        }
+
+    </style>
+  <div class="selectionOptions">
+        シリーズ タイプ:
+        <select id="seriesType" class="selectBounds">
+            <option value="candlestick" selected="selected">ローソク足チャート</option>
+            <option value="ohlc">OHLC</option>
+            <option value="absoluteVolumeOscillatorIndicator">絶対出来高オシレーター</option>
+            <option value="averageTrueRangeIndicator">ATR (アベレージ トゥルー レンジ)</option>
+            <option value="accumulationDistributionIndicator">蓄積/分配</option>
+            <option value="averageDirectionalIndexIndicator">平均方向性指数</option>
+            <option value="bollingerBandsOverlay">ボリンジャー バンド オーバーレイ</option>
+            <option value="bollingerBandWidthIndicator">ボリンジャー バンド幅</option>
+            <option value="chaikinOscillatorIndicator">チャイキン オシレーター</option>
+            <option value="chaikinVolatilityIndicator">チャイキン ボラティリティ</option>
+            <option value="commodityChannelIndexIndicator">商品チャネル指数 (CCI)</option>
+            <option value="detrendedPriceOscillatorIndicator">トレンド除去価格オシレーター</option>
+            <option value="easeOfMovementIndicator">イーズ オブ ムーブメント</option>
+            <option value="fastStochasticOscillatorIndicator">ファスト スト キャスティクス オシレーター</option>
+            <option value="forceIndexIndicator">フォース インデックス</option>
+            <option value="fullStochasticOscillatorIndicator">フル ストキャスティクス オシレーター</option>
+            <option value="marketFacilitationIndexIndicator">マーケット ファシリテーション インデックス</option>
+            <option value="massIndexIndicator">マス インデックス</option>
+            <option value="medianPriceIndicator">メディアンプライス</option>
+            <option value="moneyFlowIndexIndicator">マネー フロー インデックス</option>
+            <option value="movingAverageConvergenceDivergenceIndicator">移動平均収束拡散</option>
+            <option value="negativeVolumeIndexIndicator">負出来高指数 (NVI)</option>
+            <option value="onBalanceVolumeIndicator">OBV (オン バランス ボリューム)</option>
+            <option value="percentagePriceOscillatorIndicator">パーセンテージ価格オシレーター</option>
+            <option value="percentageVolumeOscillatorIndicator">パーセンテージ出来高オシレーター</option>
+            <option value="positiveVolumeIndexIndicator">PVI (ポジティブ ボリューム インデックス)</option>
+            <option value="priceChannelOverlay">プライス チャネル オーバーレイ</option>
+            <option value="priceVolumeTrendIndicator">価格出来高トレンド</option>
+            <option value="rateOfChangeAndMomentumIndicator">変化率およびモメンタム</option>
+            <option value="relativeStrengthIndexIndicator">相対力指数</option>
+            <option value="slowStochasticOscillatorIndicator">スロー ストキャスティクス オシレーター</option>
+            <option value="standardDeviationIndicator">標準偏差</option>
+            <option value="stochRSIIndicator">ストキャスティクス RSI</option>
+            <option value="trixIndicator">TRIX</option>
+            <option value="typicalPriceIndicator">代表価格</option>
+            <option value="ultimateOscillatorIndicator">アルティメット オシレーター</option>
+            <option value="weightedCloseIndicator">重み付きクローズ</option>
+            <option value="williamsPercentRIndicator">ウィリアム パーセント レンジ</option>
+         </select>
+    </div>
+    <div id="chart" class="chartElement"></div>
+    <div>
+        <fieldset id="chartOptions">
+            <legend>チャート オプション</legend>
+            	
+            <div class="optionContainer">
+                トランジション タイプ
+                <br>
+                <select id="transitionInTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="fromZero">fromZero</option>
+                    <option value="accordionFromLeft">accordionFromLeft</option>
+                    <option value="accordionFromRight">accordionFromRight</option>
+                    <option value="accordionFromTop">accordionFromTop</option>
+                    <option value="accordionFromBottom">accordionFromBottom</option>
+                    <option value="expand">expand</option>
+                    <option value="sweepFromLeft">sweepFromLeft</option>
+                    <option value="sweepFromRight">sweepFromRight</option>
+                    <option value="sweepFromTop">sweepFromTop</option>
+                    <option value="sweepFromBottom">sweepFromBottom</option>
+                    <option value="sweepFromCenter">sweepFromCenter</option>
+                    <option value="accordionFromCategoryAxisMinimum">accordionFromCategoryAxisMinimum</option>
+                    <option value="accordionFromCategoryAxisMaximum">accordionFromCategoryAxisMaximum</option>
+                    <option value="accordionFromValueAxisMinimum">accordionFromValueAxisMinimum</option>
+                    <option value="accordionFromValueAxisMaximum">accordionFromValueAxisMaximum</option>
+                    <option value="sweepFromCategoryAxisMinimum">sweepFromCategoryAxisMinimum</option>
+                    <option value="sweepFromCategoryAxisMaximum">sweepFromCategoryAxisMaximum</option>
+                    <option value="sweepFromValueAxisMinimum">sweepFromValueAxisMinimum</option>
+                    <option value="sweepFromValueAxisMaximum">sweepFromValueAxisMaximum</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                スピード タイプ
+                <br>
+                <select id="transitionInSpeedTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="normal">normal</option>
+                    <option value="valueScaled">valueScaled</option>
+                    <option value="indexScaled">indexScaled</option>
+                    <option value="random">random</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                イージング関数
+                <br>
+                <select id="transitionEasingFunctionSlider">
+                    <option value="linear" selected="selected">linear</option>
+                    <option value="cubic">cubic</option>
+                </select>
+            </div>
+            
+           
+        </fieldset>
+    </div>
+
+    <div class="selectionOptions" style="display: inline-block">
+        <label>株価のデータ ソース:
+            <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+        </label>
+    </div>
+
+</body>
+</html>

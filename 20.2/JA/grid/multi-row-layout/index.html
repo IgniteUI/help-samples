@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+	<title>複数行レイアウト</title>
+
+	<!-- Ignite UI Required Combined CSS Files -->
+	<link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+	<link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+	<!-- Ignite UI Required Combined JavaScript Files -->
+	<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.core.js"></script>
+	<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.lob.js"></script>
+	<!--Sample JSON Data-->
+	<script src="../../../../data-files/company-data.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+	<table id="grid-mrl"></table>
+
+	<script>
+		$(function () {
+			$("#grid-mrl").igGrid({
+				dataSource: data,
+				autoCommit: true,
+				width: "100%",
+				autoGenerateColumns: false,
+				primaryKey: "company",
+				columns: [
+					{ headerText: "会社", key: "company", dataType: "string", rowIndex: 0, columnIndex: 0, colSpan: 2 },
+					{ headerText: "生涯セールス", key: "sales_lifetimeSales", dataType: "number", rowIndex: 0, columnIndex: 2, colSpan: 2, rowSpan: 2 },
+					{ headerText: "市場の潜在能力", key: "sales_marketPotential", dataType: "number", rowIndex: 0, columnIndex: 4, rowSpan: 3, width: "10%" },
+					{ headerText: "現金資産", key: "assets_cash", dataType: "number", rowIndex: 0, columnIndex: 5, width: "10%" },
+					{ headerText: "売掛金勘定", key: "assets_accRec", dataType: "number", rowIndex: 0, columnIndex: 6, width: "20%" },
+					{ headerText: "国", key: "country", dataType: "string", rowIndex: 1, columnIndex: 0, width: "10%" },
+					{ headerText: "市", key: "city", dataType: "string", rowIndex: 1, columnIndex: 1, width: "10%" },
+					{ headerText: "資産台帳", key: "assets_books", dataType: "number", rowIndex: 1, columnIndex: 5, colSpan: 2, rowSpan: 2 },
+					{ headerText: "住所", key: "address", dataType: "string", rowIndex: 2, columnIndex: 0, colSpan: 2 },
+					{ headerText: "四半期", key: "sales_quarterlySales", dataType: "number", rowIndex: 2, columnIndex: 2, width: "10%" },
+					{ headerText: "年間", key: "sales_yearlySales", dataType: "number", rowIndex: 2, columnIndex: 3, width: "10%" }
+				],
+				autofitLastColumn: false,
+				features: [
+					{ name: "Paging", pageSize: 5 },
+					{
+						name: "Updating",
+						editMode: "dialog"
+					},
+					{
+						name: "Filtering",
+						mode: "advanced"
+					}, {
+						name: "Sorting"
+					}
+				]
+			});
+		});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/20.2/HTMLSamples/grid/responsive-single-column-template.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "20.2/JA/grid/responsive-single-column-template/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "20.2/JA/grid/responsive-single-column-template/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "20.2/JA/grid/responsive-single-column-template/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/20.2/JA/grid/responsive-single-column-template/index.html"
+        }
+    ]
+}

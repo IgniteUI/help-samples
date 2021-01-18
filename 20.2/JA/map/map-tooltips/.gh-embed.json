@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/20.2/HTMLSamples/map/map-tooltips.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "20.2/JA/map/map-tooltips/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "20.2/JA/map/map-tooltips/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "20.2/JA/map/map-tooltips/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/20.2/JA/map/map-tooltips/index.html"
+        }
+    ]
+}

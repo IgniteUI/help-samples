@@ -1,0 +1,138 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.lob.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/extensions/infragistics.ui.datachart.knockout-extensions.js"></script>
+<script type="text/javascript" src="https://cdn-na.infragistics.com/igniteui/2020.2/latest/js/extensions/infragistics.ui.combo.knockout-extensions.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2020.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="main-container">
+        <div class="combo-container">
+            <label for="combo1">現在の項目を選択</label>
+            <div class="clear"></div>
+            <div id="combo1" data-bind="igCombo: {
+                dataSource: data,
+                selectedItems: [{ index: 3 }],
+                valueKey: 'index',
+                textKey: 'label',
+                width: '150',
+                mode: 'dropdown',
+                enableClearButton: false
+            }"></div>
+            <div class="legend-container">
+                <div class="title">シミュレーション オプション:</div>
+                <button class="btn-add-end" title="項目を igDataChart の終了に追加する"></button>
+                <span>新しい日を追加する</span><div class="clear"></div>
+                <button class="btn-rmv-curr" title="最後の項目を igDataChart から削除する"></button>
+                <span>選択した日を削除する</span><div class="clear"></div>
+                <button class="btn-prev" title="現在の項目の選択を左に移動する"></button>
+                <span>選択した日を左へ移動</span><div class="clear"></div>
+                <button class="btn-next" title="現在の項目の選択を右に移動する"></button>
+                <span>選択した日を右へ移動</span><div class="clear"></div>
+                <button class="btn-play" title="現在の項目を秒によって右に移動する"></button>
+                <span>連続移動シミュレーションを再生する</span><div class="clear"></div>
+                <button class="btn-pause" title="シミュレーションを一時停止する" disabled="disabled"></button>
+                <span>シミュレーションを一時停止する</span><div class="clear"></div>
+            </div>
+        </div>
+        <div class="sample-chart-container">
+            <div id="lineChart" data-bind="igDataChart: {
+                dataSource: data,
+                width: chartWidth,
+                height: chartHeight,
+                title: '経費 vs. 売上 (日単位)',
+                legend: { element: 'legendLineChart' },
+                axes: [{
+                    name: 'xAxis',
+                    type: 'categoryX',
+                    label: 'label',
+                    interval: 1,
+                }, {
+                    name: 'yAxis',
+                    type: 'numericY',
+                    minimumValue: minChartValue,
+                    maximumValue: maxChartValue,
+
+                }],
+                series: [{
+                    name: 'line1',
+                    type: 'line',
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    title: '売上 日ごと (千単位)',
+                    thickness: chartThickness,
+                    markerType: 'circle',
+                    xAxis: 'xAxis',
+                    yAxis: 'yAxis',
+                    valueMemberPath: 'revenue',
+                    transitionDuration: transitionDuration
+                },
+                {
+                    name: 'line2',
+                    type: 'line',
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    title: '経費 日ごと (千単位)',
+                    thickness: chartThickness,
+                    markerType: 'circle',
+                    xAxis: 'xAxis',
+                    yAxis: 'yAxis',
+                    valueMemberPath: 'expenses',
+                    transitionDuration: transitionDuration,
+                    brush: '#d3404b',
+                    markerBrush: '#d3404b'
+                }]
+            }"></div>
+            <div id="legendLineChart"></div>
+            <div id="barColumnChart" data-bind="igDataChart: {
+                dataSource: data,
+                width: chartWidth,
+                height: chartHeight,
+                title: '経費 vs. 売上 (日単位)',
+                legend: { element: 'legendBarColumnChart' },
+                axes: [{
+                    name: 'xAxis',
+                    type: 'categoryX',
+                    label: 'label',
+                    interval: 1,
+                }, {
+                    name: 'yAxis',
+                    type: 'numericY',
+                    minimumValue: minChartValue,
+                    maximumValue: maxChartValue
+                }],
+                series: [{
+                    name: 'column1',
+                    type: 'column',
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    title: '売上 日ごと (千単位)',
+                    thickness: chartThickness,
+                    xAxis: 'xAxis',
+                    yAxis: 'yAxis',
+                    valueMemberPath: 'revenue',
+                    transitionDuration: transitionDuration
+                },
+                {
+                    name: 'column2',
+                    type: 'column',
+                    isHighlightingEnabled: true,
+                    isTransitionInEnabled: true,
+                    title: '経費 日ごと (千単位)',
+                    thickness: chartThickness,
+                    xAxis: 'xAxis',
+                    yAxis: 'yAxis',
+                    valueMemberPath: 'expenses',
+                    transitionDuration: transitionDuration,
+                    brush: '#d3404b'
+                }]
+            }"></div>
+            <div id="legendBarColumnChart"></div>
+        </div>
+    </div>
