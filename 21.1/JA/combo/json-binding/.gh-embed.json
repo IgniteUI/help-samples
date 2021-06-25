@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.1/HTMLSamples/combo/json-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.1/JA/combo/json-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.1/JA/combo/json-binding/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/21.1/JA/combo/json-binding/index.html"
+        }
+    ]
+}

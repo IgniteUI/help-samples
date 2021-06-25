@@ -1,0 +1,37 @@
+#container {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#igDatePickersContainer {
+    float: left;
+}
+
+.group-fields {
+    margin-bottom: 10px;
+}
+
+.group-fields label {
+    display: block;
+    line-height: 18px;
+}
+
+#ValuesContainer {
+    float: right;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:570px) {
+    #igDatePickersContainer,#ValuesContainer {
+        float: none;
+    }
+    #ValuesContainer {
+        margin-top:20px;
+    }
+}

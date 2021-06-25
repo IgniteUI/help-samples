@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.1/HTMLSamples/data-chart/category-tooltip-layer.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.1/EN/data-chart/category-tooltip-layer/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.1/EN/data-chart/category-tooltip-layer/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "21.1/EN/data-chart/category-tooltip-layer/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/21.1/EN/data-chart/category-tooltip-layer/index.html"
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>セル結合の高度なカスタマイズ</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.1/latest/css/structure/infragistics.css" rel="stylesheet">   
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2021.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.1/latest/js/infragistics.lob.js"></script>
+	<style>
+		td {
+			border-left: 1px solid #bcbcbc !important;
+		}
+	</style>
+    
+<script src="https://cdn-na.infragistics.com/igniteui/2021.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+        
+    <!-- Target element for the igGrid -->
+    <table id="grid">
+    </table>    
+
+    <!--Sample JSON Data-->
+    <script src="../../../../data-files-ja/projects-data.js"></script>
+
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                width: "800px",
+                dataSource: projects,
+                dataSourceType: "json",
+                primaryKey: "ActionID",
+                autoGenerateColumns: false,
+                columns: [
+                    { headerText: "操作 ID ", key: "ActionID", dataType: "number", hidden: true},
+                    { headerText: "プロジェクト名", key: "ProjectName", dataType: "object", width: "30%"},
+                    { headerText: "タイプ", key: "Type", dataType: "string", width: "15%"},
+                    { headerText: "優先", key: "Priority", dataType: "string", width: "15%"},
+                    { headerText: "状態", key: "Status", dataType: "string", width: "15%"},
+                    { headerText: "操作", key: "ActionName", dataType: "string", width: "40%"},
+                    { headerText: "作成日付", key: "Created", dataType: "date", width: "15%"},
+                ],
+				autoCommit: true,
+				enableHoverStyles : false,
+                features: [
+                    {
+                        name: "CellMerging",
+                        mergeOn: "always",
+						mergeType: "physical",
+						mergeStrategy: function (prevRec, curRec, columnKey) {
+							if ($.type(prevRec[ columnKey ]) === "string" &&
+								$.type(curRec[ columnKey ]) === "string" &&
+								 prevRec["ProjectName"] === curRec["ProjectName"]) {
+								return prevRec[ columnKey ].toLowerCase() === curRec[ columnKey ].toLowerCase();
+							} else if ( prevRec["ProjectName"] === curRec["ProjectName"]) {
+								return prevRec[ columnKey ] === curRec[ columnKey ];
+							}
+							
+							return false;
+						}
+                    },
+                    {
+                        name: "Updating",
+						editMode: "cell",
+						enableAddRow: false
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

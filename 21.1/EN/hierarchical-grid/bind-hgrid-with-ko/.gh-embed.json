@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.1/HTMLSamples/hierarchical-grid/bind-hgrid-with-ko.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.1/EN/hierarchical-grid/bind-hgrid-with-ko/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.1/EN/hierarchical-grid/bind-hgrid-with-ko/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "21.1/EN/hierarchical-grid/bind-hgrid-with-ko/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/21.1/EN/hierarchical-grid/bind-hgrid-with-ko/index.html"
+        }
+    ]
+}

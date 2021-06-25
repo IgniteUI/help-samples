@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.1/HTMLSamples/combo/bind-combo-with-ko.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.1/JA/combo/bind-combo-with-ko/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.1/JA/combo/bind-combo-with-ko/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "21.1/JA/combo/bind-combo-with-ko/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/21.1/JA/combo/bind-combo-with-ko/index.html"
+        }
+    ]
+}
