@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.2/HTMLSamples/data-chart/numeric-xaxis-intervals.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.2/EN/data-chart/numeric-xaxis-intervals/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.2/EN/data-chart/numeric-xaxis-intervals/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "21.2/EN/data-chart/numeric-xaxis-intervals/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/21.2/EN/data-chart/numeric-xaxis-intervals/index.html"
+        }
+    ]
+}

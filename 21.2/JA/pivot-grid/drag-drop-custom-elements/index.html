@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>カスタム要素のドラッグ アンド ドロップ</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.lob.js"></script>
+
+    <style type="text/css">
+        .custom-draggables-container {
+            width: 100%;
+            height: 30px;
+            float: none;
+            margin: 2px;
+        }
+
+        .custom-draggable {
+            float: left;
+            padding: 1px 20px;
+            cursor: pointer;
+            z-index: 5;
+            margin: 0 2px;
+        }
+
+        #dataSelector, #pivotGrid {
+            float: left;
+        }
+    </style>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <div class="custom-draggables-container">
+        <!-- Set the data-type and data-name attributes and the .ui-igpivot-metadataitem class
+            in order to enable items to be dropped to the pivot data selector and pivot grid. -->
+        <div class="ui-igpivot-metadataitem ui-state-default ui-corner-all custom-draggable" data-type="Hierarchy" data-name="[Seller].[Seller]"><span>階層: 販売員</span></div>
+        <div class="ui-igpivot-metadataitem ui-state-default ui-corner-all custom-draggable" data-type="Measure" data-name="[Measures].[UnitsSold]"><span>メジャー: 販売単位数</span></div>
+    </div>
+
+    <div id="dataSelector"></div>
+    <div id="pivotGrid"></div>
+
+    <script type="text/javascript" src="../../../../data-files-ja/sales.js"></script>
+    <script>
+        $.support.cors = true;
+
+        $(function () {
+            var dataSource = new $.ig.OlapFlatDataSource({
+                dataSource: sales,
+                metadata: {
+                    cube: {
+                        name: "Sales",
+                        caption: "セールス",
+                        measuresDimension: {
+                            caption: "メジャー",
+                            measures: [
+                                { caption: "販売単位数", name: "UnitsSold", aggregator: $.ig.OlapUtilities.prototype.sumAggregator('UnitsSold') },
+                                { caption: "単価", name: "UnitPrice", aggregator: $.ig.OlapUtilities.prototype.sumAggregator('UnitPrice', 2) }]
+                        },
+
+                        dimensions: [
+                            {
+                                caption: "日付", name: "Date", hierarchies: [
+                                    $.ig.OlapUtilities.prototype.getDateHierarchy(
+                                        "Date", ["year", "quarter", "month", "date"], "Dates", "日付",
+                                        ["年", "四半期", "月", "日"], "すべての期間")]
+                            },
+                            {
+                                caption: "位置", name: "Location", hierarchies: [{
+                                    caption: "位置", name: "Location", levels: [
+                                        { name: "AllLocations", levelCaption: "すべての場所", memberProvider: function (item) { return "すべての場所"; } },
+                                        { name: "Country", levelCaption: "国", memberProvider: function (item) { return item.Country; } },
+                                        { name: "City", levelCaption: "市", memberProvider: function (item) { return item.City; } }]
+                                }]
+                            },
+                            {
+                                caption: "製品", name: "Product", hierarchies: [{
+                                    caption: "製品", name: "Product", levels: [
+                                        { name: "AllProducts", levelCaption: "すべての製品", memberProvider: function (item) { return "すべての製品"; } },
+                                        { name: "ProductCategory", levelCaption: "カテゴリ", memberProvider: function (item) { return item.ProductCategory; } }]
+                                }]
+                            },
+                            {
+                                caption: "販売員", name: "Seller", hierarchies: [{
+                                    caption: "販売員", name: "Seller", levels: [
+                                        { name: "AllSellers", levelCaption: "すべての販売員", memberProvider: function (item) { return "すべての販売員"; } },
+                                        { name: "SellerName", levelCaption: "販売員", memberProvider: function (item) { return item.SellerName; } }]
+                                }]
+                            }
+                        ]
+                    }
+                },
+                rows: "[Date].[Dates]",
+                columns: "[Product].[Product]",
+                measures: "[Measures].[UnitPrice]"
+            });
+
+            $('#dataSelector').igPivotDataSelector({
+                dataSource: dataSource,
+                height: "565px"
+            });
+
+            $("#pivotGrid").igPivotGrid({
+                dataSource: dataSource,
+                height: "565px",
+                width: "660px"
+            });
+
+            $(".custom-draggable").draggable({
+                // You must set this option in a similar manner, because the pointer is used when 
+                // calculating the drop position and its top should not be blocked by the dragged element
+                cursorAt: {
+                    top: -10,
+                    left: 10
+                },
+                helper: "clone"
+            });
+        });
+    </script>
+</body>
+</html>

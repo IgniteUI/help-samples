@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.2/HTMLSamples/grid/row-edit-dialog.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.2/EN/grid/row-edit-dialog/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.2/EN/grid/row-edit-dialog/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "21.2/EN/grid/row-edit-dialog/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/21.2/EN/grid/row-edit-dialog/index.html"
+        }
+    ]
+}

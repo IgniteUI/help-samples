@@ -1,0 +1,79 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.lob.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/northwind.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<table id="grid">
+    </table>
+<div>
+        <fieldset id="editOptions" class="explorer">
+            <legend>設定の編集</legend>
+            <input type="checkbox" id="showButtons" checked="checked"><label for="showButtons">完了/キャンセル ボタンの表示</label>
+            <label for="editMode">編集モード</label>
+            <select id="editMode">
+                <option selected="selected">row</option>
+                <option>cell</option>
+                <option>dialog</option>
+                <option>none</option>
+            </select>
+            <label for="startEditTriggers">編集の開始トリガー</label>
+            <select id="startEditTriggers" class="explorer">
+                <option value="click,F2,enter" selected="selected">click,F2,enter</option>
+                <option value="dblclick,F2,enter">dblclick,F2,enter</option>
+                <option value="dblclick">dblclick</option>
+                <option value="click">click</option>
+                <option value="click,F2">click,F2</option>
+                <option value="F2,enter">F2,enter</option>
+            </select>
+        </fieldset>
+
+        <fieldset id="deletingOptions" class="explorer">
+            <legend>設定の削除</legend>
+            <input type="checkbox" id="enableDelete" checked="checked">
+            <label for="enableDelete">行の削除を有効にする</label>
+            <br>
+            <label for="rowSelect">行インデックスの選択</label>
+            <span id="rowSelect"></span>
+            <br>
+            <input type="button" id="deleteRow" value="行の削除">
+        </fieldset>
+        <div style="clear:both;"></div>
+        <fieldset id="addingOptions">
+            <legend>設定の追加</legend>
+
+            <input type="checkbox" id="enableAddRow" checked="checked"><label for="enableAddRow">行の追加を有効にする</label>
+            
+                <ul class="addNewRow">
+                    <li><label for="firstName">名前</label>
+                        <input id="firstName" type="text">
+                    </li>
+                    <li><label for="lastName">名字</label>
+                        <input id="lastName" type="text">
+                    </li>
+                    <li><label for="title">役職</label>
+                        <input id="title" type="text">
+                    </li>
+                    <li>
+                        <label for="birthDate">生年月日</label>
+                        <input id="birthDate" type="text">
+                    </li>
+                    <li><label for="postCode">郵便番号</label>
+                        <input id="postCode" type="text">
+                    </li>
+                    <li>
+                        <label for="country">国</label>
+                        <input id="country" type="text">
+                    </li>
+                    <li> <label>&nbsp;</label><input id="addRow" type="button" value="行の追加"></li>
+                </ul>
+        </fieldset>
+        <div style="clear:both;"></div>
+    </div>
+<div class="api-viewer"></div>

@@ -1,0 +1,23 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.dv.js"></script>
+<script src="https://unpkg.com/igniteui-angularjs@1.2.1/igniteui-angularjs.min.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div ng-app="sampleApp" ng-controller="dataChartController">
+        <ig-data-chart id="datachart1" data-source="dataChart">
+            <axes>
+                <axis name="NameAxis" type="categoryX" title="Country" label="CountryName"></axis>
+
+                <axis name="PopulationAxis" type="numericY" minimumvalue="0" title="Millions of People"></axis>
+            </axes>
+            <series>
+                <series name="2015Population" type="column" is-highlighting-enabled="true" is-transition-in-enabled="true" x-axis="NameAxis" y-axis="PopulationAxis" value-member-path="Pop2015">
+                </series>
+            </series>
+        </ig-data-chart>
+        <ig-zoombar id="zoombar1" target="#datachart1"></ig-zoombar>
+    </div>

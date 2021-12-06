@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Date Picker</title>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+    <style>
+        #container {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        #igDatePickersContainer {
+            float: left;
+        }
+
+        .group-fields {
+            margin-bottom: 10px;
+        }
+
+        .group-fields label {
+            display: block;
+            line-height: 18px;
+        }
+
+        #ValuesContainer {
+            float: right;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width:570px) {
+            #igDatePickersContainer,#ValuesContainer {
+                float: none;
+            }
+            #ValuesContainer {
+                margin-top:20px;
+            }
+        }
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.lob.js"></script>
+</head>
+<body>
+    <div id="container" class="clearfix">
+        <div id="igDatePickersContainer">
+            <form id="form" name="FormSubmit" action="javascript:console.log('Submit');">
+                <div class="group-fields">
+                    <label for="datePicker1">Date object</label>
+                    <input id="datePicker1" type="date" name="datePicker_date">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker2">Edit mode text</label>
+                    <input id="datePicker2" type="date" name="datePicker_editModeText">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker3">Display mode text</label>
+                    <input id="datePicker3" type="date" name="displayModeText">
+                </div>
+                <input type="submit" id="submitBtn" value="Submit">
+            </form>
+        </div>
+
+        <div id="ValuesContainer">
+            <h4>DatePickers submitted values:</h4>
+            <div id="results">
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+
+	$(function () {
+	    $("#datePicker1").igDatePicker({
+	        value: new Date(2017, 11, 8),
+	        dataMode: "date",
+	        dateDisplayFormat: "yyyy/MM/dd dddd" 
+	    });
+	
+	    $("#datePicker2").igDatePicker({
+	        value: new Date(2017, 11, 8),
+	        dataMode: "editModeText",
+	        dateDisplayFormat: "yyyy/MM/dd dddd"
+	    });
+	
+	    $("#datePicker3").igDatePicker({
+	        value: new Date(2017, 11, 8),
+	        dataMode: "displayModeText",
+	        dateDisplayFormat: "yyyy/MM/dd dddd" 
+	    });
+	
+	    var headers = $('.group-fields label');
+	    $("#form").submit(function (event) {
+	        var submittedValues = $(this).serializeArray(),
+                $results = $("#results");
+            $results.empty();
+	        for (var i = 0 ; i < submittedValues.length; i++) {
+	            $results.append("<p class='p'><span class='header'>" + headers[i].textContent + ": " + "</span>  <strong>" + submittedValues[i].value + "</strong></p>");
+	        }
+	        return false;
+	    });
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <table>
+            <tr>
+                <td colspan="2" class="tooltip">テスト系列: ${item.Value}</td>
+            </tr>
+        </table>
+    </script>
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div>
+      <!--  <div style="padding: 5px; margin: 0px 5px 5px 5px;">
+            <label>更新時間: </label><span id="timeText"></span>
+        </div>
+
+        <div style="max-width: 150px; padding: 5px; margin: 0px 5px 5px 10px;">
+            <div id="slider"></div>    
+        </div>
+         <div style="padding: 5px; margin: 0px 5px 5px 5px;">
+             <label >データ ポイント: </label> 
+             <label id="sliderLabel">50000</label>
+         </div>   -->
+
+        <table>
+            <tr>
+                <td>
+                    <label>データ ポイント: </label> 
+                </td> 
+                <td style="width: 110px; padding: 5px; margin: 10px 5px 5px 10px;">
+                    <div id="slider" style="margin: 10px 5px 5px 10px;"></div>    
+                </td> 
+                <td style="width: 45px; padding: 5px;">
+                    <label id="sliderLabel">50000</label>
+                </td> 
+                <td>
+                    <button id="btnRefresh" type="button" style="margin: 10px 5px 5px 10px;">更新</button>
+                </td> 
+                <td>
+                    <label>更新時間: </label><span id="timeText"></span>
+                </td> 
+               
+            </tr>
+        </table>
+         
+    </div>
+<div><span class="message">データの生成と割り当て</span></div>
+<div style="height: 520px; width: 90%; min-width: 210px;">
+       <div id="chart"></div>
+   </div>

@@ -1,0 +1,23 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.dv.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/nw-invoices.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<table>
+		<tr>
+			<td style="width: 330px;">
+				<!-- Target element for the igSparkline -->
+				<div id="sparkline"></div>
+			</td>
+		</tr>
+	</table>
+<div class="api-explorer">
+        <button id="btnAddData">Add New Data Item</button><span>$("#sparkline").igSparkline("addItem", item);</span><br>
+        <button id="btnRemoveData">Remove First Data Item</button><span>$("#sparkline").igSparkline("removeItem", 0);</span><br>
+    </div>
+<div class="api-viewer"></div>

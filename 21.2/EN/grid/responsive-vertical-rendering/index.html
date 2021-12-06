@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Vertical Rendering</title>
+    <style type="text/css">
+        body {
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+    </style>
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.lob.js"></script>
+</head>
+<body>
+
+    <script src="../../../../data-files/nw-customers-with-orders.js"></script>
+
+    <fieldset id="sortingAPI">
+        <legend>Select a column to sort</legend>
+
+        <div id="gridColumns"></div>
+        <input type="button" id="igButtonSort" value="Sort Column" style="vertical-align: top; padding-top: 0px; height: 23px;">
+
+    </fieldset>
+
+    <table id="grid7"></table>
+
+    <script>
+        $(function () {
+            var data = [
+                    { "columnKey": "CompanyName", "columnHeader": "Company Name" },
+                    { "columnKey": "ContactName", "columnHeader": "Contact Name" },
+                    { "columnKey": "ContactTitle", "columnHeader": "Contact Title" },
+                    { "columnKey": "Address", "columnHeader": "Address" },
+                    { "columnKey": "City", "columnHeader": "City" }
+            ];
+
+            $("#gridColumns").igCombo({
+                dataSource: data, //JSON Array defined above
+                valueKey: "columnKey",
+                textKey: "columnHeader",
+                width: "300px",
+                mode: "dropdown",
+                height: "25px",
+                selectedItems: [{index: 0}]
+            });
+
+            $( "#igButtonSort" ).igButton( {
+                labelText: $( "#igButtonSort" ).val(),
+                height: "25px"
+            } );
+
+            $("#igButtonSort").on({
+                click: function (e) {
+                    var columnKey = $( "#gridColumns" ).igCombo( "value" );
+                    if ( columnKey ) {
+                        $( '#grid7' ).igGridSorting( 'sortColumn', columnKey, 'ascending' );
+                    }
+                }
+            });
+
+            $("#grid7").igGrid({
+                columns: [
+                    { headerText: "Customer ID", key: "ID", dataType: "string", hidden: true },
+                    { headerText: "Company Name", key: "CompanyName", dataType: "string" },
+                    { headerText: "Contact Name", key: "ContactName", dataType: "string" },
+                    { headerText: "Contact Title", key: "ContactTitle", dataType: "string" },
+                    { headerText: "Address", key: "Address", dataType: "string" },
+                    { headerText: "City", key: "City", dataType: "string" },
+                    { headerText: "Country", key: "Country", dataType: "string", hidden: true }
+                ],
+                primaryKey: "ID",
+                autoGenerateColumns: false,
+                dataSource: nwCustomersWithOrders,
+                height: "600px",
+                width: "100%",
+                features: [
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: true,
+                        reactOnContainerWidthChanges: true,
+                        windowWidthToRenderVertically: null,
+                        propertiesColumnWidth: "40%",
+                        valuesColumnWidth: "60%",
+                        allowedColumnWidthPerType: {
+                            string: 300,
+                            number: 100,
+                            bool: 100,
+                            date: 100,
+                            object: 150
+                        }
+                    },
+                    {
+                        name: "Paging",
+                        type: "local",
+                        pageSize: 5
+                    },
+                    {
+                        name: "Sorting",
+                        type: "local"
+                    }
+                ]
+            });            
+        });
+    </script>
+
+</body>
+</html>

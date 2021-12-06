@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multi-Column Headers</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2021.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2021.2/latest/js/infragistics.lob.js"></script>
+</head>
+<body>
+    <table id="grid1"></table>
+    <script src="../../../../data-files/nw-customers.js"></script>
+    <script>
+        $(function () {
+            $("#grid1").igGrid({
+                width: "100%",
+                height: "500px",
+                autoGenerateColumns: false,
+                dataSource: nwCustomers,
+                responseDataKey: "results",
+                columns: [
+                    { headerText: "Customer ID", key: "CustomerID", dataType: "string", width: "100px" },
+                    {
+                        headerText: "Company Information",
+                        group: [
+                            { headerText: "Company Name", key: "CompanyName", dataType: "string", width: "150px" },
+                            { headerText: "Contact Name", key: "ContactName", dataType: "string", width: "150px" },
+                            { headerText: "Contact Title", key: "ContactTitle", dataType: "string", width: "150px" }
+                        ]
+                    },
+                    {
+                        headerText: "Address Information",
+                        group: [
+                        {
+                            headerText: "Local Address",
+                            group: [
+                                { headerText: "Address", key: "Address", dataType: "string", width: "150px" },
+                                { headerText: "City", key: "City", dataType: "string", width: "100px" }
+                            ]
+                        },
+                            { headerText: "Postal Code", key: "PostalCode", dataType: "string", width: "100px" }
+                        ]
+                    },
+                    {
+                        headerText: "Phone Information",
+                        group: [
+                            { headerText: "Phone", key: "Phone", dataType: "string", width: "150px" },
+                            { headerText: "Fax", key: "Fax", dataType: "string", width: "150px" }
+                        ]
+                    }
+                ],
+                features: [
+                    {
+                        name: 'MultiColumnHeaders'
+                    },
+                    {
+                        name: 'Responsive',
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: 'CustomerID',
+                                classes: 'ui-hidden-phone ui-hidden-tablet'
+                            },
+                            {
+                                columnKey: 'ContactTitle',
+                                classes: 'ui-hidden-phone ui-hidden-tablet'
+                            },
+                            {
+                                columnKey: 'PostalCode',
+                                classes: 'ui-hidden-phone'
+                            },
+                            {
+                                columnKey: 'Phone',
+                                classes: 'ui-hidden-phone'
+                            },
+                            {
+                                columnKey: 'Fax',
+                                classes: 'ui-hidden-phone'
+                            }
+                        ]
+                    },
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

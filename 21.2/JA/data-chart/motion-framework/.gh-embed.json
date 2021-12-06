@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/21.2/HTMLSamples/data-chart/motion-framework.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "21.2/JA/data-chart/motion-framework/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "21.2/JA/data-chart/motion-framework/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/21.2/JA/data-chart/motion-framework/index.html"
+        }
+    ]
+}
