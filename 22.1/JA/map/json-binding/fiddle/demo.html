@@ -1,0 +1,23 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.dv.js"></script>
+<script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <table id="tooltipTable" >
+            <tr><th class="tooltipHeading" colspan="2">${item.Name}, ${item.Country}</th></tr>
+            <tr>
+                <td>緯度:</td>
+                <td>${item.Latitude}</td>
+            </tr>
+            <tr>
+                <td>経度:</td>
+                <td>${item.Longitude}</td>
+            </tr>
+        </table>
+    </script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="map"></div>

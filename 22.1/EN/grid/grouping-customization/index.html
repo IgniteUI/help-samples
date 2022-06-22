@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grouping Customization</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.lob.js"></script>
+</head>
+<body>
+    <table id="grid"></table>
+    <script src="../../../../data-files/adventureworks.min.js"></script>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                autoGenerateColumns: false,
+                width: "100%",
+                height: "400px",
+                columns: [
+                    { headerText: "Product ID", key: "ProductID", dataType: "number", width: "20%" },
+                    { headerText: "Product Name", key: "Name", dataType: "string", width: "30%" },
+                    { headerText: "Product Number", key: "ProductNumber", dataType: "string", width: "20%" },
+                    { headerText: "Make Flag", key: "MakeFlag", dataType: "bool", width: "25%" },
+                    { headerText: "Time", key: "ModifiedDate", dataType: "time", width: "25%" }
+                ],
+                dataSource: adventureWorks,
+                features: [
+                    {
+                        name: 'GroupBy',
+                        columnSettings: [
+                            {
+                                columnKey: "Name",
+                                isGroupBy: true,
+                                compareFunc: groupByFirstLetter,
+                                groupLabelFormatter: function (val) {
+                                    val = val || "";
+                                    return val.substring(0, 1);
+                                }
+                            },
+                            {
+                                columnKey: "ModifiedDate",
+                                isGroupBy: false,
+                                compareFunc: function (val1, val2, recordsData) {
+                                    var d1 = new Date(val1), d2 = new Date(val2);
+                                    if (d1.getHours() === d2.getHours() && d1.getMinutes() === d2.getMinutes()) {
+                                        return 0;
+                                    }
+                                    return Math.sign(val1 - val2);
+                                }
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+        function groupByFirstLetter(val1, val2) {
+            val1 = val1 || "";
+            val2 = val2 || "";
+            val1 = val1.substring(0, 1);
+            val2 = val2.substring(0, 1);
+            return val1 > val2 ? 1 : val1 < val2 ? -1 : 0;
+        }
+    </script>
+</body>
+</html>

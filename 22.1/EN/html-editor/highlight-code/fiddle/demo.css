@@ -1,0 +1,42 @@
+#sampleContainer {
+    overflow: visible;
+}
+div.ui-igdialog {
+    width: 70% !important;
+}
+.comboGroup {
+    float: left;
+}
+.buttonGroup > button {
+    float: left;
+    margin: 5px;
+}
+.buttonGroup {
+    display: inline-block;
+}
+.ui-igbutton-code::before {
+    content: "{;}";
+    top: 30%;
+    font-weight: bold;
+}
+div.ui-widget-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 0px !important;
+}
+.ui-igdialog-content > div {
+    position: absolute;
+}
+#okCancelButtons {
+    bottom: 10px;
+    height:auto;
+}
+
+#dialogTextArea {
+    top:70px;
+    height:auto;
+    bottom: 70px;
+}

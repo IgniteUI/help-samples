@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head><meta charset="utf-8">
+    <title>カスタム系列の強調表示</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.dv.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <script type="text/javascript" src="../../../../data-files/uk-france-population.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            
+            var data = [
+                    { "CountryName": "China", "Pop1995": 1216, "Pop2005": 1297, "Pop2015": 1361, "Pop2025": 1394 },
+                    { "CountryName": "India", "Pop1995": 920, "Pop2005": 1090, "Pop2015": 1251, "Pop2025": 1396 },
+                    { "CountryName": "United States", "Pop1995": 266, "Pop2005": 295, "Pop2015": 322, "Pop2025": 351 },
+                    { "CountryName": "Indonesia", "Pop1995": 197, "Pop2005": 229, "Pop2015": 256, "Pop2025": 277 },
+                    { "CountryName": "Brazil", "Pop1995": 161, "Pop2005": 186, "Pop2015": 204, "Pop2025": 218 }
+            ];
+
+            $("#chart").igDataChart({
+                width: "100%",
+                height: "400px",
+                title: "国別人口",
+                subtitle: "2005 年の人口",
+                dataSource: data,
+                axes: [
+                    {
+                        name: "NameAxis",
+                        type: "categoryX",
+                        title: "国",
+                        label: "CountryName"
+                    },
+                    {
+                        name: "PopulationAxis",
+                        type: "numericY",
+                        minimumValue: 0,
+                        title: "人口 (百万人単位)",
+                    }
+                ],
+
+                series: [{
+                  name: "2005Population",
+                  type: "column",
+                  title: "2005 Population",  
+                  isHighlightingEnabled: true,
+                  isTransitionInEnabled: true,
+                  xAxis: "NameAxis",
+                  yAxis: "PopulationAxis",
+                  valueMemberPath: "Pop2005",
+                  showTooltip: true,
+                  isCustomCategoryStyleAllowed: true,
+                  isAssigningCategoryStyleAssigned: true
+                }],
+                
+                horizontalZoomable: true,
+                assigningCategoryStyle: function (e, ui) {
+                    var minOpacity = .3, opacity = 1.0, curr;
+                    if (ui.sumAllSeriesHighlightingProgress > 0.0) {
+                        var progress = 0;
+                        if (ui.highlightingInfo !== null) {
+                            progress = ui.highlightingInfo.progress;
+                        }
+
+                        progress = progress - ui.sumAllSeriesHighlightingProgress;
+
+                        opacity = minOpacity + (1.0 + progress) * (1.0 - minOpacity);
+                        ui.opacity = opacity;
+                        ui.highlightingHandled = true;
+
+                        
+                    }
+                },
+                verticalZoomable: true,
+                windowResponse: "immediate"
+            });
+            
+            // Transiton Duration Slider
+            $("#transitionDurationSlider").slider({
+                min: 0,
+                max: 5,
+                step: 0.01,
+                value: 2,
+                slide: function (event, ui) {
+                    $("#chart").igDataChart("option", "highlightingTransitionDuration", ui.value * 1000 );
+                    $("#transitionDurationLabel").text(ui.value);
+                }
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        
+        td { vertical-align: top; }
+        .chartElement {
+            padding-bottom: 20px;
+        }
+
+        .selectionOptions
+        {
+            margin-bottom: 10px;   
+        }
+        .sliderBounds {
+    	   width: 95px;
+    	   margin: 6px 3px 6px 6px;
+			display: inline-block;
+    	}
+    	
+    	.selectBounds {
+    	   width: 120px;
+    	}
+    </style>
+    <div id="chart" class="chartElement"></div>  
+    <div style="float: left">
+        <fieldset id="chartOptions">
+            <legend>チャート オプション</legend>
+            <div class="optionContainer">
+                トランジション期間
+                <br>
+                <div id="transitionDurationSlider" class="sliderBounds"></div>
+                <label id="transitionDurationLabel">2</label>
+            </div>
+        </fieldset>    
+    </div>
+    <div style="float: right" class="Quandl-attribution">
+        人口のデータ ソース:
+        <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+#htmlEditor {
+    margin-bottom: 10px;
+}
+@media print {
+    .noprint {
+        display: none;
+    }
+    .content {
+        border: 0px;
+    }
+    #htmlEditor_source {
+        display:none;
+    }
+    #htmlEditor_editor {
+        width: 100%;
+    }
+    #htmlEditor_domPathToolbar {
+        display: none;
+    }
+    .ui-ightmleditor-content iframe
+    {
+        border-width: 0px;
+    }
+}
+#buttons {
+    margin-bottom: 10px;
+}
+/* Override sample's browser styles */
+#htmlEditor h1, #htmlEditor h2, #htmlEditor h3, #htmlEditor h4, #htmlEditor h5, #htmlEditor h6 { margin: 0px; }
+#htmlEditor h1 { font-size: 1.9em; }
+#sampleContainer { overflow: visible; }

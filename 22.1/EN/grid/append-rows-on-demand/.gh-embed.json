@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.1/HTMLSamples/grid/append-rows-on-demand.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.1/EN/grid/append-rows-on-demand/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.1/EN/grid/append-rows-on-demand/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "22.1/EN/grid/append-rows-on-demand/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/22.1/EN/grid/append-rows-on-demand/index.html"
+        }
+    ]
+}

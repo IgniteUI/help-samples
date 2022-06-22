@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.1/HTMLSamples/grid/export-client-events.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.1/JA/grid/export-client-events/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.1/JA/grid/export-client-events/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "22.1/JA/grid/export-client-events/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/22.1/JA/grid/export-client-events/index.html"
+        }
+    ]
+}

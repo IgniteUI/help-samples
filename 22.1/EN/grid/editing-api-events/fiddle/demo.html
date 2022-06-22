@@ -1,0 +1,77 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2022.1/latest/js/infragistics.lob.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/northwind.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2022.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<table id="grid">
+    </table>
+<div>
+        <fieldset id="editOptions" class="explorer">
+            <legend>Edit settings</legend>
+            <input type="checkbox" id="showButtons" checked="checked"><label for="showButtons">Show Done/Cancel Buttons</label>
+            <label for="editMode">Edit mode</label>
+            <select id="editMode">
+                <option selected="selected">row</option>
+                <option>cell</option>
+                <option>dialog</option>
+                <option>none</option>
+            </select>
+            <label for="startEditTriggers">Start edit triggers</label>
+            <select id="startEditTriggers" class="explorer">
+                <option value="click,F2,enter" selected="selected">click,F2,enter</option>
+                <option value="dblclick,F2,enter">dblclick,F2,enter</option>
+                <option value="dblclick">dblclick</option>
+                <option value="click">click</option>
+                <option value="click,F2">click,F2</option>
+                <option value="F2,enter">F2,enter</option>
+            </select>
+        </fieldset>
+
+        <fieldset id="deletingOptions" class="explorer">
+            <legend>Deleting settings</legend>
+            <input type="checkbox" id="enableDelete" checked="checked">
+            <label for="enableDelete">Enable Delete Row</label>
+            <br>
+            <label for="rowSelect">Select Row Index</label>
+            <span id="rowSelect"></span>
+            <br>
+            <input type="button" id="deleteRow" value="Delete row">
+        </fieldset>
+        <div style="clear:both;"></div>
+        <fieldset id="addingOptions">
+            <legend>Adding settings</legend>
+
+            <input type="checkbox" id="enableAddRow" checked="checked"><label for="enableAddRow">Enable Add Row</label>
+            
+                <ul class="addNewRow">
+                    <li><label for="firstName">First Name</label>
+                        <input id="firstName" type="text">
+                    </li>
+                    <li><label for="lastName">Last Name</label>
+                        <input id="lastName" type="text">
+                    </li>
+                    <li><label for="title">Title</label>
+                        <input id="title" type="text">
+                    </li>
+                    <li>
+                        <label for="birthDate">Birth Date</label>
+                        <input id="birthDate" type="text">
+                    </li>
+                    <li><label for="postCode">Postal Code</label>
+                        <input id="postCode" type="text">
+                    </li>
+                    <li>
+                        <label for="country">Country</label>
+                        <input id="country" type="text">
+                    </li>
+                    <li> <label>&nbsp;</label><input id="addRow" type="button" value="Add row"></li>
+                </ul>
+        </fieldset>
+        <div style="clear:both;"></div>
+    </div>
+<div class="api-viewer"></div>

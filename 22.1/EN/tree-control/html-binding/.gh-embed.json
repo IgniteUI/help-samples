@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.1/HTMLSamples/tree-control/html-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.1/EN/tree-control/html-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.1/EN/tree-control/html-binding/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/22.1/EN/tree-control/html-binding/index.html"
+        }
+    ]
+}
