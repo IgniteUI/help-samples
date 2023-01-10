@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.2/HTMLSamples/data-chart/chart-title.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.2/JA/data-chart/chart-title/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.2/JA/data-chart/chart-title/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "22.2/JA/data-chart/chart-title/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/22.2/JA/data-chart/chart-title/index.html"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+.ui-igdialog #dialog img {
+    width: 100%;
+}
+#dialog img {
+    width: 300px;
+}

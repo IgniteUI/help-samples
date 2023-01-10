@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.2/HTMLSamples/radial-gauge/label-settings.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.2/EN/radial-gauge/label-settings/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.2/EN/radial-gauge/label-settings/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "22.2/EN/radial-gauge/label-settings/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/22.2/EN/radial-gauge/label-settings/index.html"
+        }
+    ]
+}

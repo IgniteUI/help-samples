@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/22.2/HTMLSamples/grid/json-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "22.2/JA/grid/json-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "22.2/JA/grid/json-binding/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "22.2/JA/grid/json-binding/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/22.2/JA/grid/json-binding/index.html"
+        }
+    ]
+}
