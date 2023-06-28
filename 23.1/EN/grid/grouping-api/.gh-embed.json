@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.1/HTMLSamples/grid/grouping-api.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.1/EN/grid/grouping-api/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.1/EN/grid/grouping-api/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/23.1/EN/grid/grouping-api/index.html"
+        }
+    ]
+}

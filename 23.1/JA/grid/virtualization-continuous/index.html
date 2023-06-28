@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+    <title>仮想化 (連続)</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.lob.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+    <table id="grid"></table>
+    <script src="../../../../data-files/nw-invoices.js"></script>
+    <script>
+        $(function () {
+            $("#grid").igGrid({
+                autoGenerateColumns: false,
+                autofitLastColumn : false,
+                renderCheckboxes: true,
+                width: "100%",
+                height: "400px",
+                rowVirtualization : true,
+                virtualizationMode: "continuous",
+                columns: [
+                   { headerText: "製品名", key: "ProductName", dataType: "string", width: "15%" },
+                   { headerText: "出荷名", key: "ShipName", dataType: "string", width: "20%" },
+                   { headerText: "注文日", key: "OrderDate", dataType: "date", width: "10%" },
+                   { headerText: "総額", key: "ExtendedPrice", dataType: "number", format: "currency", width: "10%" },
+                   { headerText: "配送先住所", key: "ShipAddress", dataType: "string", width: "15%" },
+                   { headerText: "配送先市町村", key: "ShipCity", dataType: "string", width: "10%" },
+                   { headerText: "配送先の国", key: "ShipCountry", dataType: "string", width: "10%" },
+                   { headerText: "郵便番号", key: "ShipPostalCode", dataType: "string", width: "10%" }
+                ],
+                dataSource: northwindInvoices,
+                features:
+                [
+                    {
+                        name: "Selection"
+                    },
+                    {
+                        name: "RowSelectors",
+                        enableRowNumbering: true
+                    },
+                    {
+                        name: "GroupBy"
+                    },
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: "OrderID",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "OrderDate",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ExtendedPrice",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ShipAddress",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ShipCity",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ShipCountry",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ShipPostalCode",
+                                classes: "ui-hidden-phone"
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

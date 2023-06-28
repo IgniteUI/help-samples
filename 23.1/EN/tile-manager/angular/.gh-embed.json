@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.1/HTMLSamples/tile-manager/angular.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.1/EN/tile-manager/angular/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.1/EN/tile-manager/angular/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.1/EN/tile-manager/angular/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/23.1/EN/tile-manager/angular/index.html"
+        }
+    ]
+}

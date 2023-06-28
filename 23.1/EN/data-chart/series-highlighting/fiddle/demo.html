@@ -1,0 +1,45 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.dv.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/uk-france-population.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="selectionOptions">
+        Series type:
+        <select id="seriesType" class="selectBounds">
+            <option value="column" selected="selected">Column</option>
+            <option value="area">Area</option>
+            <option value="line">Line</option>
+            <option value="splineArea">Spline Area</option>
+            <option value="spline">Spline</option>
+            <option value="stepArea">Step Area</option>
+            <option value="stepLine">Step Line</option>
+            <option value="point">Point</option>
+            <option value="rangeColumn">Range Column</option>
+            <option value="rangeArea">Range Area</option>
+            <option value="bar">Bar</option>
+        </select>
+    </div>
+<table>
+        <tr>
+            <td id="chart" class="chartElement"></td>  
+            <td id="lineLegend" style="float: left"></td>
+        </tr>    
+    </table>
+<div style="float: left">
+        <fieldset id="chartOptions">
+            <legend>Chart Options</legend>
+            <div class="optionContainer">
+                Transition Duration
+                <br>
+                <div id="transitionDurationSlider" class="sliderBounds"></div>
+                <label id="transitionDurationLabel">1000</label>
+            </div>
+        </fieldset>    
+    </div>
+<div style="float: right" class="Quandl-attribution">
+        Population data from:
+        <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+    </div>

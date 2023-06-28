@@ -1,0 +1,72 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.lob.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script src="https://igniteui.github.io/help-samples/data-files/northwind.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="http://www.igniteui.com/css/apiviewer.css" rel="stylesheet" type="text/css">
+<div style="height: 400px; padding-bottom: 30px;">
+        <table id="grid"></table>
+    </div>
+<div>
+        <h3>階層グリッド API</h3>
+        <div style="margin: 1em 0;">
+            <input type="button" id="buttonExpandAll" value="すべて展開">
+            <input type="button" id="buttonCollapseAll" value="すべて縮小">
+        </div>
+    </div>
+<hr>
+<div>      
+        <div>
+            <h3>子グリッド API</h3>
+            <p style="font-size: 15px; color: #5F6564; margin-top: 1em; margin-bottom: 1em;">
+                子グリッドで API メソッドを呼び出すには、ID によって関連する親行を選択してください。                 子グリッドが作成されたことを確認するために、選択した行が展開されます。                 各子グリッドはフラット データの igGrid コントロールのインスタンスで、すべての igGrid API メソッドおよびイベントを子グリッドに適用できます。                     
+            </p>
+            <div id="SelectParentRowID" style></div>
+
+            <div style="clear: both;"></div>
+            <fieldset id="gridOptions" class="explorer">
+                <legend>グリッド API 設定</legend>
+                <label>選択した子 igGrid をデータ バインド:</label>
+                <input type="button" id="buttonDataBind" value="データ バインド">
+            </fieldset>
+
+            <fieldset id="filteringOptions" class="explorer">
+                <legend>フィルター設定</legend>
+                <div id="filterColumn"></div>
+                <div id="conditionList"></div>
+                <div id="exprTextEditor"></div>
+                <div id="exprNumericEditor"></div>
+                <div id="exprDateEditor"></div>
+                <br>
+                <input type="button" id="buttonFilter" value="フィルター">
+            </fieldset>
+
+            <div style="clear: both;"></div>
+
+            <fieldset id="pagingOptions" class="explorer">
+                <legend>ページング設定</legend>
+                <label for="pageIndexList">ページ インデックスの選択:</label>
+                <div id="pageIndexList"></div>
+                <label for="PageSizeSelect">ページ サイズの選択:</label>
+                <div id="pageSizeList"></div>
+            </fieldset>
+
+            <fieldset id="selectionOptions" class="explorer">
+                <legend>選択の設定</legend>
+                <label for="RowSelect">行インデックスの選択:  </label>
+                <div id="rowNumberEditor"></div>
+                <br>
+                <input type="button" id="buttonSelectRow" value="行の選択">
+                <input type="button" id="buttonSelectedRows" value="選択した行の取得">
+            </fieldset>
+        </div>
+        <div style="clear: both;"></div>
+        <!--    </fieldset>-->
+    </div>
+<div class="api-viewer"></div>

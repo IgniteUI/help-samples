@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head><meta charset="utf-8">
+    <title>大量のデータのバインド</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/i18n/infragistics-ja.js"></script><script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.dv.js"></script>
+
+<script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script></head>
+<body>
+
+   <script id="tooltipTemplate" type="text/x-jquery-tmpl">
+        <table>
+            <tr>
+                <td colspan="2" class="tooltip">テスト系列: ${item.Value}</td>
+            </tr>
+        </table>
+    </script>
+
+	<script type="text/javascript">
+	    var currData, currDataSource, doGeneration, startTime = null;
+	    var sliderValue = 50000;
+
+	    function doGeneration() {
+	        var num = sliderValue, data = [], curr = 10;
+
+	        for (var i = 0; i < num; i++) {
+	            if (Math.random() > .5) {
+	                curr += Math.random() * 2.0;
+	            } else {
+	                curr -= Math.random() * 2.0;
+	            }
+	            var val1 = Math.round(curr * 1000.0) / 1000.0;
+	            data[i] = { Label: i.toString(), Value: val1 };
+	        }
+	        currData = data;
+	    }
+
+	    function assignData() {
+	        startTime = new Date().getTime();
+	        $("#chart").igDataChart({
+	            dataSource: currData
+	        });
+	    };
+
+	    $(function () {
+	        $("#btnRefresh").click(function () {
+	            doGeneration();
+	            assignData();
+	        });
+
+	        $("#slider").slider({
+	            min: 50000,
+	            max: 1000000,
+	            step: 50000,
+	            value: 50000,
+	            slide: function (event, ui) {
+	                sliderValue = ui.value;
+	                $("#sliderLabel").text(ui.value);
+	            }
+	        });
+
+	        $("#chart").igDataChart({
+	            width: "100%",
+	            height: "500px",
+	            title: "ランダムに生成されたデータ",
+	            axes: [{
+	                name: "xAxis",
+	                type: "categoryX",
+	                label: "Label"
+	            }, {
+                    name: "yAxis",
+                    type: "numericY"
+                }],
+	            series: [{
+	                name: "series1",
+	                title: "テスト系列",
+	                type: "line",
+	                xAxis: "xAxis",
+	                yAxis: "yAxis",
+	                valueMemberPath: "Value",
+	                showTooltip: true,
+	                isTransitionInEnabled: true,
+	                isHighlightingEnabled: true,
+	                tooltipTemplate: "tooltipTemplate"
+	            }],
+	            horizontalZoomable: true,
+	            verticalZoomable: true,
+	            windowResponse: "immediate"
+	        });
+
+	        $(document).on("igdatachartrefreshcompleted", "#chart", function () {
+	            if (startTime) {
+	                var time = new Date().getTime() - startTime;
+	                $("#timeText").text(time.toString() + " ms");
+	                startTime = null;
+	            }
+	        });
+
+	        doGeneration();
+	        assignData();
+	        $(".message").hide();
+	    });
+    </script>
+
+    <style type="text/css">
+        #chart
+        {
+            margin-top: 10px;
+        }
+        .message
+        {
+            color: darkorange;
+            font-weight: bold;
+        }
+        .tooltip { margin: 0px 5px 0px 5px; }
+    </style>
+
+    <div>
+      <!--  <div style="padding: 5px; margin: 0px 5px 5px 5px;">
+            <label>更新時間: </label><span id="timeText"></span>
+        </div>
+
+        <div style="max-width: 150px; padding: 5px; margin: 0px 5px 5px 10px;">
+            <div id="slider"></div>    
+        </div>
+         <div style="padding: 5px; margin: 0px 5px 5px 5px;">
+             <label >データ ポイント: </label> 
+             <label id="sliderLabel">50000</label>
+         </div>   -->
+
+        <table>
+            <tr>
+                <td>
+                    <label>データ ポイント: </label> 
+                </td> 
+                <td style="width: 110px; padding: 5px; margin: 10px 5px 5px 10px;">
+                    <div id="slider" style="margin: 10px 5px 5px 10px;"></div>    
+                </td> 
+                <td style="width: 45px; padding: 5px;">
+                    <label id="sliderLabel">50000</label>
+                </td> 
+                <td>
+                    <button id="btnRefresh" type="button" style="margin: 10px 5px 5px 10px;">更新</button>
+                </td> 
+                <td>
+                    <label>更新時間: </label><span id="timeText"></span>
+                </td> 
+               
+            </tr>
+        </table>
+         
+    </div>
+
+    <div><span class="message">データの生成と割り当て</span></div>
+
+   <div style="height: 520px; width: 90%; min-width: 210px;">
+       <div id="chart"></div>
+   </div>
+</body>
+</html>

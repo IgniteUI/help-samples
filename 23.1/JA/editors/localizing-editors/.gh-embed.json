@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.1/HTMLSamples/editors/localizing-editors.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.1/JA/editors/localizing-editors/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.1/JA/editors/localizing-editors/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.1/JA/editors/localizing-editors/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/23.1/JA/editors/localizing-editors/index.html"
+        }
+    ]
+}

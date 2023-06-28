@@ -1,0 +1,18 @@
+td { vertical-align: top; }
+.chartElement {
+    padding-bottom: 20px;
+}
+
+.selectionOptions
+{
+    margin-bottom: 10px;   
+}
+.sliderBounds {
+   width: 95px;
+   margin: 6px 3px 6px 6px;
+	display: inline-block;
+}
+
+.selectBounds {
+   width: 120px;
+}

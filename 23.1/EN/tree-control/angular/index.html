@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AngularJS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2023.1/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2023.1/latest/js/infragistics.lob.js"></script>
+
+    <script src="https://unpkg.com/igniteui-angularjs@1.2.1/igniteui-angularjs.min.js"></script>
+
+    <script src="../../../../data-files/hierarchical-files.js"></script>
+    <script type="text/javascript">
+        var sampleApp = angular.module('sampleApp', ['igniteui-directives']);
+        sampleApp.controller('treeController', function ($scope) {
+            $scope.data = files;
+        });
+    </script>
+</head>
+<body>
+    <div ng-app="sampleApp" ng-controller="treeController">
+        <ig-tree id="tree1" data-source="data">
+            <bindings child-data-property="Folder" text-key="Text" value-key="Value">
+            </bindings>
+        </ig-tree>
+    </div>
+</body>   
+</html>
