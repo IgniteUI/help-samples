@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/data-chart/series-highlighting.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/JA/data-chart/series-highlighting/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/JA/data-chart/series-highlighting/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.2/JA/data-chart/series-highlighting/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/23.2/JA/data-chart/series-highlighting/index.html"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/data-chart/binding-real-time-data.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/EN/data-chart/binding-real-time-data/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/EN/data-chart/binding-real-time-data/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.2/EN/data-chart/binding-real-time-data/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/23.2/EN/data-chart/binding-real-time-data/index.html"
+        }
+    ]
+}

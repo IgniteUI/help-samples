@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/data-chart/json-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/EN/data-chart/json-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/EN/data-chart/json-binding/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/23.2/EN/data-chart/json-binding/index.html"
+        }
+    ]
+}

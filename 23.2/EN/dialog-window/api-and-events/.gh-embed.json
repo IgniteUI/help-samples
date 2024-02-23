@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/dialog-window/api-and-events.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/EN/dialog-window/api-and-events/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/EN/dialog-window/api-and-events/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.2/EN/dialog-window/api-and-events/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/23.2/EN/dialog-window/api-and-events/index.html"
+        }
+    ]
+}

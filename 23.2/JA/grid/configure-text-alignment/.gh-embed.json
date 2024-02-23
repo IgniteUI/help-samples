@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/grid/configure-text-alignment.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/JA/grid/configure-text-alignment/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/JA/grid/configure-text-alignment/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.2/JA/grid/configure-text-alignment/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/23.2/JA/grid/configure-text-alignment/index.html"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/infragistics.lob.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2023.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2023.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2023.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div id="container" class="clearfix">
+        <div id="igDatePickersContainer">
+            <form id="form" name="FormSubmit" action="javascript:console.log('送信');">
+                <div class="group-fields">
+                    <label for="datePicker1">日付オブジェクト</label>
+                    <input id="datePicker1" type="date" name="datePicker_date">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker2">編集モードのテキスト</label>
+                    <input id="datePicker2" type="date" name="datePicker_editModeText">
+                </div>
+                <div class="group-fields">
+                    <label for="datePicker3">表示モードのテキスト</label>
+                    <input id="datePicker3" type="date" name="displayModeText">
+                </div>
+                <input type="submit" id="submitBtn" value="送信">
+            </form>
+        </div>
+
+        <div id="ValuesContainer">
+            <h4>DatePicker の送信された値:</h4>
+            <div id="results">
+            </div>
+        </div>
+    </div>

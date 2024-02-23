@@ -1,0 +1,18 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/grid/unbound-column.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/JA/grid/unbound-column/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/JA/grid/unbound-column/fiddle/demo.html"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/23.2/JA/grid/unbound-column/index.html"
+        }
+    ]
+}

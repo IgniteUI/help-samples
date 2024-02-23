@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/23.2/HTMLSamples/editors/bind-editors-with-ko.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "23.2/JA/editors/bind-editors-with-ko/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "23.2/JA/editors/bind-editors-with-ko/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "23.2/JA/editors/bind-editors-with-ko/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/23.2/JA/editors/bind-editors-with-ko/index.html"
+        }
+    ]
+}

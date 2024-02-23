@@ -1,0 +1,46 @@
+.chart {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+
+.slider {
+    width: 150px;
+    margin: 6px 3px -1px 6px;
+    display: inline-block;
+}
+
+.optionsPane {
+    position: relative;
+    float: initial;
+    width: 350px;
+    margin: 6px 3px 6px 6px;
+    display: inline-block;
+    padding-top: 18px;
+}
+
+
+.optionContainer {
+    float: left;
+    position: relative;
+    width: 315px;
+    margin: 2px;
+    padding: 2px;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.labels {
+    padding-right: 8px;
+}
+
+.labels2 {
+    padding-right: 8px;
+}
+
+.labels3 {
+    padding-right: 0px;
+}
