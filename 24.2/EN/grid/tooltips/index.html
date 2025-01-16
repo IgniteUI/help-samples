@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tooltips</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    <link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+    <link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/structure/infragistics.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Ignite UI Required Combined JavaScript Files -->
+    <script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.core.js"></script>
+    <script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.lob.js"></script>
+
+    <style type="text/css">
+        .tooltip-grid-notes { white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+    </style>
+</head>
+<body>    
+    <table id="grid"></table>
+    <script src="../../../../data-files/adventureworks.min.js"></script>
+    <script>
+        $(function () {
+            $( "#grid" ).igGrid( {
+                autoGenerateColumns: false,
+                autofitLastColumn: false,
+				renderCheckboxes: true,
+                width: "100%",
+                columns: [
+                    { headerText: "Product Name", key: "Name", dataType: "string", width: "20%" },
+					{ headerText: "Product Number", key: "ProductNumber", dataType: "string", width: "20%" },
+					{ headerText: "Make Flag", key: "MakeFlag", dataType: "bool", width: "10%" },
+					{ headerText: "Reorder Point", key: "ReorderPoint", dataType: "number", width: "10%" },
+					{ headerText: "Sell Start Date", key: "SellStartDate", dataType: "date", width: "15%" }
+                ],
+                dataSource: adventureWorks.slice(0, 10),
+                features: [
+                    {
+                        name: "Tooltips",
+                        columnSettings: [
+                           { columnKey: "Name", allowTooltips: false },
+                           { columnKey: "MakeFlag", allowTooltips: false }
+                        ],
+                        style: Modernizr.touch ? "popover" : "tooltip",
+                        visibility: "always"
+                    },
+                    {
+                        name: "Responsive",
+                        enableVerticalRendering: false,
+                        columnSettings: [
+                            {
+                                columnKey: "MakeFlag",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "ReorderPoint",
+                                classes: "ui-hidden-phone"
+                            },
+                            {
+                                columnKey: "SellStartDate",
+                                classes: "ui-hidden-phone"
+                            }
+                        ]
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

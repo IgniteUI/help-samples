@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/24.2/HTMLSamples/tree-control/drag-and-drop-single-tree.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "24.2/EN/tree-control/drag-and-drop-single-tree/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "24.2/EN/tree-control/drag-and-drop-single-tree/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "24.2/EN/tree-control/drag-and-drop-single-tree/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/24.2/EN/tree-control/drag-and-drop-single-tree/index.html"
+        }
+    ]
+}

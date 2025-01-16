@@ -1,0 +1,29 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.dv.js"></script>
+<script src="https://igniteui.github.io/help-samples/js/apiviewer.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<link href="https://igniteui.github.io/help-samples/css/apiviewer.css" rel="stylesheet" type="text/css">
+<div id="radialGauge"></div>
+<div class="api-explorer">  
+        <table style="width: 100%;">
+	        <tr>
+                <td><span>Enter/Select Needle value: </span></td>
+                <td style="text-align: right;">
+                    <input type="text" id="needleValue" name="format" value class="apiInput">
+                    <span class="apiButton ui-corner-all" id="changeNeedleValue">Set Needle Value</span>
+                </td>
+            </tr>
+            <tr style="height:10px"></tr>
+            <tr>
+                <td><span>Get Current Needle Value: </span></td>
+                <td style="text-align: right;">
+                    <span class="apiButton ui-corner-all" id="getNeedleValue">Get Needle Value</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+<div class="api-viewer"></div>

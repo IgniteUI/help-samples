@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/24.2/HTMLSamples/grid/responsive-vertical-rendering.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "24.2/JA/grid/responsive-vertical-rendering/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "24.2/JA/grid/responsive-vertical-rendering/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "24.2/JA/grid/responsive-vertical-rendering/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "サンプル",
+            "url": "https://igniteui.github.io/help-samples/24.2/JA/grid/responsive-vertical-rendering/index.html"
+        }
+    ]
+}

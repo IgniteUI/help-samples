@@ -1,0 +1,26 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.loader.js"></script>
+<script id="dialogTemplate" type="text/html">
+        <div style="float: left; width:50%;" id="templateContainer">
+            <strong>${Name}</strong><br /><br />
+            <table id="dialogTmpTable" style="width: 100%;">
+                <colgroup>
+                    <col style="width: 30%;" />
+                    <col style="width: 70%;" />
+                </colgroup>
+                <tbody data-render-tmpl="true">
+                </tbody>
+            </table>
+            <div data-editor-for-imageurl="true"></div>
+        </div>
+    </script>
+<script id="editorsTemplate" type="text/html">
+        <tr>
+            <td><strong>${headerText}</strong></td>
+            <td><input data-editor-for-${key}="true"/></td>
+        </tr>
+    </script>
+<table id="grid1"></table>
+<br>

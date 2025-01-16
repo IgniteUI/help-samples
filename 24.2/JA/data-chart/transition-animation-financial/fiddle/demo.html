@@ -1,0 +1,115 @@
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/i18n/infragistics-ja.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.core.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/infragistics.dv.js"></script>
+<script src="https://cdn-na.infragistics.com/igniteui/2024.2/latest/js/modules/i18n/regional/infragistics.ui.regional-ja.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files-ja/financial-indicators.js"></script>
+<script type="text/javascript" src="https://igniteui.github.io/help-samples/data-files/financial-data.js"></script>
+<link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet">
+<link href="https://cdn-na.infragistics.com/igniteui/2024.2/latest/css/structure/infragistics.css" rel="stylesheet">
+<div class="selectionOptions">
+        シリーズ タイプ:
+        <select id="seriesType" class="selectBounds">
+            <option value="candlestick" selected="selected">ローソク足チャート</option>
+            <option value="ohlc">OHLC</option>
+            <option value="absoluteVolumeOscillatorIndicator">絶対出来高オシレーター</option>
+            <option value="averageTrueRangeIndicator">ATR (アベレージ トゥルー レンジ)</option>
+            <option value="accumulationDistributionIndicator">蓄積/分配</option>
+            <option value="averageDirectionalIndexIndicator">平均方向性指数</option>
+            <option value="bollingerBandsOverlay">ボリンジャー バンド オーバーレイ</option>
+            <option value="bollingerBandWidthIndicator">ボリンジャー バンド幅</option>
+            <option value="chaikinOscillatorIndicator">チャイキン オシレーター</option>
+            <option value="chaikinVolatilityIndicator">チャイキン ボラティリティ</option>
+            <option value="commodityChannelIndexIndicator">商品チャネル指数 (CCI)</option>
+            <option value="detrendedPriceOscillatorIndicator">トレンド除去価格オシレーター</option>
+            <option value="easeOfMovementIndicator">イーズ オブ ムーブメント</option>
+            <option value="fastStochasticOscillatorIndicator">ファスト スト キャスティクス オシレーター</option>
+            <option value="forceIndexIndicator">フォース インデックス</option>
+            <option value="fullStochasticOscillatorIndicator">フル ストキャスティクス オシレーター</option>
+            <option value="marketFacilitationIndexIndicator">マーケット ファシリテーション インデックス</option>
+            <option value="massIndexIndicator">マス インデックス</option>
+            <option value="medianPriceIndicator">メディアンプライス</option>
+            <option value="moneyFlowIndexIndicator">マネー フロー インデックス</option>
+            <option value="movingAverageConvergenceDivergenceIndicator">移動平均収束拡散</option>
+            <option value="negativeVolumeIndexIndicator">負出来高指数 (NVI)</option>
+            <option value="onBalanceVolumeIndicator">OBV (オン バランス ボリューム)</option>
+            <option value="percentagePriceOscillatorIndicator">パーセンテージ価格オシレーター</option>
+            <option value="percentageVolumeOscillatorIndicator">パーセンテージ出来高オシレーター</option>
+            <option value="positiveVolumeIndexIndicator">PVI (ポジティブ ボリューム インデックス)</option>
+            <option value="priceChannelOverlay">プライス チャネル オーバーレイ</option>
+            <option value="priceVolumeTrendIndicator">価格出来高トレンド</option>
+            <option value="rateOfChangeAndMomentumIndicator">変化率およびモメンタム</option>
+            <option value="relativeStrengthIndexIndicator">相対力指数</option>
+            <option value="slowStochasticOscillatorIndicator">スロー ストキャスティクス オシレーター</option>
+            <option value="standardDeviationIndicator">標準偏差</option>
+            <option value="stochRSIIndicator">ストキャスティクス RSI</option>
+            <option value="trixIndicator">TRIX</option>
+            <option value="typicalPriceIndicator">代表価格</option>
+            <option value="ultimateOscillatorIndicator">アルティメット オシレーター</option>
+            <option value="weightedCloseIndicator">重み付きクローズ</option>
+            <option value="williamsPercentRIndicator">ウィリアム パーセント レンジ</option>
+         </select>
+    </div>
+<div id="chart" class="chartElement"></div>
+<div>
+        <fieldset id="chartOptions">
+            <legend>チャート オプション</legend>
+            	
+            <div class="optionContainer">
+                トランジション タイプ
+                <br>
+                <select id="transitionInTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="fromZero">fromZero</option>
+                    <option value="accordionFromLeft">accordionFromLeft</option>
+                    <option value="accordionFromRight">accordionFromRight</option>
+                    <option value="accordionFromTop">accordionFromTop</option>
+                    <option value="accordionFromBottom">accordionFromBottom</option>
+                    <option value="expand">expand</option>
+                    <option value="sweepFromLeft">sweepFromLeft</option>
+                    <option value="sweepFromRight">sweepFromRight</option>
+                    <option value="sweepFromTop">sweepFromTop</option>
+                    <option value="sweepFromBottom">sweepFromBottom</option>
+                    <option value="sweepFromCenter">sweepFromCenter</option>
+                    <option value="accordionFromCategoryAxisMinimum">accordionFromCategoryAxisMinimum</option>
+                    <option value="accordionFromCategoryAxisMaximum">accordionFromCategoryAxisMaximum</option>
+                    <option value="accordionFromValueAxisMinimum">accordionFromValueAxisMinimum</option>
+                    <option value="accordionFromValueAxisMaximum">accordionFromValueAxisMaximum</option>
+                    <option value="sweepFromCategoryAxisMinimum">sweepFromCategoryAxisMinimum</option>
+                    <option value="sweepFromCategoryAxisMaximum">sweepFromCategoryAxisMaximum</option>
+                    <option value="sweepFromValueAxisMinimum">sweepFromValueAxisMinimum</option>
+                    <option value="sweepFromValueAxisMaximum">sweepFromValueAxisMaximum</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                スピード タイプ
+                <br>
+                <select id="transitionInSpeedTypeSlider">
+                    <option value="auto" selected="selected">auto</option>
+                    <option value="normal">normal</option>
+                    <option value="valueScaled">valueScaled</option>
+                    <option value="indexScaled">indexScaled</option>
+                    <option value="random">random</option>
+                </select>
+            </div>
+            
+            <div class="optionContainer">
+                イージング関数
+                <br>
+                <select id="transitionEasingFunctionSlider">
+                    <option value="linear" selected="selected">linear</option>
+                    <option value="cubic">cubic</option>
+                </select>
+            </div>
+            
+           
+        </fieldset>
+    </div>
+<div class="selectionOptions" style="display: inline-block">
+        <label>株価のデータ ソース:
+            <a href="http://www.quandl.com/" target="_blank">Quandl</a>
+        </label>
+    </div>

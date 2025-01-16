@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/24.2/HTMLSamples/data-chart/crosshair-layer.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "24.2/EN/data-chart/crosshair-layer/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "24.2/EN/data-chart/crosshair-layer/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "24.2/EN/data-chart/crosshair-layer/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/24.2/EN/data-chart/crosshair-layer/index.html"
+        }
+    ]
+}

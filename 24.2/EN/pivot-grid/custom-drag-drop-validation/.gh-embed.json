@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/24.2/HTMLSamples/pivot-grid/custom-drag-drop-validation.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "24.2/EN/pivot-grid/custom-drag-drop-validation/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "24.2/EN/pivot-grid/custom-drag-drop-validation/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "24.2/EN/pivot-grid/custom-drag-drop-validation/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/24.2/EN/pivot-grid/custom-drag-drop-validation/index.html"
+        }
+    ]
+}
