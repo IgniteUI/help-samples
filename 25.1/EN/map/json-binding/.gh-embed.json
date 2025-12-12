@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/25.1/HTMLSamples/map/json-binding.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "25.1/EN/map/json-binding/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "25.1/EN/map/json-binding/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "25.1/EN/map/json-binding/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/25.1/EN/map/json-binding/index.html"
+        }
+    ]
+}

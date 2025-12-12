@@ -1,0 +1,25 @@
+.right {
+    float: right;
+}
+#exportButton {
+    float: left;
+}
+.exporting-overlay {
+    position: absolute;
+    background-color: rgba(181, 181, 181, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    text-align: center;
+    vertical-align: top;
+}
+.exporting-overlay:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+.exporting-text {
+    font-size: 46px;
+    font-weight: bold;
+}

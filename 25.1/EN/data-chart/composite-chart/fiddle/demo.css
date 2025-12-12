@@ -1,0 +1,4 @@
+.tooltip { margin: 0px 5px 0px 5px; }
+#legend, #legend2 { margin: 0px 5px 5px 5px; }
+#legends, #chart { float: left; }
+#chartTitle { width: 500px; text-align: center; }

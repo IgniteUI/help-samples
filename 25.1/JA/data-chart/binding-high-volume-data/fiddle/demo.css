@@ -1,0 +1,10 @@
+#chart
+{
+    margin-top: 10px;
+}
+.message
+{
+    color: darkorange;
+    font-weight: bold;
+}
+.tooltip { margin: 0px 5px 0px 5px; }

@@ -1,0 +1,18 @@
+   .apiButton {
+      text-align: center;
+      padding: 0px 0.5em 0px 0.5em;
+      margin: 0.1em !important;
+      display: inline-block;
+      cursor: pointer;
+      background: #f0f0f0;
+      border: 1px solid #a0a0a0;
+   }
+   .apiButton:hover {
+      background: #d0d0f0;
+      border: 1px solid #505090;
+   }
+	 .apiInput {
+      width: 3em;
+      margin: 0.1em;
+      border: 1px solid #a0a0a0;
+	 }

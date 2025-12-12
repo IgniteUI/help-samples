@@ -1,0 +1,22 @@
+#tooltipTable
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+#tooltipTable td, #tooltipTable th
+{
+    font-size: 9px;
+    border: 1px solid #28b51c;
+    padding: 3px 7px 2px 7px;
+}
+#tooltipTable th
+{
+    font-weight: bold;
+    font-size: 11px;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #28b51c;
+    color: #ffffff;
+}

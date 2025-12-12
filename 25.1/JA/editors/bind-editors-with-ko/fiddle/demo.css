@@ -1,0 +1,39 @@
+.order-container {
+    width: 450px;
+    margin: 0 auto;
+}
+.row {
+    margin-top: 5px;
+}
+.heading-row
+{
+    font-size: large;
+}
+
+.row-control {
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.row label
+{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.row label, .row-control
+{
+    height: 28px;
+    width: 200px;
+    margin: 0px 5px 0px 5px;
+}
+
+@media all and (max-width: 520px) {
+    .order-container {
+        width: 280px;
+    }
+
+    .ui-igedit-container {
+        margin-bottom: 5px;
+    }
+}

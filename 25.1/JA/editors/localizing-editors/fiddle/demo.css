@@ -1,0 +1,5 @@
+@media all and (max-width: 360px) {
+    .ui-datepicker {
+        width: 250px;
+    }
+}

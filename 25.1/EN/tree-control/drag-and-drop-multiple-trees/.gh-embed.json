@@ -1,0 +1,22 @@
+{
+    "srcUrlPattern": "/${owner}/${repo}-src/blob/25.1/HTMLSamples/tree-control/drag-and-drop-multiple-trees.html",
+    "embed": [
+        {
+            "label": "JS",
+            "path": "25.1/EN/tree-control/drag-and-drop-multiple-trees/fiddle/demo.js"
+        },
+        {
+            "label": "HTML",
+            "path": "25.1/EN/tree-control/drag-and-drop-multiple-trees/fiddle/demo.html"
+        },
+        {
+            "label": "CSS",
+            "path": "25.1/EN/tree-control/drag-and-drop-multiple-trees/fiddle/demo.css"
+        },
+        {
+            "type": "htmlpage",
+            "label": "Result",
+            "url": "https://igniteui.github.io/help-samples/25.1/EN/tree-control/drag-and-drop-multiple-trees/index.html"
+        }
+    ]
+}

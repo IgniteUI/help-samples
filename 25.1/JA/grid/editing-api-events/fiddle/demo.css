@@ -1,0 +1,25 @@
+fieldset.explorer
+{
+    float: left;
+    width: 45%;
+}
+#sampleContainer fieldset input[type="checkbox"] + label
+{
+    display: inline;
+}
+.addNewRow
+{
+    width: 100%;
+    list-style-type: none;
+}
+.addNewRow li
+{
+    display: inline-block;
+    float: left;
+    margin-right: 1em;
+    height: 60px;
+}
+.ui-igedit
+{
+    margin: 2px 0px 2px 0px;
+}

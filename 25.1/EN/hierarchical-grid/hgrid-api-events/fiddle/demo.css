@@ -1,0 +1,42 @@
+fieldset.explorer
+{
+    float: left;
+    width: 45%;
+}
+
+#sampleContainer fieldset
+{
+    border: none;
+    margin: 1em 0;
+    padding: 0em;
+}
+
+#sampleContainer fieldset > legend
+{
+    padding: 2px 0;
+}
+
+hr
+{
+    border-top: 1px solid #dadada;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+.comboTable
+{
+    width: 100%;
+    height: 40px;
+}
+
+.comboTable > tbody > tr > td
+{
+     width: 120px;
+     text-align: left;
+     display: inline-block;
+}
+
+.comboTableHeader
+{
+    border-bottom: solid 1px #E8E8E8;
+}

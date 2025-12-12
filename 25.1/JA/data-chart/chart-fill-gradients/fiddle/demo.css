@@ -1,0 +1,17 @@
+/* Use the following css classes to apply gradients through CSS for the series fill */
+/* As many palettes can be defined as needed */
+/*.ui-chart-fill-palette-1 {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+.ui-chart-fill-palette-2 {
+    background-image: linear-gradient(to right, violet, indigo,blue, green, yellow, orange, red);
+}*/
+/*Use the following css classes to apply gradients through CSS for the series fill*/
+/*.ui-chart-outline-palette-1 {
+    background-image: linear-gradient(90deg, green 10%, blue 80%);
+}
+
+.ui-chart-outline-palette-2 {
+    background-image: linear-gradient(180deg, red 30%, blue 50%);
+}*/

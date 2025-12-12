@@ -1,0 +1,35 @@
+.tweet-user {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    float: left;
+}
+
+.tweet-text {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.tweet-screen-name {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #999;
+    margin-left: 10px;
+    float: left;
+}
+
+.tweet {
+    float: none;
+    padding-left: 50px;
+}
+
+    .tweet p {
+        margin: 5px;
+    }
+
+.tweet-date {
+    float: right;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #999;
+}

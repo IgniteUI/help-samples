@@ -1,0 +1,66 @@
+.clear {
+    clear: both;
+}
+
+#trash {
+	margin-top: 10px;
+    height: 150px;
+    padding: 1%;
+}
+
+    #trash h4 {
+        line-height: 16px;
+        margin: 0 0 0.4em;
+    }
+
+        #trash h4 .ui-icon {
+            float: left;
+        }
+
+.containerTree {
+	margin-top: 10px;
+    overflow: auto;
+}
+
+#tree {
+    width: 330px;
+}
+
+#left {
+    margin-right: 150px;
+}
+
+#right {
+    width: 150px;
+    float: right;
+}
+
+.containerModalDialog {
+    overflow: auto;
+    width: 180px;
+    margin: 0 auto;
+    padding-top: 5px;
+	height: 35px;
+}
+
+#leftYes {
+    float: left;
+}
+
+#rightNo {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    #right {
+        float: none;
+    }
+	#trash { 
+		margin-bottom: 10px;
+	}
+	.containerModalDialog { 
+		width: 160px;
+	}
+	.containerModalDialog #leftYes, .containerModalDialog #rightNo { width: 70px; }
+	#yesModalDialog, #noModalDialog { width: 65px!important; }
+}

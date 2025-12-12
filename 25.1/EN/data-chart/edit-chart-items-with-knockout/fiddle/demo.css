@@ -1,0 +1,74 @@
+.main-container { position: relative; width: 100% }
+.float { float: left; margin: 10px 10px 0 0; }
+.clear { clear: both; }
+.margin-b { margin-bottom: 20px; }
+.btn-container { margin-top: 30px; position: relative; width: 600px; height: 50px; }
+
+        .btn-container .btn-pause:hover { background-position: -96px -50px; }
+#lineChart {
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.combo-container { width: 210px; float: right; margin-right: 20px; }
+.sample-chart-container {
+    margin-right: 240px;
+}
+.legend-container {  width: 300px; margin-top: 10px; }
+    .legend-container .title { font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+    .legend-container .legend { float: left; width: 48px; height: 48px; margin: 2px 5px 5px 0; padding: 0;
+        background-image: url(https://igniteui.github.io/help-samples/images/data-chart/music-controls-sprite.png); background-repeat: no-repeat; 
+        border: 1px solid #535353; zoom: 50%; }
+    .legend-container .add { background-position: -337px 0px; }
+    .legend-container .delete { background-position: -384px 0px; }
+    .legend-container .prev { background-position: -192px 0px; }
+    .legend-container .next { background-position: -240px 0px; }
+    .legend-container .play {  background-position: 0px 0px; }
+    .legend-container .btn-add-start { background-position: -337px 0px; }
+        .btn-container .btn-add-start:hover { background-position: -337px -50px; }
+    .legend-container .btn-rmv-start { background-position: -384px 0px; }
+        .btn-container .btn-rmv-start:hover { background-position: -384px -50px; }
+    .legend-container .btn-add-curr { background-position: -337px 0px; }
+        .btn-container .btn-add-curr:hover { background-position: -337px -50px; }
+    .legend-container .btn-rmv-curr { background-position: -384px 0px; }
+        .btn-container .btn-rmv-curr:hover { background-position: -384px -50px; }
+    .legend-container .btn-prev { background-position: -192px 0px; }
+        .btn-container .btn-prev:hover { background-position: -192px -50px; }  
+    .legend-container .btn-play { background-position: 0px 0px;  }
+        .btn-container .btn-play:hover { background-position: 0px -50px;  }
+    .legend-container .btn-next { background-position: -240px 0px; }
+        .btn-container .btn-next:hover { background-position: -240px -50px; }
+    .legend-container .btn-rmv-end { background-position: -384px 0px; }
+        .btn-container .btn-rmv-end:hover { background-position: -384px -50px; }
+    .legend-container .btn-add-end { background-position: -336px 0px; }
+        .btn-container .btn-add-end:hover { background-position: -336px -50px; }
+    .legend-container .btn-pause { background-position: -96px 0px; opacity: 0.5 }
+    .legend-container button { float: left; width: 48px; height: 48px; margin: 2px 5px 5px 0; padding: 0; border: none; cursor: pointer; padding: 0;
+        background-image: url(https://igniteui.github.io/help-samples/images/data-chart/music-controls-sprite.png); background-repeat: no-repeat; 
+        border: 1px solid #535353; zoom: 50% }
+.legend-container span { font-size: 12px; }
+#barColumnChart { margin-top: 20px; }
+#legendLineChart { border: none; background-color: transparent; font-weight: bold; }
+#legendBarColumnChart { border: none; background-color: transparent; font-weight: bold; }
+.sample-header {
+    margin-top: 10px;
+    height: 80px;
+    line-height: 75px;
+    text-align: center;
+    width: 100%;
+    background-color: #44acd6;
+}
+@media screen and (max-width: 600px) {
+    /* Polar chart container and legend under 600px */
+    .combo-container {
+        width: 100%;
+        float: none;
+    }
+    .sample-chart-container {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 430px) {
+    #sample > section > * {
+        margin: 0;
+    }
+}
